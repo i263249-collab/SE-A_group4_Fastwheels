@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book your FastWheels Car Inspection, Detailing, or Auto Finance consultation appointment online across Lahore, Karachi, Islamabad, and Rawalpindi.">
+  <title>Book Appointment | FastWheels Pakistan</title>
+
+  <!-- Shared & Services Stylesheets -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/services.css">
+  <link rel="icon" type="image/jpeg" href="../images/logo.jpeg">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Academic Metadata Bar -->
+  <aside class="top-bar" aria-label="Course and Academic Information">
+    <div class="container top-bar-inner">
+      <div class="top-bar-meta">
+        <span class="top-bar-badge">Member 4 &bull; Page 3</span>
+        <span>Course: Software Engineering (SE-A)</span>
+        <span>Group: <strong>SE-A_Group04</strong></span>
+        <span>Roll No: <strong>i263151</strong></span>
+      </div>
+      <div>
+        <span>Helpline: 042-111-WHEELS (94335) | Mon - Sat: 9:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Semantic Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" width="24" height="24">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+
+      <a href="../index.html" class="brand" aria-label="FastWheels Home">
+        <img src="../images/logo.jpeg" alt="FastWheels Official Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-name">Fast<span>Wheels</span></span>
+          <span class="brand-tagline">Drive Your Passion</span>
+        </div>
+      </a>
+
+      <nav id="primary-navigation" class="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="used-cars.html" class="nav-link">Used Cars</a></li>
+          <li><a href="car-finance.html" class="nav-link">Car Finance</a></li>
+          <li><a href="inspection-detailing.html" class="nav-link">Inspection &amp; Detailing</a></li>
+          <li><a href="book-appointment.html" class="nav-link active" aria-current="page">Book Appointment</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta-group">
+        <a href="post-ad.html" class="btn-post-ad">
+          <span>+</span> <span class="desktop-text">Post an Ad</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Royal Blue Hero Banner -->
+  <section class="search-banner" aria-labelledby="appointment-hero-title">
+    <div class="container">
+      <span class="hero-badge">Online Bay Reservation</span>
+      <h1 id="appointment-hero-title" class="search-banner-title">Book Your FastWheels Appointment</h1>
+      <p class="search-banner-subtitle">Reserve a guaranteed time slot for Car Inspection, Pro Detailing, or Auto Finance Consultation at our certified centers.</p>
+    </div>
+  </section>
+
+  <!-- Semantic Main Content -->
+  <main id="main-content" class="container section" style="padding-top: 1.5rem;">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumbs">
+      <a href="../index.html">Home</a> &gt;
+      <a href="inspection-detailing.html">Inspection &amp; Detailing</a> &gt;
+      <span class="breadcrumb-current">Book Appointment</span>
+    </nav>
+
+    <!-- Two-Column Layout: Left Booking Form (4 States) | Right Live Summary -->
+    <div class="services-two-col">
+
+      <!-- ===================================================================
+           LEFT COLUMN: 4-STATE APPOINTMENT BOOKING CARD
+           State 1: Empty Form
+           State 2: Date & Time Selected
+           State 3: Error / Time Slot Unavailable
+           State 4: Successful Booking / Confirmation
+           =================================================================== -->
+      <section class="inquiry-card" style="margin-top: 0;" aria-labelledby="booking-form-heading">
+
+        <!-- Header with Live State Indicator Badge -->
+        <div class="inquiry-header-status">
+          <h2 id="booking-form-heading" style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin: 0;">
+            Schedule Service Slot
+          </h2>
+          <span class="inquiry-state-badge badge-state-empty" id="appointment-state-badge">
+            State 1: Empty Form
+          </span>
+        </div>
+
+        <!-- Quick State Preview Controls (Allows easy testing of all 4 states) -->
+        <div class="state-preview-bar" role="group" aria-label="Appointment Interface States">
+          <span class="state-preview-label">States:</span>
+          <button type="button" class="state-pill-btn active" data-state="1" onclick="previewAppointmentState(1)">1. Empty Form</button>
+          <button type="button" class="state-pill-btn" data-state="2" onclick="previewAppointmentState(2)">2. Date &amp; Time Selected</button>
+          <button type="button" class="state-pill-btn" data-state="3" onclick="previewAppointmentState(3)">3. Error / Slot Unavailable</button>
+          <button type="button" class="state-pill-btn" data-state="4" onclick="previewAppointmentState(4)">4. Confirmed</button>
+        </div>
+
+        <!-- State 3 Alert Banner: Time Slot Unavailable -->
+        <div id="slot-unavailable-banner" class="slot-alert-banner" role="alert" aria-live="polite">
+          <strong>Time Slot Unavailable</strong>
+          <span id="slot-unavailable-text">The selected time slot is already booked. Please choose an available slot below.</span>
+          <div id="slot-suggestions-row" class="slot-suggestions-row"></div>
+        </div>
+
+        <!-- Interactive Booking Form (States 1, 2, 3) -->
+        <form id="appointment-booking-form" novalidate onsubmit="handleAppointmentSubmit(event)">
+
+          <!-- Step 1: Service & Location -->
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="appt-category">Service Category <span class="required-mark">*</span></label>
+              <select id="appt-category" class="form-control">
+                <option value="inspection">Car Inspection Services</option>
+                <option value="detailing">Car Detailing &amp; Ceramic</option>
+                <option value="finance">Car Finance Consultation</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="appt-city">FastWheels Center <span class="required-mark">*</span></label>
+              <select id="appt-city" class="form-control">
+                <option value="Lahore">Lahore (Gulberg III)</option>
+                <option value="Karachi">Karachi (DHA Phase 6)</option>
+                <option value="Islamabad">Islamabad (Blue Area)</option>
+                <option value="Rawalpindi">Rawalpindi (Saddar)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="appt-service">Selected Package <span class="required-mark">*</span></label>
+              <select id="appt-service" class="form-control">
+                <!-- Populated dynamically by js/services.js -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="appt-date">Preferred Date <span class="required-mark">*</span></label>
+              <input type="date" id="appt-date" class="form-control">
+              <span class="field-error-msg" id="error-appt-date">Please select an open date (Mon - Sat).</span>
+            </div>
+          </div>
+
+          <!-- Step 2: Time Slot Picker -->
+          <div class="form-group" style="margin-bottom: 1.25rem;">
+            <label>Select Time Slot <span class="required-mark">*</span></label>
+            <div id="time-slots-container" class="time-slots-grid" role="group" aria-label="Available Appointment Time Slots">
+              <!-- Populated dynamically by js/services.js -->
+            </div>
+            <span class="helper-note">Tip: Slots marked "Booked" demonstrate State 3 (Unavailable Slot) with instant alternative suggestions.</span>
+            <span class="field-error-msg" id="error-appt-slot">Please select an available time slot to continue.</span>
+          </div>
+
+          <!-- Step 3: Vehicle & Contact Details -->
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="appt-vehicle">Vehicle Make, Model &amp; Year <span class="required-mark">*</span></label>
+              <input type="text" id="appt-vehicle" class="form-control" placeholder="e.g. 2023 Honda Civic RS Turbo">
+              <span class="field-error-msg" id="error-appt-vehicle">Please enter your vehicle make and model.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="appt-name">Full Name <span class="required-mark">*</span></label>
+              <input type="text" id="appt-name" class="form-control" placeholder="e.g. Bilal Ahmed">
+              <span class="field-error-msg" id="error-appt-name">Please enter your full name.</span>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="appt-phone">Mobile / WhatsApp (11 Digits) <span class="required-mark">*</span></label>
+              <input type="tel" id="appt-phone" class="form-control" placeholder="e.g. 03001234567">
+              <span class="field-error-msg" id="error-appt-phone">Enter a valid 11-digit Pakistani mobile number.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="appt-email">Email Address <span class="required-mark">*</span></label>
+              <input type="email" id="appt-email" class="form-control" placeholder="e.g. bilal@example.com">
+              <span class="field-error-msg" id="error-appt-email">Please provide a valid email address.</span>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1.25rem;">
+            <label for="appt-notes">Additional Notes (Optional)</label>
+            <textarea id="appt-notes" rows="2" class="form-control" placeholder="Mention registration city, doorstep address, or specific inspection focus..."></textarea>
+          </div>
+
+          <!-- Submit & Reset Actions -->
+          <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+            <button type="submit" class="btn-search-action" style="flex: 1; padding: 0.85rem 1.5rem;">
+              Confirm Appointment Booking
+            </button>
+            <button type="button" class="btn-small-reset" style="padding: 0.85rem 1.1rem;" onclick="resetAppointmentForm()">
+              Reset Form
+            </button>
+          </div>
+        </form>
+
+        <!-- State 4 View: Successful Booking / Confirmation -->
+        <div class="inquiry-success-view" id="booking-success-container">
+          <div class="inquiry-success-icon" aria-hidden="true">✓</div>
+          <h3 class="inquiry-success-title">Appointment Confirmed!</h3>
+          <span id="confirm-ref-code" class="confirmation-ref-badge">Booking Ref: #FW-APT-48219</span>
+          <p class="inquiry-success-text">
+            Thank you, <strong id="confirm-customer-name">Customer</strong>! Your FastWheels service bay has been reserved. Our center coordinator will reach out on your mobile number before your slot.
+          </p>
+
+          <div class="confirmation-details-box">
+            <table class="specs-grid-table" aria-label="Confirmed Booking Details">
+              <tbody>
+                <tr>
+                  <th scope="row">Service</th>
+                  <td id="confirm-service">200+ Point Comprehensive Inspection</td>
+                </tr>
+                <tr>
+                  <th scope="row">Center</th>
+                  <td id="confirm-center">FastWheels Lahore Center</td>
+                </tr>
+                <tr>
+                  <th scope="row">Date &amp; Time</th>
+                  <td id="confirm-datetime">Tomorrow at 11:00 AM</td>
+                </tr>
+                <tr>
+                  <th scope="row">Vehicle</th>
+                  <td id="confirm-vehicle">2023 Honda Civic RS Turbo</td>
+                </tr>
+                <tr>
+                  <th scope="row">Contact</th>
+                  <td id="confirm-phone">03001234567</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+            <button type="button" class="btn-search-action" onclick="resetAppointmentForm()">
+              Book Another Appointment
+            </button>
+            <a href="inspection-detailing.html" class="btn-full-link btn-outline-primary" style="width: auto; padding: 0.75rem 1.25rem;">
+              Back to Services
+            </a>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ===================================================================
+           RIGHT COLUMN: LIVE BOOKING SUMMARY & CENTER ASSURANCE
+           =================================================================== -->
+      <aside class="service-card-panel finance-summary-sticky" aria-labelledby="booking-summary-heading">
+        <h2 id="booking-summary-heading" class="panel-heading">Live Booking Summary</h2>
+
+        <table class="specs-grid-table" aria-label="Live Appointment Selection">
+          <tbody>
+            <tr>
+              <th scope="row">Service</th>
+              <td id="summary-appt-service">200+ Point Comprehensive Inspection</td>
+            </tr>
+            <tr>
+              <th scope="row">Center</th>
+              <td id="summary-appt-city">FastWheels Lahore Center</td>
+            </tr>
+            <tr>
+              <th scope="row">Selected Date</th>
+              <td id="summary-appt-date">Not selected</td>
+            </tr>
+            <tr>
+              <th scope="row">Time Slot</th>
+              <td id="summary-appt-time">Not selected</td>
+            </tr>
+            <tr>
+              <th scope="row">Vehicle</th>
+              <td id="summary-appt-vehicle">Not entered yet</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="seller-comments-box">
+          <strong>FastWheels Booking Assurance:</strong><br>
+          Free rescheduling up to 3 hours prior to your slot. Service centers operate <strong>Monday to Saturday, 9:30 AM &ndash; 7:00 PM</strong> (Closed Sundays).
+        </div>
+
+        <div class="finance-actions-stack">
+          <a href="inspection-detailing.html" class="btn-full-link btn-outline-primary">
+            Compare Inspection &amp; Detailing Packages
+          </a>
+          <a href="car-finance.html" class="btn-full-link btn-outline-primary">
+            Calculate Monthly Car Installments
+          </a>
+        </div>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- Semantic Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Fast<span>Wheels</span></h3>
+          <p>FastWheels is Pakistan's premier automotive technology marketplace, built with semantic HTML5, pure CSS3, and vanilla JavaScript.</p>
+          <div class="footer-meta-box">
+            <p><strong>Course:</strong> Software Engineering (Section A)</p>
+            <p><strong>Project Group:</strong> SE-A_Group04</p>
+            <p><strong>Member 4 Roll No:</strong> i263151</p>
+            <p><strong>Stack:</strong> Pure HTML5 &bull; CSS3 &bull; Vanilla JavaScript Only</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore Services</h4>
+          <ul class="footer-links">
+            <li><a href="car-finance.html">Car Finance &amp; Installments</a></li>
+            <li><a href="inspection-detailing.html">Inspection &amp; Detailing</a></li>
+            <li><a href="book-appointment.html">Book Appointment</a></li>
+            <li><a href="used-cars.html">Used Cars for Sale</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Marketplace</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">FastWheels Home</a></li>
+            <li><a href="car-details.html">Vehicle Specifications</a></li>
+            <li><a href="post-ad.html">Sell Your Car</a></li>
+            <li><a href="used-cars.html?city=Karachi">Cars in Karachi</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="book-appointment.html?city=Lahore">Lahore Service Center</a></li>
+            <li><a href="book-appointment.html?city=Karachi">Karachi Service Center</a></li>
+            <li><a href="book-appointment.html?city=Islamabad">Islamabad Service Center</a></li>
+            <li><a href="../docs/README.md">Developer Docs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>&copy; 2026 FastWheels Pakistan. All rights reserved. Developed for SE-A_Group04.</div>
+        <div>Theme: Royal-Blue &amp; Crimson-Red &bull; Member 4: i263151</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared & Member 4 Vanilla JavaScript -->
+  <script src="../js/main.js"></script>
+  <script src="../js/services.js"></script>
+</body>
+</html>

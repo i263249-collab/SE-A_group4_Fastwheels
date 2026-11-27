@@ -1,0 +1,623 @@
+/* ==========================================================================
+   FASTWHEELS - Member 4 Services Stylesheet
+   Pages: Car Finance & Installments, Inspection & Detailing, Book Appointment
+   Group: SE-A_Group04 | Member 4 (Roll No: i263151)
+   Layered on top of ../css/styles.css using shared theme tokens.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Shared Subpage Breadcrumb & Two-Column Layout
+   -------------------------------------------------------------------------- */
+.breadcrumb-nav {
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-text-muted);
+}
+
+.breadcrumb-nav a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.breadcrumb-nav a:hover {
+  color: var(--color-accent);
+}
+
+.breadcrumb-current {
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+.services-two-col {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+}
+
+.service-card-panel {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.panel-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.panel-subheading {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.required-mark {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.helper-note {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. Mode / Category Tab Buttons (Reuses search-tabs visual language)
+   -------------------------------------------------------------------------- */
+.mode-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.mode-tab-btn {
+  background-color: #f8fafc;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mode-tab-btn:hover {
+  border-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.mode-tab-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   3. Car Finance & Installment Calculator
+   -------------------------------------------------------------------------- */
+.range-field-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.range-value-pill {
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+
+.range-input {
+  width: 100%;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.range-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
+}
+
+.finance-summary-sticky {
+  position: sticky;
+  top: 84px;
+}
+
+.emi-highlight-box {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  color: #ffffff;
+  border-radius: var(--border-radius-md);
+  padding: 1.35rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  border-bottom: 3px solid var(--color-accent);
+}
+
+.emi-highlight-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #cbd5e1;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.emi-highlight-amount {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.emi-highlight-note {
+  font-size: var(--font-size-xs);
+  color: #e2e8f0;
+}
+
+.finance-actions-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.btn-full-link {
+  width: 100%;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.78rem 1.2rem;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.btn-outline-primary {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.table-scroll-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 0.85rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+}
+
+.comparison-table thead th {
+  background-color: #f8fafc;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.comparison-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.plan-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+  text-transform: uppercase;
+}
+
+.plan-tag-islamic {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.plan-tag-conventional {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+/* --------------------------------------------------------------------------
+   4. Inspection & Detailing Packages & Checklist
+   -------------------------------------------------------------------------- */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.package-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.package-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-light);
+}
+
+.package-card.featured {
+  border: 2px solid var(--color-primary);
+}
+
+.package-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--border-radius-sm);
+  letter-spacing: 0.04em;
+}
+
+.package-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.35rem;
+  padding-right: 5rem;
+}
+
+.package-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.package-duration {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.package-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.package-features li {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-main);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.feature-check {
+  color: var(--color-success);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.75rem;
+}
+
+.checklist-item {
+  background-color: #f8fafc;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  padding: 0.75rem 0.9rem;
+}
+
+.checklist-item strong {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  margin-bottom: 0.15rem;
+}
+
+.checklist-item span {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.centers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.center-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.center-card h3 {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.35rem;
+}
+
+.center-card p {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.center-hours {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+/* --------------------------------------------------------------------------
+   5. Book Appointment Page (4 Interface States)
+   -------------------------------------------------------------------------- */
+.state-preview-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f8fafc;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.state-preview-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-right: 0.25rem;
+}
+
+.state-pill-btn {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.state-pill-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.state-pill-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.35rem;
+}
+
+.time-slot-btn {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  padding: 0.6rem 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.time-slot-btn:hover {
+  border-color: var(--color-primary);
+  background-color: #f8fafc;
+}
+
+.time-slot-time {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.time-slot-status {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--color-success);
+  text-transform: uppercase;
+}
+
+.time-slot-btn.is-selected {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.time-slot-btn.is-selected .time-slot-time,
+.time-slot-btn.is-selected .time-slot-status {
+  color: #ffffff;
+}
+
+.time-slot-btn.is-unavailable {
+  background-color: #fff5f5;
+  border-style: dashed;
+  border-color: #fecaca;
+}
+
+.time-slot-btn.is-unavailable .time-slot-time {
+  color: #991b1b;
+  text-decoration: line-through;
+}
+
+.time-slot-btn.is-unavailable .time-slot-status {
+  color: #b91c1c;
+}
+
+.time-slot-btn.is-unavailable:hover {
+  border-color: var(--color-accent);
+  background-color: #fee2e2;
+}
+
+.slot-alert-banner {
+  display: none;
+  background-color: #fff5f5;
+  border: 1px solid #fecaca;
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--border-radius-sm);
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.15rem;
+  color: #991b1b;
+  font-size: var(--font-size-sm);
+}
+
+.slot-alert-banner.visible {
+  display: block;
+}
+
+.slot-alert-banner strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #7f1d1d;
+}
+
+.slot-suggestions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.6rem;
+}
+
+.btn-suggest-slot {
+  background-color: #ffffff;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+}
+
+.btn-suggest-slot:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.confirmation-details-box {
+  background-color: #f8fafc;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1rem 1.25rem;
+  margin: 0 auto 1.5rem;
+  max-width: 520px;
+  text-align: left;
+}
+
+.confirmation-ref-badge {
+  display: inline-block;
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Responsive Breakpoints (Matches css/styles.css)
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .services-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .finance-summary-sticky {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card-panel {
+    padding: 1.15rem;
+  }
+
+  .emi-highlight-amount {
+    font-size: 1.65rem;
+  }
+}
