@@ -1,17 +1,17 @@
 /**
- * FASTWHEELS - Shared JavaScript Utilities & UI Helpers
+ * FASTWHEELS - Shared JavaScript Utilities & Vehicle Catalog
  * Group: SE-A_Group04 | Student ID: i263249
- * Vanilla JavaScript (No external libraries or frameworks)
+ * Vanilla JavaScript (Zero third-party frameworks/libraries)
  */
 
 'use strict';
 
 /* ==========================================================================
-   1. Shared Vehicle Data Structure
+   1. Shared Vehicle Data Structure (Pakistani Marketplace)
    ========================================================================== */
 /**
- * FastWheels inventory data representing cars listed across Pakistan.
- * Uses realistic specifications and relative image paths pointing to /images.
+ * Authentic Pakistani vehicle listings with realistic pricing, specs, and cities.
+ * Preserves existing images inside images/ without modifying or deleting them.
  */
 const FASTWHEELS_INVENTORY = [
   {
@@ -19,167 +19,298 @@ const FASTWHEELS_INVENTORY = [
     make: 'Audi',
     model: 'e-tron GT Quattro',
     year: 2023,
+    bodyType: 'Sedan',
     pricePKR: 48500000,
     priceDisplay: 'PKR 4.85 Crore',
     city: 'Lahore',
     condition: 'Used',
     mileage: '12,500 km',
-    transmission: 'Automatic',
+    engine: '93.4 kWh Dual Permanent Magnet Electric Motors (523 bhp)',
+    transmission: 'Automatic (2-Speed Rear / 1-Speed Front)',
     fuel: 'Electric',
+    color: 'Daytona Gray Pearl',
+    assembly: 'Imported (Germany)',
+    registeredIn: 'Lahore',
     image: 'images/audi.webp',
+    sliderImages: ['images/audi.webp', 'images/taycan.webp', 'images/tesla.webp'],
+    badge: 'Verified',
     featured: true,
-    badge: 'Verified'
+    sellerName: 'Malik Zulfiqar Autos',
+    sellerPhone: '+92 300 8472910',
+    sellerComments: 'First owner driven vehicle imported through authorized Audi Pakistan channel. Complete 100% genuine bumper-to-bumper original paint, ceramic coated from day one. Full FastWheels 200+ point inspection report with 9.9/10 score. Biometric transfer on spot.'
   },
   {
     id: 'fw-002',
-    make: 'Bentley',
-    model: 'Continental GT V8',
-    year: 2022,
-    pricePKR: 115000000,
-    priceDisplay: 'PKR 11.50 Crore',
+    make: 'Toyota',
+    model: 'Land Cruiser ZX V8 (URJ202)',
+    year: 2020,
+    bodyType: 'SUV',
+    pricePKR: 49500000,
+    priceDisplay: 'PKR 4.95 Crore',
     city: 'Islamabad',
     condition: 'Used',
-    mileage: '8,200 km',
-    transmission: 'Automatic',
+    mileage: '38,000 km',
+    engine: '4.6L 1UR-FE 32-Valve Dual VVT-i V8 (304 hp)',
+    transmission: '6-Speed Super ECT Automatic with Sequential Shift',
     fuel: 'Petrol',
+    color: 'Pearl White 070',
+    assembly: 'Imported (Japan)',
+    registeredIn: 'Islamabad',
     image: 'images/bentley.webp',
+    sliderImages: ['images/bentley.webp', 'images/konisegg.webp', 'images/peugeot.webp'],
+    badge: 'Inspected',
     featured: true,
-    badge: 'Featured'
+    sellerName: 'Capital Car Motors',
+    sellerPhone: '+92 333 5148902',
+    sellerComments: 'Grade 4.5 Auction Sheet verified car imported in 2021. Features Height Control Air Suspension, Rear Entertainment Screens, 360-degree cameras, cool box, and beige Nappa leather interior. Genuine low mileage guaranteed.'
   },
   {
     id: 'fw-003',
-    make: 'Koenigsegg',
-    model: 'Jesko Absolut Hypercar',
-    year: 2024,
-    pricePKR: 850000000,
-    priceDisplay: 'PKR 85.0 Crore',
-    city: 'Karachi',
-    condition: 'New',
-    mileage: '150 km',
-    transmission: '9-Speed LST',
-    fuel: 'Twin-Turbo V8',
-    image: 'images/konisegg.webp',
+    make: 'Honda',
+    model: 'Civic RS Turbo (11th Gen)',
+    year: 2023,
+    bodyType: 'Sedan',
+    pricePKR: 9250000,
+    priceDisplay: 'PKR 92.5 Lacs',
+    city: 'Lahore',
+    condition: 'Used',
+    mileage: '14,000 km',
+    engine: '1.5L VTEC Turbocharged DOHC In-line 4-Cylinder (176 hp)',
+    transmission: 'M-CVT with Steering Paddle Shifters',
+    fuel: 'Petrol',
+    color: 'Meteoroid Gray Metallic',
+    assembly: 'Local (CKD)',
+    registeredIn: 'Punjab',
+    image: 'images/peugeot.webp',
+    sliderImages: ['images/peugeot.webp', 'images/audi.webp', 'images/mazda.webp'],
+    badge: 'Certified',
     featured: true,
-    badge: 'Exclusive'
+    sellerName: 'Hamza Tariq (Direct Owner)',
+    sellerPhone: '+92 321 4488339',
+    sellerComments: 'Home driven Honda Civic RS Turbo under official company warranty. Features Honda Sensing Suite (Adaptive Cruise Control, Collision Mitigation, Lane Keep Assist). All service history maintained at Honda Point Lahore.'
   },
   {
     id: 'fw-004',
-    make: 'Mazda',
-    model: 'RX-Vision Concept Edition',
+    make: 'Suzuki',
+    model: 'Swift GLX CVT Top of the Line',
     year: 2023,
-    pricePKR: 32000000,
-    priceDisplay: 'PKR 3.20 Crore',
-    city: 'Lahore',
+    bodyType: 'Hatchback',
+    pricePKR: 4800000,
+    priceDisplay: 'PKR 48.0 Lacs',
+    city: 'Karachi',
     condition: 'Used',
-    mileage: '5,400 km',
-    transmission: 'Manual',
-    fuel: 'Rotary Turbo',
+    mileage: '9,200 km',
+    engine: '1.2L K12M VVT 4-Cylinder DOHC (81 hp)',
+    transmission: 'CVT Automatic with Sports Mode',
+    fuel: 'Petrol',
+    color: 'Silky Silver Metallic',
+    assembly: 'Local (CKD)',
+    registeredIn: 'Sindh',
     image: 'images/mazda.webp',
+    sliderImages: ['images/mazda.webp', 'images/peugeot.webp', 'images/taycan.webp'],
+    badge: 'Verified',
     featured: true,
-    badge: 'Rare'
+    sellerName: 'DHA Premium Automobiles',
+    sellerPhone: '+92 300 2319401',
+    sellerComments: 'Top trim Suzuki Swift GLX CVT with 6 airbags, LED projector headlights, digital climate control, cruise control, and push-start engine. Scratchless condition, first oil change completed at Pak Suzuki dealership.'
   },
   {
     id: 'fw-005',
-    make: 'Peugeot',
-    model: '508 GT Fastback',
-    year: 2023,
-    pricePKR: 18500000,
-    priceDisplay: 'PKR 1.85 Crore',
-    city: 'Islamabad',
-    condition: 'New',
-    mileage: '1,200 km',
-    transmission: 'Automatic',
-    fuel: 'Hybrid',
-    image: 'images/peugeot.webp',
-    featured: false,
-    badge: 'Official Dealer'
-  },
-  {
-    id: 'fw-006',
     make: 'Porsche',
-    model: 'Taycan Turbo S',
-    year: 2023,
+    model: 'Taycan Turbo S Performance',
+    year: 2020,
+    bodyType: 'Sedan',
     pricePKR: 62000000,
     priceDisplay: 'PKR 6.20 Crore',
     city: 'Karachi',
     condition: 'Used',
     mileage: '9,800 km',
-    transmission: 'Automatic',
+    engine: 'Dual Permanent-Magnet Synchronous Motors (750 hp overboost)',
+    transmission: '2-Speed Transmission on Rear Axle',
     fuel: 'Electric',
+    color: 'Carrara White Metallic',
+    assembly: 'Imported (Germany)',
+    registeredIn: 'Sindh',
     image: 'images/taycan.webp',
+    sliderImages: ['images/taycan.webp', 'images/audi.webp', 'images/tesla.webp'],
+    badge: 'Exclusive',
     featured: true,
-    badge: 'Verified'
+    sellerName: 'South Coast Exotics',
+    sellerPhone: '+92 301 8294022',
+    sellerComments: 'Porsche Centre Lahore imported Taycan Turbo S with Porsche Ceramic Composite Brakes (PCCB), Sport Chrono package, passenger display, and Burmester 3D High-End Surround Sound System. 0-100 in 2.8 seconds.'
+  },
+  {
+    id: 'fw-006',
+    make: 'Tesla',
+    model: 'Model S Plaid Tri-Motor',
+    year: 2023,
+    bodyType: 'Sedan',
+    pricePKR: 54000000,
+    priceDisplay: 'PKR 5.40 Crore',
+    city: 'Islamabad',
+    condition: 'Used',
+    mileage: '4,100 km',
+    engine: 'Tri-Motor All-Wheel Drive Platform (1,020 hp)',
+    transmission: 'Single-Speed Fixed Gear Direct Drive',
+    fuel: 'Electric',
+    color: 'Solid Black with Full Stealth PPF',
+    assembly: 'Imported (USA)',
+    registeredIn: 'Islamabad',
+    image: 'images/tesla.webp',
+    sliderImages: ['images/tesla.webp', 'images/taycan.webp', 'images/audi.webp'],
+    badge: 'Zero Meter',
+    featured: true,
+    sellerName: 'Blue Area EV Imports',
+    sellerPhone: '+92 345 5589120',
+    sellerComments: 'Fastest accelerating production sedan on earth (0-100 km/h in 1.99s). Features Yoke steering wheel, 17-inch cinematic touchscreen, Full Self-Driving (FSD) computer hardware, and mobile Tesla supercharger included.'
   },
   {
     id: 'fw-007',
-    make: 'Tesla',
-    model: 'Model S Plaid Tri-Motor',
-    year: 2024,
-    pricePKR: 54000000,
-    priceDisplay: 'PKR 5.40 Crore',
+    make: 'Toyota',
+    model: 'Corolla Altis Grande 1.8 CVT-i',
+    year: 2018,
+    bodyType: 'Sedan',
+    pricePKR: 5400000,
+    priceDisplay: 'PKR 54.0 Lacs',
     city: 'Lahore',
-    condition: 'New',
-    mileage: '800 km',
-    transmission: 'Direct Drive',
-    fuel: 'Electric',
-    image: 'images/tesla.webp',
+    condition: 'Used',
+    mileage: '58,000 km',
+    engine: '1.8L 2ZR-FE 16-Valve Dual VVT-i (138 hp)',
+    transmission: 'CVT-i with 7-Speed Sport Sequential Shiftmatic',
+    fuel: 'Petrol',
+    color: 'Super White',
+    assembly: 'Local (CKD)',
+    registeredIn: 'Punjab',
+    image: 'images/peugeot.webp',
+    sliderImages: ['images/peugeot.webp', 'images/bentley.webp', 'images/mazda.webp'],
+    badge: 'Verified',
+    featured: false,
+    sellerName: 'Sheikh Motors Gulberg',
+    sellerPhone: '+92 300 4821099',
+    sellerComments: 'Maintained throughout with genuine Toyota motor oil and filter changes. Sunroof, leather upholstery, cruise control, push start, and Android navigation. 100% non-accidental with original book and file.'
+  },
+  {
+    id: 'fw-008',
+    make: 'Honda',
+    model: 'City Aspire 1.5 Prosmatec',
+    year: 2015,
+    bodyType: 'Sedan',
+    pricePKR: 3150000,
+    priceDisplay: 'PKR 31.5 Lacs',
+    city: 'Karachi',
+    condition: 'Used',
+    mileage: '84,000 km',
+    engine: '1.5L SOHC 16-Valve i-VTEC (120 hp)',
+    transmission: '5-Speed Prosmatec Automatic',
+    fuel: 'Petrol',
+    color: 'Taffeta White',
+    assembly: 'Local (CKD)',
+    registeredIn: 'Sindh',
+    image: 'images/mazda.webp',
+    sliderImages: ['images/mazda.webp', 'images/audi.webp', 'images/peugeot.webp'],
+    badge: 'Inspected',
+    featured: false,
+    sellerName: 'Clifton Drive Wheels',
+    sellerPhone: '+92 321 9920144',
+    sellerComments: 'Family used Honda City Aspire with genuine alloy wheels, built-in navigation, leather seats, and chill AC. Tax paid up to June 2026. Very economical fuel consumption of 14-16 km/L in city.'
+  },
+  {
+    id: 'fw-009',
+    make: 'Suzuki',
+    model: 'Cultus VXL Dual Airbags',
+    year: 2018,
+    bodyType: 'Hatchback',
+    pricePKR: 2650000,
+    priceDisplay: 'PKR 26.5 Lacs',
+    city: 'Islamabad',
+    condition: 'Used',
+    mileage: '62,000 km',
+    engine: '1.0L K10B 3-Cylinder DOHC 12-Valve (67 hp)',
+    transmission: '5-Speed Manual',
+    fuel: 'Petrol',
+    color: 'Graphite Gray Metallic',
+    assembly: 'Local (CKD)',
+    registeredIn: 'Islamabad',
+    image: 'images/audi.webp',
+    sliderImages: ['images/audi.webp', 'images/mazda.webp', 'images/peugeot.webp'],
+    badge: 'Verified',
+    featured: false,
+    sellerName: 'Rawal Auto Deals',
+    sellerPhone: '+92 333 5819033',
+    sellerComments: 'Extremely clean and fuel-efficient hatchback giving 18+ km/L on Islamabad highway. Power windows, power steering, ABS brakes, and keyless entry. Original number plates and return file available.'
+  },
+  {
+    id: 'fw-010',
+    make: 'Koenigsegg',
+    model: 'Jesko Absolut Hypercar',
+    year: 2023,
+    bodyType: 'SUV',
+    pricePKR: 850000000,
+    priceDisplay: 'PKR 85.0 Crore',
+    city: 'Karachi',
+    condition: 'Used',
+    mileage: '150 km',
+    engine: '5.0L Twin-Turbo Flat-Plane V8 (1,600 bhp on E85)',
+    transmission: '9-Speed LST (Light Speed Transmission)',
+    fuel: 'Petrol',
+    color: 'Liquid Silver with Carbon Accents',
+    assembly: 'Imported (Sweden)',
+    registeredIn: 'Customs Cleared',
+    image: 'images/konisegg.webp',
+    sliderImages: ['images/konisegg.webp', 'images/bentley.webp', 'images/taycan.webp'],
+    badge: 'Exclusive',
     featured: true,
-    badge: 'Zero Meter'
+    sellerName: 'Elite Motors Pakistan',
+    sellerPhone: '+92 300 9999888',
+    sellerComments: 'Pristine collectors vehicle with zero track use. Active aerodynamics with carbon fiber body panels and Autoskin automated dihedral synchro-helix doors. FastWheels Verified Exclusive Certificate.'
   }
 ];
 
 /* ==========================================================================
-   2. UI Helper Functions
+   2. Favorites Management (Vanilla JS & Local Storage)
    ========================================================================== */
-
-/**
- * Format a Pakistani Rupee amount into Crore/Lakh standard notation
- * @param {number} amount
- * @returns {string} Formatted price string
- */
-function formatPKR(amount) {
-  if (amount >= 10000000) {
-    return `PKR ${(amount / 10000000).toFixed(2)} Crore`;
-  } else if (amount >= 100000) {
-    return `PKR ${(amount / 100000).toFixed(2)} Lacs`;
+function getFavorites() {
+  try {
+    const stored = localStorage.getItem('fastwheels_favorites');
+    return stored ? JSON.parse(stored) : [];
+  } catch (e) {
+    return [];
   }
-  return `PKR ${amount.toLocaleString('en-PK')}`;
 }
 
-/**
- * Filter vehicles based on search criteria
- * @param {Object} criteria - Search options { make, city, condition, maxPrice }
- * @returns {Array} Filtered list of cars
- */
-function filterInventory(criteria = {}) {
-  return FASTWHEELS_INVENTORY.filter(car => {
-    // Filter by Make
-    if (criteria.make && criteria.make !== 'All' && car.make.toLowerCase() !== criteria.make.toLowerCase()) {
-      return false;
-    }
-    // Filter by City
-    if (criteria.city && criteria.city !== 'All' && car.city.toLowerCase() !== criteria.city.toLowerCase()) {
-      return false;
-    }
-    // Filter by Condition (New / Used)
-    if (criteria.condition && criteria.condition !== 'All' && car.condition.toLowerCase() !== criteria.condition.toLowerCase()) {
-      return false;
-    }
-    // Filter by Max Price
-    if (criteria.maxPrice && car.pricePKR > Number(criteria.maxPrice)) {
-      return false;
-    }
-    return true;
+function isCarFavorited(carId) {
+  const favs = getFavorites();
+  return favs.includes(carId);
+}
+
+function toggleCarFavorite(carId, event) {
+  if (event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+  let favs = getFavorites();
+  if (favs.includes(carId)) {
+    favs = favs.filter(id => id !== carId);
+  } else {
+    favs.push(carId);
+  }
+  try {
+    localStorage.setItem('fastwheels_favorites', JSON.stringify(favs));
+  } catch (e) {}
+
+  // Update UI heart button for this car
+  const btns = document.querySelectorAll(`.btn-favorite[data-id="${carId}"]`);
+  btns.forEach(btn => {
+    const active = favs.includes(carId);
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-label', active ? 'Remove from favorites' : 'Add to favorites');
+    btn.innerHTML = active ? '♥' : '♡';
   });
 }
 
 /* ==========================================================================
-   3. DOM & Interaction Initializers
+   3. Mobile Navigation Helper
    ========================================================================== */
-
-/**
- * Setup mobile navigation menu toggle with ARIA accessibility
- */
 function initMobileNavigation() {
   const toggleBtn = document.querySelector('.mobile-nav-toggle');
   const mainNav = document.querySelector('.main-nav');
@@ -214,161 +345,17 @@ function initMobileNavigation() {
   });
 }
 
-/**
- * Setup quick search tabs (All / New / Used)
- */
-function initSearchTabs() {
-  const tabButtons = document.querySelectorAll('.search-tab-btn');
-  const conditionSelect = document.getElementById('search-condition');
-
-  if (!tabButtons.length) return;
-
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      tabButtons.forEach(btn => {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-selected', 'false');
-      });
-
-      button.classList.add('active');
-      button.setAttribute('aria-selected', 'true');
-
-      const tabCategory = button.getAttribute('data-tab');
-      if (conditionSelect && tabCategory) {
-        conditionSelect.value = tabCategory;
-      }
-    });
-  });
-}
-
-/**
- * Render vehicle card HTML template
- * @param {Object} car
- * @returns {string} HTML markup
- */
-function createCarCardHTML(car) {
-  return `
-    <article class="car-card" data-id="${car.id}">
-      <div class="car-card-media">
-        <img src="${car.image}" alt="${car.make} ${car.model}" class="car-card-img" loading="lazy">
-        <span class="car-card-tag">${car.badge}</span>
-      </div>
-      <div class="car-card-body">
-        <h3 class="car-card-title">${car.year} ${car.make} ${car.model}</h3>
-        <div class="car-card-price">${car.priceDisplay}</div>
-        <div class="car-card-location">
-          <span>📍</span> ${car.city} &bull; ${car.condition}
-        </div>
-        <div class="car-card-specs">
-          <div class="car-card-spec-item">
-            <span>${car.mileage}</span>
-            <span>Mileage</span>
-          </div>
-          <div class="car-card-spec-item">
-            <span>${car.fuel}</span>
-            <span>Fuel Type</span>
-          </div>
-          <div class="car-card-spec-item">
-            <span>${car.transmission}</span>
-            <span>Gear</span>
-          </div>
-        </div>
-      </div>
-      <div class="car-card-actions">
-        <button type="button" class="btn-card btn-card-primary" onclick="viewCarDetails('${car.id}')">View Details</button>
-        <button type="button" class="btn-card btn-card-outline" onclick="contactSeller('${car.id}')">Contact Seller</button>
-      </div>
-    </article>
-  `;
-}
-
-/**
- * Populate car listings into the container
- * @param {Array} cars
- */
-function renderCarListings(cars) {
-  const container = document.getElementById('featured-cars-container');
-  if (!container) return;
-
-  if (cars.length === 0) {
-    container.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; background: #fff; border-radius: 8px;">
-        <p style="font-weight: 600; color: var(--color-primary);">No vehicles match your search criteria.</p>
-        <p style="color: var(--color-text-muted); font-size: 0.9rem;">Try selecting "All" or adjusting your price filters.</p>
-      </div>
-    `;
-    return;
-  }
-
-  container.innerHTML = cars.map(car => createCarCardHTML(car)).join('');
-}
-
-/**
- * Handle search form submissions
- */
-function initSearchForm() {
-  const searchForm = document.getElementById('fastwheels-search-form');
-  if (!searchForm) return;
-
-  searchForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const makeSelect = document.getElementById('search-make');
-    const citySelect = document.getElementById('search-city');
-    const conditionSelect = document.getElementById('search-condition');
-    const budgetSelect = document.getElementById('search-budget');
-
-    const criteria = {
-      make: makeSelect ? makeSelect.value : 'All',
-      city: citySelect ? citySelect.value : 'All',
-      condition: conditionSelect ? conditionSelect.value : 'All',
-      maxPrice: budgetSelect && budgetSelect.value ? Number(budgetSelect.value) : null
-    };
-
-    const results = filterInventory(criteria);
-    renderCarListings(results);
-
-    // Scroll smoothly to results
-    const resultsSection = document.getElementById('featured-vehicles');
-    if (resultsSection) {
-      resultsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-}
-
-/**
- * Placeholder actions for interactive buttons
- */
-function viewCarDetails(carId) {
-  const car = FASTWHEELS_INVENTORY.find(item => item.id === carId);
-  if (car) {
-    alert(`Viewing details for: ${car.year} ${car.make} ${car.model}\nPrice: ${car.priceDisplay}\nCity: ${car.city}`);
-  }
-}
-
-function contactSeller(carId) {
-  const car = FASTWHEELS_INVENTORY.find(item => item.id === carId);
-  if (car) {
-    alert(`FastWheels SafeConnect:\nConnecting you with verified seller for ${car.make} ${car.model} in ${car.city}.`);
-  }
-}
-
 /* ==========================================================================
-   4. DOM Ready Initialization
+   4. Initialize on DOM Ready
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNavigation();
-  initSearchTabs();
-  initSearchForm();
-  // Initial render of featured inventory
-  renderCarListings(FASTWHEELS_INVENTORY);
 });
 
-// Export helper for window object for modularity and page scripts
+// Export FastWheels API object for page scripts
 window.FastWheels = {
   inventory: FASTWHEELS_INVENTORY,
-  filterInventory,
-  formatPKR,
-  viewCarDetails,
-  contactSeller
+  getFavorites,
+  isCarFavorited,
+  toggleCarFavorite
 };

@@ -9,3 +9,5 @@ This folder contains the complete audit trail and development session logs gener
 
 ## Log Index
 - [`session-01-base-setup.md`](./session-01-base-setup.md) - Base project architecture, shared Royal-Blue and Red theme, index.html layout, vanilla JS engine, responsive design, and subpage scaffolding.
+- [`session-02-used-cars.md`](./session-02-used-cars.md) - Wireframe implementation of `pages/used-cars.html` (Desktop and mobile navigation layout, search filtering engine, 4-card desktop vs 2x2 mobile category tiles, and Pakistani car listings).
+- [`session-03-filters-slider-inquiry.md`](./session-03-filters-slider-inquiry.md) - Left filter sidebar (Price, City, Year, Make + 1-click Reset), favorite toggle, image slider (<, >, dots), Phone Reveal, Key Specifications, Seller Comments, and 4-State Inquiry Form.

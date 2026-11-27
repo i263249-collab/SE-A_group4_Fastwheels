@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse verified used cars for sale across Pakistan on FastWheels. Group SE-A_Group04, Roll No. i263249.">
+  <meta name="description" content="Browse verified used cars for sale in Pakistan on FastWheels. Pure HTML5, CSS3, and vanilla JS. Group SE-A_Group04, Roll No. i263249.">
   <title>Used Cars for Sale in Pakistan | FastWheels</title>
+
   <!-- Shared Stylesheet -->
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" type="image/jpeg" href="../images/logo.jpeg">
 </head>
 <body>
 
-  <!-- Accessible Skip Link -->
+  <!-- Accessible Skip Link for Keyboard Navigation -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Top Metadata Bar -->
+  <!-- Top Academic Metadata Bar -->
   <aside class="top-bar" aria-label="Course and Academic Information">
     <div class="container top-bar-inner">
       <div class="top-bar-meta">
@@ -24,14 +25,23 @@
         <span>Roll No: <strong>i263249</strong></span>
       </div>
       <div>
-        <span>Helpline: 042-111-WHEELS (94335)</span>
+        <span>Helpline: 042-111-WHEELS (94335) | Mon - Sat: 9:00 AM - 8:00 PM</span>
       </div>
     </div>
   </aside>
 
-  <!-- Semantic Header -->
+  <!-- Semantic Header (Clean navigation links without external teammate feature logic) -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
+
+      <!-- Mobile Hamburger Toggle (Left on Mobile <768px via CSS order: 1) -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" width="24" height="24">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+
+      <!-- FastWheels Brand Identity (Left on Desktop, Centered on Mobile <768px) -->
       <a href="../index.html" class="brand" aria-label="FastWheels Home">
         <img src="../images/logo.jpeg" alt="FastWheels Official Logo" class="brand-logo-img">
         <div class="brand-text">
@@ -40,87 +50,232 @@
         </div>
       </a>
 
-      <!-- Mobile Navigation Hamburger Button -->
-      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-        </svg>
-      </button>
-
+      <!-- Clean Semantic Navigation Links -->
       <nav id="primary-navigation" class="main-nav" role="navigation" aria-label="Main Navigation">
         <ul class="nav-list">
           <li><a href="../index.html" class="nav-link">Home</a></li>
           <li><a href="used-cars.html" class="nav-link active" aria-current="page">Used Cars</a></li>
-          <li><a href="car-details.html" class="nav-link">Featured Specs</a></li>
-          <li><a href="post-ad.html" class="nav-link">Sell Your Car</a></li>
-          <li><a href="../index.html#about-section" class="nav-link">About Us</a></li>
+          <li><a href="car-details.html" class="nav-link">Car Details</a></li>
+          <li><a href="post-ad.html" class="nav-link">Sell Car</a></li>
+          <li><a href="../docs/README.md" class="nav-link">Docs</a></li>
         </ul>
       </nav>
 
-      <div class="header-cta-group">
-        <a href="post-ad.html" class="btn-post-ad">
-          <span>+</span> Post an Ad
-        </a>
-      </div>
     </div>
   </header>
 
   <!-- Semantic Main Content -->
-  <main id="main-content" class="container section">
-    <div class="section-title-wrap">
-      <h1 class="section-title">Used Cars in Pakistan</h1>
-      <p class="section-subtitle">Explore 100% physically inspected and verified used cars available in Lahore, Karachi, and Islamabad.</p>
+  <main id="main-content" class="container section" style="padding-top: 1.5rem;">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumbs" style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--color-text-muted);">
+      <a href="../index.html" style="color: var(--color-primary); font-weight: 600;">Home</a> &gt; 
+      <span style="color: var(--color-text-main); font-weight: 600;">Used Cars in Pakistan</span>
+    </nav>
+
+    <!-- Page Header Banner -->
+    <div style="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)); color: #fff; padding: 1.75rem 1.5rem; border-radius: var(--border-radius-md); margin-bottom: 1.5rem; border-bottom: 3px solid var(--color-accent);">
+      <h1 style="font-size: 1.85rem; font-weight: 800; margin-bottom: 0.25rem;">Find Used Cars in Pakistan</h1>
+      <p style="color: #cbd5e1; font-size: 0.95rem;">Browse physically inspected vehicles with verified documents, live price comparison, and direct seller contact.</p>
     </div>
 
-    <!-- Filter Bar for Used Cars -->
-    <div class="search-widget" style="margin-bottom: 2rem;">
-      <form id="fastwheels-search-form" class="search-form-grid">
-        <div class="form-group">
-          <label for="search-make">Filter Make</label>
-          <select id="search-make" class="form-control" name="make">
-            <option value="All">All Makes</option>
-            <option value="Audi">Audi</option>
-            <option value="Bentley">Bentley</option>
-            <option value="Koenigsegg">Koenigsegg</option>
-            <option value="Mazda">Mazda</option>
-            <option value="Peugeot">Peugeot</option>
-            <option value="Porsche">Porsche</option>
-            <option value="Tesla">Tesla</option>
-          </select>
+    <!-- Mobile Filter Toggle Button (<900px) -->
+    <button type="button" class="mobile-filter-trigger" id="mobile-filter-btn" onclick="toggleMobileSidebar()" aria-expanded="false" aria-controls="filters-sidebar-panel">
+      <span>☰ Filter Vehicles</span> (<span id="mobile-filter-count-label">All Active</span>)
+    </button>
+
+    <!-- Two-Column Layout: Left Filters + Featured Inventory -->
+    <div class="catalog-layout">
+
+      <!-- ===================================================================
+           LEFT FILTERS SIDEBAR
+           (Price Range, City, Year, Make, and One-Click Reset Button)
+           =================================================================== -->
+      <aside class="filters-sidebar" id="filters-sidebar-panel" aria-label="Vehicle Filters">
+        <div class="sidebar-header">
+          <div class="sidebar-title">
+            <span>⚙️</span> Filter Inventory
+          </div>
+          <button type="button" class="btn-small-reset" id="btn-sidebar-reset" onclick="resetAllSidebarFilters()" title="Clear all selected filters">
+            ↺ Reset
+          </button>
         </div>
 
-        <div class="form-group">
-          <label for="search-city">City</label>
-          <select id="search-city" class="form-control" name="city">
-            <option value="All">All Cities</option>
-            <option value="Lahore">Lahore</option>
-            <option value="Karachi">Karachi</option>
-            <option value="Islamabad">Islamabad</option>
-          </select>
+        <form id="sidebar-filters-form" onsubmit="event.preventDefault();">
+
+          <!-- 1. Price Range Filter -->
+          <div class="filter-group">
+            <div class="filter-group-title">Price Range (PKR)</div>
+            <div class="price-slider-box">
+              <input type="range" id="filter-price-slider" class="price-range-slider" min="2000000" max="100000000" step="1000000" value="100000000" oninput="handlePriceSliderChange(this.value)">
+              <div class="price-display-label">
+                <span>Min: PKR 20 Lacs</span>
+                <span id="price-slider-val">Up to: <strong>PKR 10.0 Crore</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. City Checkboxes (Lahore, Karachi, Islamabad) -->
+          <div class="filter-group">
+            <div class="filter-group-title">City</div>
+            <div class="filter-checkbox-list">
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="city-filter" value="Lahore" onchange="handleFilterChange()">
+                  <span>Lahore</span>
+                </span>
+                <span class="checkbox-count-badge" id="count-city-lahore">3</span>
+              </label>
+
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="city-filter" value="Karachi" onchange="handleFilterChange()">
+                  <span>Karachi</span>
+                </span>
+                <span class="checkbox-count-badge" id="count-city-karachi">4</span>
+              </label>
+
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="city-filter" value="Islamabad" onchange="handleFilterChange()">
+                  <span>Islamabad</span>
+                </span>
+                <span class="checkbox-count-badge" id="count-city-islamabad">3</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 3. Year Checkboxes (2015, 2018, 2020, 2023) -->
+          <div class="filter-group">
+            <div class="filter-group-title">Model Year</div>
+            <div class="filter-checkbox-list">
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="year-filter" value="2023" onchange="handleFilterChange()">
+                  <span>2023</span>
+                </span>
+                <span class="checkbox-count-badge">5</span>
+              </label>
+
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="year-filter" value="2020" onchange="handleFilterChange()">
+                  <span>2020</span>
+                </span>
+                <span class="checkbox-count-badge">2</span>
+              </label>
+
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="year-filter" value="2018" onchange="handleFilterChange()">
+                  <span>2018</span>
+                </span>
+                <span class="checkbox-count-badge">2</span>
+              </label>
+
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="year-filter" value="2015" onchange="handleFilterChange()">
+                  <span>2015</span>
+                </span>
+                <span class="checkbox-count-badge">1</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 4. Make Checkboxes (Toyota, Honda, Suzuki, etc.) -->
+          <div class="filter-group">
+            <div class="filter-group-title">Make / Brand</div>
+            <div class="filter-checkbox-list">
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="make-filter" value="Toyota" onchange="handleFilterChange()">
+                  <span>Toyota</span>
+                </span>
+                <span class="checkbox-count-badge">2</span>
+              </label>
+
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="make-filter" value="Honda" onchange="handleFilterChange()">
+                  <span>Honda</span>
+                </span>
+                <span class="checkbox-count-badge">2</span>
+              </label>
+
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="make-filter" value="Suzuki" onchange="handleFilterChange()">
+                  <span>Suzuki</span>
+                </span>
+                <span class="checkbox-count-badge">2</span>
+              </label>
+
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="make-filter" value="Audi" onchange="handleFilterChange()">
+                  <span>Audi</span>
+                </span>
+                <span class="checkbox-count-badge">1</span>
+              </label>
+
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="make-filter" value="Porsche" onchange="handleFilterChange()">
+                  <span>Porsche</span>
+                </span>
+                <span class="checkbox-count-badge">1</span>
+              </label>
+
+              <label class="checkbox-label">
+                <span class="checkbox-custom-item">
+                  <input type="checkbox" name="make-filter" value="Tesla" onchange="handleFilterChange()">
+                  <span>Tesla</span>
+                </span>
+                <span class="checkbox-count-badge">1</span>
+              </label>
+            </div>
+          </div>
+
+        </form>
+      </aside>
+
+      <!-- ===================================================================
+           FEATURED INVENTORY SECTION
+           =================================================================== -->
+      <section class="inventory-main-content" aria-labelledby="featured-inventory-title">
+        
+        <!-- Results Status Bar -->
+        <div class="results-header-bar">
+          <div>
+            <h2 id="featured-inventory-title" style="font-size: 1.35rem; font-weight: 800; color: var(--color-primary); margin-bottom: 0.15rem;">
+              Featured Inventory
+            </h2>
+            <div class="results-count-text">
+              Showing <strong id="results-count">10</strong> verified cars in Pakistan
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <label for="sort-select" style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-muted);">Sort by:</label>
+            <select id="sort-select" class="form-control" style="width: auto; padding: 0.35rem 0.65rem; font-size: 0.8rem;" onchange="handleSortChange(this.value)">
+              <option value="featured">Featured First</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="year-desc">Year: Newest First</option>
+            </select>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="search-budget">Maximum Budget</label>
-          <select id="search-budget" class="form-control" name="budget">
-            <option value="">Any Budget</option>
-            <option value="25000000">Under PKR 2.5 Crore</option>
-            <option value="50000000">Under PKR 5.0 Crore</option>
-            <option value="100000000">Under PKR 10.0 Crore</option>
-          </select>
+        <!-- Cards Grid Container (Populated dynamically via Vanilla JS) -->
+        <div id="featured-cars-container" class="cars-grid">
+          <!-- Populated by renderInventoryCards() -->
         </div>
 
-        <input type="hidden" id="search-condition" value="Used">
+      </section>
 
-        <div class="form-group">
-          <button type="submit" class="btn-search">Apply Filters</button>
-        </div>
-      </form>
     </div>
 
-    <!-- Vehicles Grid Container -->
-    <div id="featured-cars-container" class="cars-grid">
-      <!-- Populated via js/main.js -->
-    </div>
   </main>
 
   <!-- Semantic Footer -->
@@ -129,37 +284,40 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>Fast<span>Wheels</span></h3>
-          <p>Used car classifieds portal engineered for Pakistan's automobile community.</p>
+          <p>Assigned Page 1: Used Cars Marketplace &amp; Filterable Catalog.</p>
           <div class="footer-meta-box">
-            <p><strong>Assigned Page:</strong> Used Cars Catalog</p>
-            <p><strong>Group:</strong> SE-A_Group04 | <strong>Roll No:</strong> i263249</p>
+            <p><strong>Course:</strong> Software Engineering (SE-A)</p>
+            <p><strong>Group:</strong> SE-A_Group04</p>
+            <p><strong>Student ID / Roll No:</strong> i263249</p>
+            <p><strong>Stack:</strong> Pure HTML5 &bull; CSS3 &bull; Vanilla JavaScript Only</p>
           </div>
         </div>
 
         <div class="footer-col">
-          <h4>Explore Cars</h4>
+          <h4>Navigation</h4>
           <ul class="footer-links">
-            <li><a href="../index.html">Home Page</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="used-cars.html">Used Cars</a></li>
-            <li><a href="car-details.html">Featured Specs</a></li>
-            <li><a href="post-ad.html">Post Vehicle Ad</a></li>
+            <li><a href="car-details.html">Car Details</a></li>
+            <li><a href="post-ad.html">Post an Ad</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Popular Cities</h4>
+          <h4>Cities</h4>
           <ul class="footer-links">
-            <li><a href="used-cars.html?city=Lahore">Used Cars in Lahore</a></li>
-            <li><a href="used-cars.html?city=Karachi">Used Cars in Karachi</a></li>
-            <li><a href="used-cars.html?city=Islamabad">Used Cars in Islamabad</a></li>
+            <li><a href="javascript:void(0)" onclick="quickSelectCity('Lahore')">Used Cars in Lahore</a></li>
+            <li><a href="javascript:void(0)" onclick="quickSelectCity('Karachi')">Used Cars in Karachi</a></li>
+            <li><a href="javascript:void(0)" onclick="quickSelectCity('Islamabad')">Used Cars in Islamabad</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Documentation</h4>
           <ul class="footer-links">
-            <li><a href="../docs/README.md">Developer Guide</a></li>
-            <li><a href="../docs/ai-logs/26i-3249/session-01-base-setup.md">Session Logs</a></li>
+            <li><a href="../docs/README.md">Developer Docs</a></li>
+            <li><a href="../docs/ai-logs/26i-3249/session-01-base-setup.md">Session 01 Log</a></li>
+            <li><a href="../docs/ai-logs/26i-3249/session-02-used-cars.md">Session 02 Log</a></li>
           </ul>
         </div>
       </div>
@@ -167,56 +325,271 @@
 
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <div>&copy; 2026 FastWheels. Group SE-A_Group04. All rights reserved.</div>
+        <div>&copy; 2026 FastWheels Pakistan. Group SE-A_Group04. All rights reserved.</div>
         <div>Theme: Royal-Blue &amp; Crimson-Red &bull; Roll Number: i263249</div>
       </div>
     </div>
   </footer>
 
-  <!-- Vanilla JavaScript -->
+  <!-- Shared Vanilla JavaScript -->
   <script src="../js/main.js"></script>
+
+  <!-- Page-Specific Controller for Left Sidebar Filters & Inventory Grid -->
   <script>
-    // Automatically filter used cars on page load
+    /**
+     * FASTWHEELS USED CARS CONTROLLER
+     * Group: SE-A_Group04 | Student Roll Number: i263249
+     * Clean, modular, viva-ready vanilla JavaScript.
+     */
+    'use strict';
+
+    // State object holding the active filters
+    const activeFilters = {
+      maxPrice: 100000000,
+      cities: [],
+      years: [],
+      makes: [],
+      sortBy: 'featured'
+    };
+
+    /**
+     * Initialize on DOM Load
+     */
     document.addEventListener('DOMContentLoaded', () => {
-      if (window.FastWheels) {
-        const usedOnly = window.FastWheels.filterInventory({ condition: 'Used' });
-        // Update vehicle cards
-        const container = document.getElementById('featured-cars-container');
-        if (container && usedOnly.length > 0) {
-          container.innerHTML = usedOnly.map(car => `
-            <article class="car-card" data-id="${car.id}">
-              <div class="car-card-media">
-                <img src="../${car.image}" alt="${car.make} ${car.model}" class="car-card-img" loading="lazy">
-                <span class="car-card-tag">${car.badge}</span>
-              </div>
-              <div class="car-card-body">
-                <h3 class="car-card-title">${car.year} ${car.make} ${car.model}</h3>
-                <div class="car-card-price">${car.priceDisplay}</div>
-                <div class="car-card-location"><span>📍</span> ${car.city} &bull; ${car.condition}</div>
-                <div class="car-card-specs">
-                  <div class="car-card-spec-item">
-                    <span>${car.mileage}</span>
-                    <span>Mileage</span>
-                  </div>
-                  <div class="car-card-spec-item">
-                    <span>${car.fuel}</span>
-                    <span>Fuel Type</span>
-                  </div>
-                  <div class="car-card-spec-item">
-                    <span>${car.transmission}</span>
-                    <span>Gear</span>
-                  </div>
-                </div>
-              </div>
-              <div class="car-card-actions">
-                <button type="button" class="btn-card btn-card-primary" onclick="FastWheels.viewCarDetails('${car.id}')">View Details</button>
-                <button type="button" class="btn-card btn-card-outline" onclick="FastWheels.contactSeller('${car.id}')">Contact Seller</button>
-              </div>
-            </article>
-          `).join('');
+      // Check URL parameters (e.g. ?city=Lahore)
+      const urlParams = new URLSearchParams(window.location.search);
+      const cityQuery = urlParams.get('city');
+      if (cityQuery) {
+        const matchingCheck = document.querySelector(`input[name="city-filter"][value="${cityQuery}"]`);
+        if (matchingCheck) {
+          matchingCheck.checked = true;
+          activeFilters.cities.push(cityQuery);
         }
       }
+
+      applyFilters();
     });
+
+    /**
+     * Handle mobile sidebar collapse toggle (<900px)
+     */
+    function toggleMobileSidebar() {
+      const panel = document.getElementById('filters-sidebar-panel');
+      const btn = document.getElementById('mobile-filter-btn');
+      if (panel) {
+        const isShown = panel.classList.toggle('is-visible');
+        if (btn) btn.setAttribute('aria-expanded', String(isShown));
+      }
+    }
+
+    /**
+     * Handle Price Slider Drag / Input
+     */
+    function handlePriceSliderChange(val) {
+      const num = Number(val);
+      activeFilters.maxPrice = num;
+      const displayEl = document.getElementById('price-slider-val');
+      if (displayEl) {
+        let label = '';
+        if (num >= 100000000) {
+          label = 'Up to: <strong>PKR 10.0+ Crore</strong>';
+        } else if (num >= 10000000) {
+          label = `Up to: <strong>PKR ${(num / 10000000).toFixed(1)} Crore</strong>`;
+        } else {
+          label = `Up to: <strong>PKR ${(num / 100000).toFixed(0)} Lacs</strong>`;
+        }
+        displayEl.innerHTML = label;
+      }
+      applyFilters();
+    }
+
+    /**
+     * Handle Checkbox Changes (Cities, Years, Makes)
+     */
+    function handleFilterChange() {
+      // Gather checked cities
+      activeFilters.cities = Array.from(document.querySelectorAll('input[name="city-filter"]:checked')).map(el => el.value);
+
+      // Gather checked years
+      activeFilters.years = Array.from(document.querySelectorAll('input[name="year-filter"]:checked')).map(el => Number(el.value));
+
+      // Gather checked makes
+      activeFilters.makes = Array.from(document.querySelectorAll('input[name="make-filter"]:checked')).map(el => el.value);
+
+      applyFilters();
+    }
+
+    /**
+     * Handle Sorting Dropdown Change
+     */
+    function handleSortChange(sortVal) {
+      activeFilters.sortBy = sortVal;
+      applyFilters();
+    }
+
+    /**
+     * Reset All Sidebar Filters in One Click
+     */
+    function resetAllSidebarFilters() {
+      // Reset checkboxes
+      document.querySelectorAll('#sidebar-filters-form input[type="checkbox"]').forEach(ch => ch.checked = false);
+
+      // Reset slider
+      const slider = document.getElementById('filter-price-slider');
+      if (slider) {
+        slider.value = 100000000;
+        const displayEl = document.getElementById('price-slider-val');
+        if (displayEl) displayEl.innerHTML = 'Up to: <strong>PKR 10.0 Crore</strong>';
+      }
+
+      // Reset state
+      activeFilters.maxPrice = 100000000;
+      activeFilters.cities = [];
+      activeFilters.years = [];
+      activeFilters.makes = [];
+      activeFilters.sortBy = 'featured';
+
+      const sortSelect = document.getElementById('sort-select');
+      if (sortSelect) sortSelect.value = 'featured';
+
+      applyFilters();
+    }
+
+    /**
+     * Quick filter by city link
+     */
+    function quickSelectCity(cityName) {
+      resetAllSidebarFilters();
+      const ch = document.querySelector(`input[name="city-filter"][value="${cityName}"]`);
+      if (ch) ch.checked = true;
+      activeFilters.cities = [cityName];
+      applyFilters();
+      window.scrollTo({ top: 200, behavior: 'smooth' });
+    }
+
+    /**
+     * Filter & Render Logic
+     */
+    function applyFilters() {
+      if (!window.FastWheels || !window.FastWheels.inventory) return;
+
+      let list = [...window.FastWheels.inventory];
+
+      // 1. Filter by Max Price
+      if (activeFilters.maxPrice && activeFilters.maxPrice < 100000000) {
+        list = list.filter(car => car.pricePKR <= activeFilters.maxPrice);
+      }
+
+      // 2. Filter by Selected Cities (if any checked)
+      if (activeFilters.cities.length > 0) {
+        list = list.filter(car => activeFilters.cities.some(c => c.toLowerCase() === car.city.toLowerCase()));
+      }
+
+      // 3. Filter by Selected Years (if any checked)
+      if (activeFilters.years.length > 0) {
+        list = list.filter(car => activeFilters.years.includes(car.year));
+      }
+
+      // 4. Filter by Selected Makes (if any checked)
+      if (activeFilters.makes.length > 0) {
+        list = list.filter(car => activeFilters.makes.some(m => m.toLowerCase() === car.make.toLowerCase()));
+      }
+
+      // 5. Apply Sorting
+      if (activeFilters.sortBy === 'price-asc') {
+        list.sort((a, b) => a.pricePKR - b.pricePKR);
+      } else if (activeFilters.sortBy === 'price-desc') {
+        list.sort((a, b) => b.pricePKR - a.pricePKR);
+      } else if (activeFilters.sortBy === 'year-desc') {
+        list.sort((a, b) => b.year - a.year);
+      }
+
+      // Update count display
+      const countEl = document.getElementById('results-count');
+      if (countEl) countEl.textContent = list.length;
+
+      // Render cards
+      renderInventoryCards(list);
+    }
+
+    /**
+     * Render Vehicle Cards into Grid with Favorite Toggle & Relative Links
+     */
+    function renderInventoryCards(cars) {
+      const container = document.getElementById('featured-cars-container');
+      if (!container) return;
+
+      if (cars.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1.5rem; background: #ffffff; border-radius: 8px; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;" aria-hidden="true">🔍</div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">No Matching Cars Found</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; max-width: 480px; margin: 0 auto 1.25rem;">
+              No vehicles match the selected combination of City, Year, Make, or Price. Click below to clear all filters.
+            </p>
+            <button type="button" class="btn-search-action" style="padding: 0.6rem 1.5rem;" onclick="resetAllSidebarFilters()">Reset Filters</button>
+          </div>
+        `;
+        return;
+      }
+
+      const favs = window.FastWheels.getFavorites();
+
+      container.innerHTML = cars.map(car => {
+        const isFav = favs.includes(car.id);
+        return `
+          <article class="car-card" data-id="${car.id}">
+            <div class="car-card-media">
+              <img src="../${car.image}" alt="${car.make} ${car.model}" class="car-card-img" loading="lazy">
+              <span class="car-card-tag">${car.badge}</span>
+              
+              <!-- Favorite Toggle Heart Button -->
+              <button type="button" class="btn-favorite ${isFav ? 'active' : ''}" data-id="${car.id}" onclick="window.FastWheels.toggleCarFavorite('${car.id}', event)" aria-label="${isFav ? 'Remove from favorites' : 'Add to favorites'}" title="Toggle Favorite">
+                ${isFav ? '♥' : '♡'}
+              </button>
+            </div>
+            
+            <div class="car-card-body">
+              <h3 class="car-card-title">${car.year} ${car.make} ${car.model}</h3>
+              <div class="car-card-price">${car.priceDisplay}</div>
+              <div class="car-card-location">
+                <span>📍</span> ${car.city} &bull; ${car.condition} &bull; ${car.bodyType}
+              </div>
+              
+              <div class="car-card-specs">
+                <div class="car-card-spec-item">
+                  <span>${car.mileage}</span>
+                  <span>Mileage</span>
+                </div>
+                <div class="car-card-spec-item">
+                  <span>${car.fuel}</span>
+                  <span>Fuel</span>
+                </div>
+                <div class="car-card-spec-item">
+                  <span>${car.transmission.split(' ')[0]}</span>
+                  <span>Gear</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="car-card-actions">
+              <a href="car-details.html?id=${car.id}" class="btn-card btn-card-primary" style="display:inline-flex;align-items:center;justify-content:center;">View Details</a>
+              <button type="button" class="btn-card btn-card-outline" onclick="contactDealer('${car.id}')">Call Seller</button>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    /**
+     * Contact Dealer helper
+     */
+    function contactDealer(carId) {
+      const car = window.FastWheels.inventory.find(c => c.id === carId);
+      if (car) {
+        alert(`FastWheels Verified Seller:\n${car.sellerName} (${car.city})\nContact: ${car.sellerPhone}\nVehicle: ${car.year} ${car.make} ${car.model}`);
+      }
+    }
   </script>
 </body>
 </html>
