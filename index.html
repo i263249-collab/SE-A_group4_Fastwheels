@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FastWheels - Pakistan's leading automotive portal for buying and selling new and used cars. Group SE-A_Group04, Roll i263249.">
+  <meta name="keywords" content="FastWheels, PakWheels, used cars Pakistan, buy cars Lahore Karachi Islamabad, electric cars Pakistan">
+  <meta name="author" content="Group SE-A_Group04 (Roll No. i263249)">
+  <title>FastWheels | Pakistan's Premier Automotive Marketplace</title>
+
+  <!-- Shared CSS Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Metadata Bar -->
+  <aside class="top-bar" aria-label="Course and Academic Information">
+    <div class="container top-bar-inner">
+      <div class="top-bar-meta">
+        <span class="top-bar-badge">Academic Project</span>
+        <span>Course: Software Engineering (SE-A)</span>
+        <span>Group: <strong>SE-A_Group04</strong></span>
+        <span>Roll No: <strong>i263249</strong></span>
+      </div>
+      <div>
+        <span>Helpline: 042-111-WHEELS (94335) | Mon - Sat: 9:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Semantic Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <!-- Brand Logo & Identity -->
+      <a href="index.html" class="brand" aria-label="FastWheels Home">
+        <img src="images/logo.jpeg" alt="FastWheels Official Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-name">Fast<span>Wheels</span></span>
+          <span class="brand-tagline">Drive Your Passion</span>
+        </div>
+      </a>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+
+      <!-- Main Semantic Navigation -->
+      <nav id="primary-navigation" class="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+          <li><a href="pages/used-cars.html" class="nav-link">Used Cars</a></li>
+          <li><a href="pages/car-details.html" class="nav-link">Featured Specs</a></li>
+          <li><a href="pages/post-ad.html" class="nav-link">Sell Your Car</a></li>
+          <li><a href="#about-section" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Call to Action Button in Header -->
+      <div class="header-cta-group">
+        <a href="pages/post-ad.html" class="btn-post-ad">
+          <span>+</span> Post an Ad
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Semantic Main Content -->
+  <main id="main-content">
+
+    <!-- Hero & Search Section -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">Pakistan's #1 Car Portal</span>
+          <h1 id="hero-heading" class="hero-title">Find Used &amp; New Cars in Pakistan</h1>
+          <p class="hero-subtitle">Search over 250,000 verified cars, compare genuine prices, and connect with trusted dealers.</p>
+        </div>
+
+        <!-- Quick Search Form Widget -->
+        <div class="search-widget" role="search" aria-label="Car Search Widget">
+          <div class="search-tabs" role="tablist" aria-label="Vehicle Condition Tabs">
+            <button type="button" class="search-tab-btn active" role="tab" aria-selected="true" data-tab="All">All Vehicles</button>
+            <button type="button" class="search-tab-btn" role="tab" aria-selected="false" data-tab="Used">Used Cars</button>
+            <button type="button" class="search-tab-btn" role="tab" aria-selected="false" data-tab="New">New Cars</button>
+          </div>
+
+          <form id="fastwheels-search-form" class="search-form-grid">
+            <div class="form-group">
+              <label for="search-make">Make / Manufacturer</label>
+              <select id="search-make" class="form-control" name="make">
+                <option value="All">All Makes</option>
+                <option value="Audi">Audi</option>
+                <option value="Bentley">Bentley</option>
+                <option value="Koenigsegg">Koenigsegg</option>
+                <option value="Mazda">Mazda</option>
+                <option value="Peugeot">Peugeot</option>
+                <option value="Porsche">Porsche</option>
+                <option value="Tesla">Tesla</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="search-city">City</label>
+              <select id="search-city" class="form-control" name="city">
+                <option value="All">All Cities (Pakistan)</option>
+                <option value="Lahore">Lahore</option>
+                <option value="Karachi">Karachi</option>
+                <option value="Islamabad">Islamabad</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="search-budget">Max Budget</label>
+              <select id="search-budget" class="form-control" name="budget">
+                <option value="">Any Budget</option>
+                <option value="25000000">Under PKR 2.5 Crore</option>
+                <option value="50000000">Under PKR 5.0 Crore</option>
+                <option value="100000000">Under PKR 10.0 Crore</option>
+                <option value="900000000">Luxury / Hypercars (All)</option>
+              </select>
+            </div>
+
+            <input type="hidden" id="search-condition" value="All">
+
+            <div class="form-group">
+              <button type="submit" class="btn-search">Search Cars</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Highlights Strip -->
+    <section class="highlights-bar" aria-label="FastWheels Service Highlights">
+      <div class="container highlights-grid">
+        <div class="highlight-item">
+          <div class="highlight-icon" aria-hidden="true">✓</div>
+          <div class="highlight-text">
+            <h4>200+ Point Inspection</h4>
+            <p>Every certified car thoroughly vetted</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" aria-hidden="true">★</div>
+          <div class="highlight-text">
+            <h4>Verified Sellers Only</h4>
+            <p>Direct communication with trusted owners</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" aria-hidden="true">⚡</div>
+          <div class="highlight-text">
+            <h4>Free Ad Posting</h4>
+            <p>Reach over 5 Million Pakistani buyers</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" aria-hidden="true">🛡️</div>
+          <div class="highlight-text">
+            <h4>SafePay Protection</h4>
+            <p>Secure financial transfer assurance</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Vehicle Listings Section -->
+    <section id="featured-vehicles" class="section container" aria-labelledby="featured-heading">
+      <div class="section-title-wrap">
+        <h2 id="featured-heading" class="section-title">Featured Vehicles for Sale</h2>
+        <p class="section-subtitle">Hand-picked verified luxury, sport, and premium cars available across Lahore, Karachi, and Islamabad.</p>
+      </div>
+
+      <!-- Populated dynamically via js/main.js and fallback markup -->
+      <div id="featured-cars-container" class="cars-grid">
+        <!-- Initial semantic fallback rendered for standard search engines & non-JS clients -->
+        <article class="car-card" data-id="fw-001">
+          <div class="car-card-media">
+            <img src="images/audi.webp" alt="Audi e-tron GT Quattro in Metallic Blue" class="car-card-img" loading="lazy">
+            <span class="car-card-tag">Verified</span>
+          </div>
+          <div class="car-card-body">
+            <h3 class="car-card-title">2023 Audi e-tron GT Quattro</h3>
+            <div class="car-card-price">PKR 4.85 Crore</div>
+            <div class="car-card-location">📍 Lahore &bull; Used</div>
+            <div class="car-card-specs">
+              <div class="car-card-spec-item">
+                <span>12,500 km</span>
+                <span>Mileage</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>Electric</span>
+                <span>Fuel Type</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>Automatic</span>
+                <span>Gear</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-card-actions">
+            <button type="button" class="btn-card btn-card-primary" onclick="window.FastWheels.viewCarDetails('fw-001')">View Details</button>
+            <button type="button" class="btn-card btn-card-outline" onclick="window.FastWheels.contactSeller('fw-001')">Contact Seller</button>
+          </div>
+        </article>
+
+        <article class="car-card" data-id="fw-002">
+          <div class="car-card-media">
+            <img src="images/bentley.webp" alt="Bentley Continental GT V8 Luxury Coupe" class="car-card-img" loading="lazy">
+            <span class="car-card-tag">Featured</span>
+          </div>
+          <div class="car-card-body">
+            <h3 class="car-card-title">2022 Bentley Continental GT V8</h3>
+            <div class="car-card-price">PKR 11.50 Crore</div>
+            <div class="car-card-location">📍 Islamabad &bull; Used</div>
+            <div class="car-card-specs">
+              <div class="car-card-spec-item">
+                <span>8,200 km</span>
+                <span>Mileage</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>Petrol</span>
+                <span>Fuel Type</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>Automatic</span>
+                <span>Gear</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-card-actions">
+            <button type="button" class="btn-card btn-card-primary" onclick="window.FastWheels.viewCarDetails('fw-002')">View Details</button>
+            <button type="button" class="btn-card btn-card-outline" onclick="window.FastWheels.contactSeller('fw-002')">Contact Seller</button>
+          </div>
+        </article>
+
+        <article class="car-card" data-id="fw-003">
+          <div class="car-card-media">
+            <img src="images/konisegg.webp" alt="Koenigsegg Jesko Absolut Hypercar" class="car-card-img" loading="lazy">
+            <span class="car-card-tag">Exclusive</span>
+          </div>
+          <div class="car-card-body">
+            <h3 class="car-card-title">2024 Koenigsegg Jesko Absolut</h3>
+            <div class="car-card-price">PKR 85.0 Crore</div>
+            <div class="car-card-location">📍 Karachi &bull; New</div>
+            <div class="car-card-specs">
+              <div class="car-card-spec-item">
+                <span>150 km</span>
+                <span>Mileage</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>Twin-Turbo V8</span>
+                <span>Fuel Type</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>9-Speed LST</span>
+                <span>Gear</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-card-actions">
+            <button type="button" class="btn-card btn-card-primary" onclick="window.FastWheels.viewCarDetails('fw-003')">View Details</button>
+            <button type="button" class="btn-card btn-card-outline" onclick="window.FastWheels.contactSeller('fw-003')">Contact Seller</button>
+          </div>
+        </article>
+
+        <article class="car-card" data-id="fw-006">
+          <div class="car-card-media">
+            <img src="images/taycan.webp" alt="Porsche Taycan Turbo S Sports Sedan" class="car-card-img" loading="lazy">
+            <span class="car-card-tag">Verified</span>
+          </div>
+          <div class="car-card-body">
+            <h3 class="car-card-title">2023 Porsche Taycan Turbo S</h3>
+            <div class="car-card-price">PKR 6.20 Crore</div>
+            <div class="car-card-location">📍 Karachi &bull; Used</div>
+            <div class="car-card-specs">
+              <div class="car-card-spec-item">
+                <span>9,800 km</span>
+                <span>Mileage</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>Electric</span>
+                <span>Fuel Type</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>Automatic</span>
+                <span>Gear</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-card-actions">
+            <button type="button" class="btn-card btn-card-primary" onclick="window.FastWheels.viewCarDetails('fw-006')">View Details</button>
+            <button type="button" class="btn-card btn-card-outline" onclick="window.FastWheels.contactSeller('fw-006')">Contact Seller</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Browse by Category Section -->
+    <section class="section container" aria-labelledby="categories-heading">
+      <div class="section-title-wrap">
+        <h2 id="categories-heading" class="section-title">Browse by Body Type</h2>
+        <p class="section-subtitle">Select from popular vehicle categories in Pakistan's automotive market.</p>
+      </div>
+
+      <div class="categories-grid">
+        <div class="category-card" tabindex="0" role="button" aria-label="Browse Sedans">
+          <div class="category-icon">🚗</div>
+          <div class="category-name">Sedans</div>
+          <div class="category-count">14,230 ads</div>
+        </div>
+        <div class="category-card" tabindex="0" role="button" aria-label="Browse SUVs and Crossovers">
+          <div class="category-icon">🚙</div>
+          <div class="category-name">SUVs &amp; 4x4</div>
+          <div class="category-count">9,410 ads</div>
+        </div>
+        <div class="category-card" tabindex="0" role="button" aria-label="Browse Sports Cars and Hypercars">
+          <div class="category-icon">🏎️</div>
+          <div class="category-name">Sports Cars</div>
+          <div class="category-count">1,890 ads</div>
+        </div>
+        <div class="category-card" tabindex="0" role="button" aria-label="Browse Electric Vehicles">
+          <div class="category-icon">⚡</div>
+          <div class="category-name">Electric (EV)</div>
+          <div class="category-count">2,340 ads</div>
+        </div>
+        <div class="category-card" tabindex="0" role="button" aria-label="Browse Hatchbacks">
+          <div class="category-icon">🚘</div>
+          <div class="category-name">Hatchbacks</div>
+          <div class="category-count">18,500 ads</div>
+        </div>
+        <div class="category-card" tabindex="0" role="button" aria-label="Browse Commercial and Pickups">
+          <div class="category-icon">🛻</div>
+          <div class="category-name">Pickups</div>
+          <div class="category-count">3,120 ads</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section id="about-section" class="section container" aria-labelledby="why-heading">
+      <div class="section-title-wrap">
+        <h2 id="why-heading" class="section-title">Why Choose FastWheels?</h2>
+        <p class="section-subtitle">Bringing transparency, digital security, and fair market valuation to Pakistan's car buyers.</p>
+      </div>
+
+      <div class="value-props-grid">
+        <article class="prop-card">
+          <div class="prop-card-icon">🔍</div>
+          <h3 class="prop-card-title">Comprehensive Inspection</h3>
+          <p class="prop-card-text">Our certified mechanical engineers examine engine compression, chassis integrity, computer diagnostics, paint meter readings, and suspension road tests.</p>
+        </article>
+
+        <article class="prop-card">
+          <div class="prop-card-icon">🤝</div>
+          <h3 class="prop-card-title">FastWheels Sell It For Me</h3>
+          <p class="prop-card-text">Short on time? Let our professional team handle buyer calls, manage physical viewings, arrange documentation, and ensure you get top market value without headaches.</p>
+        </article>
+
+        <article class="prop-card">
+          <div class="prop-card-icon">🛡️</div>
+          <h3 class="prop-card-title">Authentic Ownership Papers</h3>
+          <p class="prop-card-text">Every vehicle listed under our certified program goes through excise duty clearance, biometric verification check, and anti-fraud chassis numbering match.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="section container" aria-label="Sell Car Call to Action">
+      <div class="cta-banner">
+        <h2 class="cta-banner-title">Are You Looking to Sell Your Car Today?</h2>
+        <p class="cta-banner-text">List your car for free on FastWheels in less than 2 minutes and connect with thousands of genuine verified car buyers across Pakistan.</p>
+        <a href="pages/post-ad.html" class="btn-cta">Post Your Free Ad Now</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Semantic Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <!-- Brand & Assignment Info -->
+        <div class="footer-brand">
+          <h3>Fast<span>Wheels</span></h3>
+          <p>FastWheels is Pakistan's premier automotive technology marketplace, modeled with high performance, semantic HTML5, pure CSS3, and vanilla JavaScript.</p>
+          <div class="footer-meta-box">
+            <p><strong>Course:</strong> Software Engineering (Section A)</p>
+            <p><strong>Project Group:</strong> SE-A_Group04</p>
+            <p><strong>Student ID / Roll:</strong> i263249</p>
+            <p><strong>Base Framework:</strong> Vanilla Web Standards (Zero external libraries)</p>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Explore Cars</h4>
+          <ul class="footer-links">
+            <li><a href="pages/used-cars.html">Used Cars for Sale</a></li>
+            <li><a href="index.html#featured-vehicles">Featured Luxury Cars</a></li>
+            <li><a href="pages/car-details.html">Car Technical Specs</a></li>
+            <li><a href="pages/post-ad.html">Post Vehicle Advertisement</a></li>
+          </ul>
+        </div>
+
+        <!-- Major Cities -->
+        <div class="footer-col">
+          <h4>Cars by City</h4>
+          <ul class="footer-links">
+            <li><a href="pages/used-cars.html?city=Lahore">Cars in Lahore</a></li>
+            <li><a href="pages/used-cars.html?city=Karachi">Cars in Karachi</a></li>
+            <li><a href="pages/used-cars.html?city=Islamabad">Cars in Islamabad</a></li>
+            <li><a href="pages/used-cars.html?city=Rawalpindi">Cars in Rawalpindi</a></li>
+          </ul>
+        </div>
+
+        <!-- Support & Policies -->
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="#about-section">About FastWheels</a></li>
+            <li><a href="docs/README.md">Developer Docs</a></li>
+            <li><a href="docs/ai-logs/26i-3249/session-01-base-setup.md">Session Logs (26i-3249)</a></li>
+            <li><a href="#primary-navigation">Privacy &amp; Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>
+          &copy; 2026 FastWheels Pakistan. All rights reserved. Developed for SE-A_Group04.
+        </div>
+        <div>
+          Theme: Royal-Blue &amp; Crimson-Red &bull; Roll Number: i263249
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Post your car for sale on FastWheels Pakistan. Free ad posting for verified sellers. Group SE-A_Group04, Roll No. i263249.">
+  <title>Post An Ad | Sell Your Car Free on FastWheels</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/jpeg" href="../images/logo.jpeg">
+  <style>
+    .form-container-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      padding: var(--spacing-2xl);
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-sm);
+    }
+    .form-step-title {
+      font-size: 1.25rem;
+      color: var(--color-primary);
+      border-bottom: 2px solid var(--color-border);
+      padding-bottom: 0.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+    }
+    .form-step-title:first-of-type {
+      margin-top: 0;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    .required {
+      color: var(--color-accent);
+      font-weight: bold;
+    }
+    .helper-text {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Metadata Bar -->
+  <aside class="top-bar" aria-label="Course and Academic Information">
+    <div class="container top-bar-inner">
+      <div class="top-bar-meta">
+        <span class="top-bar-badge">Assigned Page 3</span>
+        <span>Course: Software Engineering (SE-A)</span>
+        <span>Group: <strong>SE-A_Group04</strong></span>
+        <span>Roll No: <strong>i263249</strong></span>
+      </div>
+      <div>
+        <span>Seller Support: 042-111-WHEELS (94335)</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Semantic Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" aria-label="FastWheels Home">
+        <img src="../images/logo.jpeg" alt="FastWheels Official Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-name">Fast<span>Wheels</span></span>
+          <span class="brand-tagline">Drive Your Passion</span>
+        </div>
+      </a>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+
+      <nav id="primary-navigation" class="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="used-cars.html" class="nav-link">Used Cars</a></li>
+          <li><a href="car-details.html" class="nav-link">Featured Specs</a></li>
+          <li><a href="post-ad.html" class="nav-link active" aria-current="page">Sell Your Car</a></li>
+          <li><a href="../index.html#about-section" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta-group">
+        <a href="post-ad.html" class="btn-post-ad">
+          <span>+</span> Post an Ad
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Semantic Main Content -->
+  <main id="main-content" class="container section">
+    <div class="section-title-wrap">
+      <h1 class="section-title">Sell Your Car On FastWheels</h1>
+      <p class="section-subtitle">Reach verified buyers across Pakistan in 3 simple steps. Complete your ad details below.</p>
+    </div>
+
+    <div class="form-container-card">
+      <form id="sell-car-form" onsubmit="event.preventDefault(); alert('Success! Your vehicle ad has been queued for verification on FastWheels.');">
+        
+        <!-- Step 1: Car Information -->
+        <h2 class="form-step-title">1. Vehicle Details</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ad-city">City <span class="required">*</span></label>
+            <select id="ad-city" class="form-control" required>
+              <option value="">Select City</option>
+              <option value="Lahore">Lahore</option>
+              <option value="Karachi">Karachi</option>
+              <option value="Islamabad">Islamabad</option>
+              <option value="Rawalpindi">Rawalpindi</option>
+              <option value="Peshawar">Peshawar</option>
+              <option value="Faisalabad">Faisalabad</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ad-year">Model Year <span class="required">*</span></label>
+            <select id="ad-year" class="form-control" required>
+              <option value="">Select Year</option>
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ad-make">Make / Brand <span class="required">*</span></label>
+            <select id="ad-make" class="form-control" required>
+              <option value="">Select Make</option>
+              <option value="Audi">Audi</option>
+              <option value="Bentley">Bentley</option>
+              <option value="Koenigsegg">Koenigsegg</option>
+              <option value="Mazda">Mazda</option>
+              <option value="Peugeot">Peugeot</option>
+              <option value="Porsche">Porsche</option>
+              <option value="Tesla">Tesla</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Honda">Honda</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ad-model">Model Name <span class="required">*</span></label>
+            <input type="text" id="ad-model" class="form-control" placeholder="e.g. e-tron GT / Taycan / Continental" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ad-mileage">Mileage (km) <span class="required">*</span></label>
+            <input type="number" id="ad-mileage" class="form-control" placeholder="e.g. 15000" min="0" required>
+          </div>
+          <div class="form-group">
+            <label for="ad-price">Expected Price (PKR) <span class="required">*</span></label>
+            <input type="number" id="ad-price" class="form-control" placeholder="e.g. 45000000" required>
+            <span class="helper-text">Enter whole number without commas.</span>
+          </div>
+        </div>
+
+        <!-- Step 2: Inspection & Verification -->
+        <h2 class="form-step-title">2. Inspection &amp; Certification</h2>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 500; cursor: pointer;">
+            <input type="checkbox" id="ad-inspection" checked>
+            <span>Book a FastWheels 200+ Point Doorstep Inspection (Recommended for faster sales)</span>
+          </label>
+        </div>
+
+        <!-- Step 3: Contact Info -->
+        <h2 class="form-step-title">3. Contact Details</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ad-seller-name">Full Name <span class="required">*</span></label>
+            <input type="text" id="ad-seller-name" class="form-control" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="ad-seller-phone">Mobile Number (WhatsApp) <span class="required">*</span></label>
+            <input type="tel" id="ad-seller-phone" class="form-control" placeholder="0300-1234567" required pattern="03[0-9]{9}">
+            <span class="helper-text">Format: 03001234567 (11 digits)</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <button type="submit" class="btn-search" style="width: 100%; font-size: 1.1rem; padding: 0.85rem;">
+            Submit Free Ad Listing
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- Semantic Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Fast<span>Wheels</span></h3>
+          <p>Assigned Page 3: Seller Ad Posting &amp; Inspection Scheduling Module.</p>
+          <div class="footer-meta-box">
+            <p><strong>Group:</strong> SE-A_Group04 | <strong>Roll No:</strong> i263249</p>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="used-cars.html">Used Cars</a></li>
+            <li><a href="car-details.html">Featured Specs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Seller Tips</h4>
+          <ul class="footer-links">
+            <li><a href="#">Clear High-Resolution Photos</a></li>
+            <li><a href="#">Set Competitive Prices</a></li>
+            <li><a href="#">Verify Vehicle Papers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Documentation</h4>
+          <ul class="footer-links">
+            <li><a href="../docs/README.md">Developer Guide</a></li>
+            <li><a href="../docs/ai-logs/26i-3249/session-01-base-setup.md">Session Logs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>&copy; 2026 FastWheels. Group SE-A_Group04. All rights reserved.</div>
+        <div>Theme: Royal-Blue &amp; Crimson-Red &bull; Roll Number: i263249</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

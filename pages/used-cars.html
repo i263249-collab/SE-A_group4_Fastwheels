@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse verified used cars for sale across Pakistan on FastWheels. Group SE-A_Group04, Roll No. i263249.">
+  <title>Used Cars for Sale in Pakistan | FastWheels</title>
+  <!-- Shared Stylesheet -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/jpeg" href="../images/logo.jpeg">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Metadata Bar -->
+  <aside class="top-bar" aria-label="Course and Academic Information">
+    <div class="container top-bar-inner">
+      <div class="top-bar-meta">
+        <span class="top-bar-badge">Assigned Page 1</span>
+        <span>Course: Software Engineering (SE-A)</span>
+        <span>Group: <strong>SE-A_Group04</strong></span>
+        <span>Roll No: <strong>i263249</strong></span>
+      </div>
+      <div>
+        <span>Helpline: 042-111-WHEELS (94335)</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Semantic Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" aria-label="FastWheels Home">
+        <img src="../images/logo.jpeg" alt="FastWheels Official Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-name">Fast<span>Wheels</span></span>
+          <span class="brand-tagline">Drive Your Passion</span>
+        </div>
+      </a>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+
+      <nav id="primary-navigation" class="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="used-cars.html" class="nav-link active" aria-current="page">Used Cars</a></li>
+          <li><a href="car-details.html" class="nav-link">Featured Specs</a></li>
+          <li><a href="post-ad.html" class="nav-link">Sell Your Car</a></li>
+          <li><a href="../index.html#about-section" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta-group">
+        <a href="post-ad.html" class="btn-post-ad">
+          <span>+</span> Post an Ad
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Semantic Main Content -->
+  <main id="main-content" class="container section">
+    <div class="section-title-wrap">
+      <h1 class="section-title">Used Cars in Pakistan</h1>
+      <p class="section-subtitle">Explore 100% physically inspected and verified used cars available in Lahore, Karachi, and Islamabad.</p>
+    </div>
+
+    <!-- Filter Bar for Used Cars -->
+    <div class="search-widget" style="margin-bottom: 2rem;">
+      <form id="fastwheels-search-form" class="search-form-grid">
+        <div class="form-group">
+          <label for="search-make">Filter Make</label>
+          <select id="search-make" class="form-control" name="make">
+            <option value="All">All Makes</option>
+            <option value="Audi">Audi</option>
+            <option value="Bentley">Bentley</option>
+            <option value="Koenigsegg">Koenigsegg</option>
+            <option value="Mazda">Mazda</option>
+            <option value="Peugeot">Peugeot</option>
+            <option value="Porsche">Porsche</option>
+            <option value="Tesla">Tesla</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="search-city">City</label>
+          <select id="search-city" class="form-control" name="city">
+            <option value="All">All Cities</option>
+            <option value="Lahore">Lahore</option>
+            <option value="Karachi">Karachi</option>
+            <option value="Islamabad">Islamabad</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="search-budget">Maximum Budget</label>
+          <select id="search-budget" class="form-control" name="budget">
+            <option value="">Any Budget</option>
+            <option value="25000000">Under PKR 2.5 Crore</option>
+            <option value="50000000">Under PKR 5.0 Crore</option>
+            <option value="100000000">Under PKR 10.0 Crore</option>
+          </select>
+        </div>
+
+        <input type="hidden" id="search-condition" value="Used">
+
+        <div class="form-group">
+          <button type="submit" class="btn-search">Apply Filters</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Vehicles Grid Container -->
+    <div id="featured-cars-container" class="cars-grid">
+      <!-- Populated via js/main.js -->
+    </div>
+  </main>
+
+  <!-- Semantic Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Fast<span>Wheels</span></h3>
+          <p>Used car classifieds portal engineered for Pakistan's automobile community.</p>
+          <div class="footer-meta-box">
+            <p><strong>Assigned Page:</strong> Used Cars Catalog</p>
+            <p><strong>Group:</strong> SE-A_Group04 | <strong>Roll No:</strong> i263249</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore Cars</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home Page</a></li>
+            <li><a href="used-cars.html">Used Cars</a></li>
+            <li><a href="car-details.html">Featured Specs</a></li>
+            <li><a href="post-ad.html">Post Vehicle Ad</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Popular Cities</h4>
+          <ul class="footer-links">
+            <li><a href="used-cars.html?city=Lahore">Used Cars in Lahore</a></li>
+            <li><a href="used-cars.html?city=Karachi">Used Cars in Karachi</a></li>
+            <li><a href="used-cars.html?city=Islamabad">Used Cars in Islamabad</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Documentation</h4>
+          <ul class="footer-links">
+            <li><a href="../docs/README.md">Developer Guide</a></li>
+            <li><a href="../docs/ai-logs/26i-3249/session-01-base-setup.md">Session Logs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>&copy; 2026 FastWheels. Group SE-A_Group04. All rights reserved.</div>
+        <div>Theme: Royal-Blue &amp; Crimson-Red &bull; Roll Number: i263249</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript -->
+  <script src="../js/main.js"></script>
+  <script>
+    // Automatically filter used cars on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.FastWheels) {
+        const usedOnly = window.FastWheels.filterInventory({ condition: 'Used' });
+        // Update vehicle cards
+        const container = document.getElementById('featured-cars-container');
+        if (container && usedOnly.length > 0) {
+          container.innerHTML = usedOnly.map(car => `
+            <article class="car-card" data-id="${car.id}">
+              <div class="car-card-media">
+                <img src="../${car.image}" alt="${car.make} ${car.model}" class="car-card-img" loading="lazy">
+                <span class="car-card-tag">${car.badge}</span>
+              </div>
+              <div class="car-card-body">
+                <h3 class="car-card-title">${car.year} ${car.make} ${car.model}</h3>
+                <div class="car-card-price">${car.priceDisplay}</div>
+                <div class="car-card-location"><span>📍</span> ${car.city} &bull; ${car.condition}</div>
+                <div class="car-card-specs">
+                  <div class="car-card-spec-item">
+                    <span>${car.mileage}</span>
+                    <span>Mileage</span>
+                  </div>
+                  <div class="car-card-spec-item">
+                    <span>${car.fuel}</span>
+                    <span>Fuel Type</span>
+                  </div>
+                  <div class="car-card-spec-item">
+                    <span>${car.transmission}</span>
+                    <span>Gear</span>
+                  </div>
+                </div>
+              </div>
+              <div class="car-card-actions">
+                <button type="button" class="btn-card btn-card-primary" onclick="FastWheels.viewCarDetails('${car.id}')">View Details</button>
+                <button type="button" class="btn-card btn-card-outline" onclick="FastWheels.contactSeller('${car.id}')">Contact Seller</button>
+              </div>
+            </article>
+          `).join('');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
