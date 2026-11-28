@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Start Selling Your Car on FastWheels Pakistan. Free vehicle ad listing with 200+ point verified inspection. Group SE-A_Group04, Roll No. i263000.">
+  <meta name="keywords" content="Sell Your Car, FastWheels, PakWheels, used cars Pakistan, post ad car, instant valuation">
+  <meta name="author" content="Group SE-A_Group04 (Roll No. i263000)">
+  <title>Start Selling Your Car | FastWheels (Page 7)</title>
+
+  <!-- Shared CSS Stylesheet -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/jpeg" href="../images/logo.jpeg">
+
+  <style>
+    /* ==========================================================================
+       Page 7 Specific Styles: Sell Your Car Form & Two-Column Grid
+       Theme: Royal-Blue (#0a3672) & Crimson-Red (#d32f2f)
+       ========================================================================== */
+
+    /* Thin border styling for cards and sections */
+    .thin-border-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      padding: var(--spacing-xl);
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .thin-border-card:hover {
+      border-color: var(--color-border-hover);
+    }
+
+    /* Hero Banner for Sell Your Car */
+    .sell-hero {
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 70%, #0d47a1 100%);
+      color: #ffffff;
+      padding: 3.5rem 0 3.75rem;
+      border-bottom: 4px solid var(--color-accent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sell-hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: var(--spacing-xl);
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .sell-hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sell-hero-badge {
+      display: inline-block;
+      background-color: rgba(211, 47, 47, 0.25);
+      border: 1px solid var(--color-accent);
+      color: #ff8a80;
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      padding: 0.25rem 0.85rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .sell-hero-title {
+      font-size: var(--font-size-3xl);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: var(--spacing-sm);
+      letter-spacing: -0.02em;
+    }
+
+    .sell-hero-title span {
+      color: #ff8a80;
+    }
+
+    .sell-hero-subtitle {
+      font-size: var(--font-size-md);
+      color: #cbd5e1;
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.6;
+    }
+
+    /* Red Action Button "Start Your CTA" */
+    .btn-start-cta {
+      background-color: var(--color-accent);
+      color: #ffffff;
+      font-size: var(--font-size-md);
+      font-weight: 800;
+      padding: 0.85rem 2.2rem;
+      border-radius: var(--border-radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 2px solid #b71c1c;
+      box-shadow: 0 4px 14px rgba(211, 47, 47, 0.4);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .btn-start-cta:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(211, 47, 47, 0.5);
+    }
+
+    .btn-start-cta:active {
+      transform: translateY(0);
+    }
+
+    /* Hero Car Preview Card */
+    .hero-preview-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border-radius: var(--border-radius-md);
+      padding: var(--spacing-md);
+      text-align: center;
+    }
+
+    .hero-preview-img-wrap {
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(7, 37, 80, 0.5);
+      border-radius: var(--border-radius-sm);
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-preview-img {
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+
+    .hero-preview-box:hover .hero-preview-img {
+      transform: scale(1.05);
+    }
+
+    .hero-preview-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: var(--font-size-xs);
+      color: #cbd5e1;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-preview-price {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ff8a80;
+    }
+
+    /* Two-Column Form Layout with Thin Borders */
+    .form-two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .form-two-column {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-section-title {
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+      color: var(--color-primary);
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.25rem;
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .form-section-title:first-of-type {
+      margin-top: 0;
+    }
+
+    /* Certified Checkbox Card with Thin Border */
+    .certified-box {
+      border: 1px solid var(--color-border);
+      background-color: #f8fafc;
+      border-radius: var(--border-radius-sm);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      cursor: pointer;
+      transition: border-color var(--transition-fast), background-color var(--transition-fast);
+      margin: 1.25rem 0;
+    }
+
+    .certified-box:hover,
+    .certified-box.active {
+      border-color: var(--color-primary);
+      background-color: #eff6ff;
+    }
+
+    .certified-box input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      accent-color: var(--color-accent);
+      cursor: pointer;
+    }
+
+    .certified-title {
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      color: var(--color-primary);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .certified-desc {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-muted);
+      line-height: 1.4;
+      display: block;
+    }
+
+    /* Live price helper note */
+    .price-helper-tag {
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-top: 0.35rem;
+    }
+
+    /* Success Submission Banner (Vanilla JS Modal/Card) */
+    .submission-banner {
+      display: none;
+      background: #ecfdf5;
+      border: 1px solid #10b981;
+      border-radius: var(--border-radius-md);
+      padding: var(--spacing-xl);
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .submission-banner.show {
+      display: block;
+    }
+
+    .submission-banner h3 {
+      color: #065f46;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .submission-banner p {
+      color: #047857;
+      font-size: var(--font-size-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Metadata Bar -->
+  <aside class="top-bar" aria-label="Course and Academic Information">
+    <div class="container top-bar-inner">
+      <div class="top-bar-meta">
+        <span class="top-bar-badge">Assigned Page 7</span>
+        <span>Course: Software Engineering (SE-A)</span>
+        <span>Group: <strong>SE-A_Group04</strong></span>
+        <span>Roll No: <strong>i263000</strong></span>
+      </div>
+      <div>
+        <span>Seller Helpline: 042-111-WHEELS (94335) | Fast-Track Verified</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Semantic Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <!-- Brand Logo & Identity -->
+      <a href="../index.html" class="brand" aria-label="FastWheels Home">
+        <img src="../images/logo.jpeg" alt="FastWheels Official Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-name">Fast<span>Wheels</span></span>
+          <span class="brand-tagline">Drive Your Passion</span>
+        </div>
+      </a>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+
+      <!-- 7-Page Semantic Navigation (Position 7 is Sell Your Car) -->
+      <nav id="primary-navigation" class="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="used-cars.html" class="nav-link">Used Cars</a></li>
+          <li><a href="car-details.html" class="nav-link">Featured Specs</a></li>
+          <li><a href="#" class="nav-link" style="opacity: 0.6; cursor: default;" title="Page 4 (Reserved for Group Member)">Page 4</a></li>
+          <li><a href="#" class="nav-link" style="opacity: 0.6; cursor: default;" title="Page 5 (Reserved for Group Member)">Page 5</a></li>
+          <li><a href="#" class="nav-link" style="opacity: 0.6; cursor: default;" title="Page 6 (Reserved for Group Member)">Page 6</a></li>
+          <li><a href="post-ad.html" class="nav-link active" aria-current="page">Sell Your Car</a></li>
+          <li><a href="../index.html#about-section" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Call to Action Button in Header -->
+      <div class="header-cta-group">
+        <a href="post-ad.html" class="btn-post-ad">
+          <span>+</span> Post an Ad
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Prototype Heading & Button -->
+  <section class="sell-hero" aria-labelledby="sell-hero-heading">
+    <div class="container">
+      <div class="sell-hero-grid">
+        
+        <!-- Left Hero Content -->
+        <div>
+          <span class="sell-hero-badge">Page 7 &bull; Verified Automotive Marketplace</span>
+          <h1 id="sell-hero-heading" class="sell-hero-title">
+            Start Selling <br>
+            <span>Your Car</span> Today!
+          </h1>
+          <p class="sell-hero-subtitle">
+            Get the maximum value for your vehicle with FASTWHEELS. Enter your car specifications in the form below, connect with verified car buyers, and enjoy our free ad listing.
+          </p>
+
+          <!-- Prototype Button: "Start Your CTA" -->
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#sell-form-card" class="btn-start-cta" id="hero-cta-btn">
+              <span>Start Your CTA</span>
+              <span aria-hidden="true">&darr;</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 1.5rem; display: flex; gap: 1.5rem; font-size: var(--font-size-xs); color: #cbd5e1;">
+            <span>✓ 100% Free Listing</span>
+            <span>✓ FAST 200+ Point Inspection</span>
+            <span>✓ Verified Genuine Buyers</span>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual: Dynamic Vehicle Preview -->
+        <div>
+          <div class="hero-preview-box">
+            <div class="hero-preview-img-wrap">
+              <img id="preview-car-image" src="../images/taycan.webp" alt="Selected Car Preview" class="hero-preview-img">
+            </div>
+            <div class="hero-preview-meta">
+              <span id="preview-car-title" style="font-weight: 700; color: #ffffff;">2023 Porsche Taycan</span>
+              <span id="preview-car-price" class="hero-preview-price">PKR 4.50 Crore</span>
+            </div>
+            <div style="font-size: 0.7rem; color: #94a3b8; margin-top: 0.35rem; text-align: left;">
+              <span id="preview-car-specs">Sedan &bull; 15,000 km &bull; FAST Certified</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content: Form & Submission -->
+  <main id="main-content" class="container section">
+
+    <!-- Success Feedback Banner -->
+    <div id="ad-success-banner" class="submission-banner" role="status" aria-live="polite">
+      <h3>🎉 Listing Submitted Successfully!</h3>
+      <p id="ad-success-msg">Your vehicle has been registered on FastWheels. Our certified team will review your ad specifications shortly.</p>
+      <div style="margin-top: 1rem;">
+        <button type="button" class="btn-card btn-card-primary" onclick="resetAdForm()" style="padding: 0.5rem 1.25rem; font-size: 0.9rem;">
+          Post Another Ad
+        </button>
+      </div>
+    </div>
+
+    <!-- Section Title -->
+    <div class="section-title-wrap">
+      <h2 class="section-title">Vehicle Specifications &amp; Details</h2>
+      <p class="section-subtitle">
+        Fill out the vehicle particulars below. Thin border two-column layout built with semantic HTML5 and vanilla JavaScript.
+      </p>
+    </div>
+
+    <!-- Form Container Card with Thin Borders -->
+    <div id="sell-form-card" class="thin-border-card" style="max-width: 900px; margin: 0 auto;">
+      <form id="sell-car-form" novalidate>
+
+        <!-- Section 1: Vehicle Make & Model Dropdowns -->
+        <h3 class="form-section-title">1. Vehicle Information</h3>
+        
+        <div class="form-two-column">
+          <!-- Make Dropdown -->
+          <div class="form-group">
+            <label for="car-make">Make / Manufacturer <span style="color: var(--color-accent); font-weight: bold;">*</span></label>
+            <select id="car-make" name="make" class="form-control" required>
+              <option value="Porsche" selected>Porsche</option>
+              <option value="Audi">Audi</option>
+              <option value="Tesla">Tesla</option>
+              <option value="Bentley">Bentley</option>
+              <option value="Mazda">Mazda</option>
+              <option value="Peugeot">Peugeot</option>
+              <option value="Koenigsegg">Koenigsegg</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Honda">Honda</option>
+            </select>
+          </div>
+
+          <!-- Model Dropdown (Dynamically populated based on Make) -->
+          <div class="form-group">
+            <label for="car-model">Model <span style="color: var(--color-accent); font-weight: bold;">*</span></label>
+            <select id="car-model" name="model" class="form-control" required>
+              <option value="Taycan" selected>Taycan</option>
+              <option value="911 Carrera">911 Carrera</option>
+              <option value="Panamera">Panamera</option>
+              <option value="Cayenne">Cayenne</option>
+              <option value="Macan">Macan</option>
+            </select>
+          </div>
+
+          <!-- Variant Dropdown -->
+          <div class="form-group">
+            <label for="car-variant">Variant / Trim</label>
+            <select id="car-variant" name="variant" class="form-control">
+              <option value="Performance Battery Plus">Performance Battery Plus</option>
+              <option value="Standard / Base Edition">Standard / Base Edition</option>
+              <option value="Sport Edition (AWD)">Sport Edition (AWD)</option>
+              <option value="Hybrid Synergy Drive">Hybrid Synergy Drive</option>
+              <option value="Turbocharged V6">Turbocharged V6</option>
+              <option value="Luxury Trim Package">Luxury Trim Package</option>
+            </select>
+          </div>
+
+          <!-- Body Type Dropdown -->
+          <div class="form-group">
+            <label for="car-body-type">Body Type</label>
+            <select id="car-body-type" name="bodyType" class="form-control">
+              <option value="Sedan" selected>Sedan</option>
+              <option value="SUV & 4x4">SUV &amp; 4x4</option>
+              <option value="Coupe">Coupe</option>
+              <option value="Hatchback">Hatchback</option>
+              <option value="Crossover">Crossover</option>
+              <option value="Supercar / Hypercar">Supercar / Hypercar</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Section 2: Year, Mileage and Price Fields -->
+        <h3 class="form-section-title">2. Year, Mileage &amp; Pricing</h3>
+
+        <div class="form-two-column">
+          <!-- Year Field -->
+          <div class="form-group">
+            <label for="car-year">Registration / Model Year <span style="color: var(--color-accent); font-weight: bold;">*</span></label>
+            <select id="car-year" name="year" class="form-control" required>
+              <option value="2025">2025 (Latest)</option>
+              <option value="2024">2024</option>
+              <option value="2023" selected>2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2015">2015 &amp; Older</option>
+            </select>
+          </div>
+
+          <!-- Mileage Field -->
+          <div class="form-group">
+            <label for="car-mileage">Mileage (km) <span style="color: var(--color-accent); font-weight: bold;">*</span></label>
+            <input 
+              type="text" 
+              id="car-mileage" 
+              name="mileage" 
+              class="form-control" 
+              placeholder="e.g. 15,000 km" 
+              value="15,000 km" 
+              required
+            >
+          </div>
+
+          <!-- Price Field -->
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label for="car-price">Expected Asking Price (PKR) <span style="color: var(--color-accent); font-weight: bold;">*</span></label>
+            <input 
+              type="number" 
+              id="car-price" 
+              name="price" 
+              class="form-control" 
+              placeholder="e.g. 45000000" 
+              value="45000000" 
+              min="100000" 
+              required
+            >
+            <div id="price-display-helper" class="price-helper-tag">
+              Estimated Value: PKR 4.50 Crore
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Certified Checkbox -->
+        <h3 class="form-section-title">3. Certification &amp; Inspection</h3>
+
+        <label class="certified-box active" id="certified-card">
+          <input type="checkbox" id="car-certified" name="isCertified" checked>
+          <div>
+            <span class="certified-title">FAST Certified Inspection (200+ Point Doorstep Verification)</span>
+            <span class="certified-desc">
+              Vehicles with the FastWheels Certified badge sell on average 40% faster and build direct trust with genuine Pakistani car buyers.
+            </span>
+          </div>
+        </label>
+
+        <!-- Section 4: Seller Contact Details -->
+        <h3 class="form-section-title">4. Seller Contact Information</h3>
+
+        <div class="form-two-column">
+          <div class="form-group">
+            <label for="seller-name">Full Name <span style="color: var(--color-accent); font-weight: bold;">*</span></label>
+            <input type="text" id="seller-name" name="sellerName" class="form-control" placeholder="e.g. Khaula" value="Khaula" required>
+          </div>
+
+          <div class="form-group">
+            <label for="seller-phone">Mobile / WhatsApp Number <span style="color: var(--color-accent); font-weight: bold;">*</span></label>
+            <input type="tel" id="seller-phone" name="sellerPhone" class="form-control" placeholder="e.g. 0300-1234567" value="0300-1234567" required>
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label for="seller-city">City Location <span style="color: var(--color-accent); font-weight: bold;">*</span></label>
+            <select id="seller-city" name="sellerCity" class="form-control" required>
+              <option value="Islamabad" selected>Islamabad</option>
+              <option value="Lahore">Lahore</option>
+              <option value="Karachi">Karachi</option>
+              <option value="Rawalpindi">Rawalpindi</option>
+              <option value="Peshawar">Peshawar</option>
+              <option value="Faisalabad">Faisalabad</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Form Submission Button -->
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="font-size: var(--font-size-xs); color: var(--color-text-muted);">
+            <span>✓ No hidden charges. Ad verified within 24 hours.</span>
+          </div>
+          
+          <button type="submit" class="btn-start-cta" style="border: none;">
+            <span>Submit Your Car Ad</span>
+            <span aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </main>
+
+  <!-- Semantic Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <!-- Brand & Assignment Info -->
+        <div class="footer-brand">
+          <h3>Fast<span>Wheels</span></h3>
+          <p>Assigned Page 7: Sell Your Car portal featuring semantic HTML5, pure CSS3 variables, and vanilla JavaScript.</p>
+          <div class="footer-meta-box">
+            <p><strong>Course:</strong> Software Engineering (Section A)</p>
+            <p><strong>Project Group:</strong> SE-A_Group04</p>
+            <p><strong>Student ID / Roll:</strong> i263000</p>
+            <p><strong>Assigned Page:</strong> Page 7 - Sell Your Car</p>
+            <p><strong>Base Framework:</strong> Vanilla Web Standards (Zero external libraries)</p>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Explore Cars</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home Page</a></li>
+            <li><a href="used-cars.html">Used Cars for Sale</a></li>
+            <li><a href="car-details.html">Car Technical Specs</a></li>
+            <li><a href="post-ad.html">Sell Your Car (Page 7)</a></li>
+          </ul>
+        </div>
+
+        <!-- Major Cities -->
+        <div class="footer-col">
+          <h4>Cars by City</h4>
+          <ul class="footer-links">
+            <li><a href="used-cars.html?city=Lahore">Cars in Lahore</a></li>
+            <li><a href="used-cars.html?city=Karachi">Cars in Karachi</a></li>
+            <li><a href="used-cars.html?city=Islamabad">Cars in Islamabad</a></li>
+            <li><a href="used-cars.html?city=Rawalpindi">Cars in Rawalpindi</a></li>
+          </ul>
+        </div>
+
+        <!-- Support & Policies -->
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html#about-section">About FastWheels</a></li>
+            <li><a href="../docs/README.md">Developer Docs</a></li>
+            <li><a href="post-ad.html">Post Vehicle Ad</a></li>
+            <li><a href="#primary-navigation">Privacy &amp; Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>
+          &copy; 2026 FastWheels Pakistan. All rights reserved. Developed for SE-A_Group04.
+        </div>
+        <div>
+          Theme: Royal-Blue &amp; Crimson-Red &bull; Roll Number: i263000
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript: Shared main.js + Page 7 Interactive Script -->
+  <script src="../js/main.js"></script>
+  <script>
+    'use strict';
+
+    // Model options mapped by Make with catalog preview images
+    const CAR_CATALOG = {
+      Porsche: {
+        models: ["Taycan", "911 Carrera", "Panamera", "Cayenne", "Macan"],
+        image: "../images/taycan.webp"
+      },
+      Audi: {
+        models: ["e-tron GT", "A4", "A6", "Q7", "R8"],
+        image: "../images/audi.webp"
+      },
+      Tesla: {
+        models: ["Model S", "Model 3", "Model Y", "Model X", "Cybertruck"],
+        image: "../images/tesla.webp"
+      },
+      Bentley: {
+        models: ["Continental GT", "Flying Spur", "Bentayga"],
+        image: "../images/bentley.webp"
+      },
+      Mazda: {
+        models: ["RX-Vision", "Mazda 3", "Mazda 6", "CX-5", "MX-5 Miata"],
+        image: "../images/mazda.webp"
+      },
+      Peugeot: {
+        models: ["508 GT", "208", "308", "2008", "3008"],
+        image: "../images/peugeot.webp"
+      },
+      Koenigsegg: {
+        models: ["Jesko Absolut", "Gemera", "Regera", "Agera RS"],
+        image: "../images/konisegg.webp"
+      },
+      Toyota: {
+        models: ["Corolla", "Camry", "Fortuner", "Land Cruiser", "Yaris"],
+        image: "../images/taycan.webp"
+      },
+      Honda: {
+        models: ["Civic", "City", "Accord", "CR-V", "BR-V"],
+        image: "../images/audi.webp"
+      }
+    };
+
+    // Elements
+    const makeSelect = document.getElementById('car-make');
+    const modelSelect = document.getElementById('car-model');
+    const yearSelect = document.getElementById('car-year');
+    const mileageInput = document.getElementById('car-mileage');
+    const priceInput = document.getElementById('car-price');
+    const priceHelper = document.getElementById('price-display-helper');
+    const certifiedCheck = document.getElementById('car-certified');
+    const certifiedCard = document.getElementById('certified-card');
+    const formElement = document.getElementById('sell-car-form');
+    const successBanner = document.getElementById('ad-success-banner');
+    const successMsg = document.getElementById('ad-success-msg');
+
+    // Preview elements
+    const previewImg = document.getElementById('preview-car-image');
+    const previewTitle = document.getElementById('preview-car-title');
+    const previewPrice = document.getElementById('preview-car-price');
+    const previewSpecs = document.getElementById('preview-car-specs');
+
+    // Update models dropdown dynamically when Make changes
+    function updateModelsDropdown() {
+      const selectedMake = makeSelect.value;
+      const data = CAR_CATALOG[selectedMake] || { models: ["Standard"], image: "../images/taycan.webp" };
+
+      // Rebuild options
+      modelSelect.innerHTML = '';
+      data.models.forEach(model => {
+        const opt = document.createElement('option');
+        opt.value = model;
+        opt.textContent = model;
+        modelSelect.appendChild(opt);
+      });
+
+      updatePreviewCard();
+    }
+
+    // Format PKR into Crore / Lacs
+    function formatPKRDisplay(amount) {
+      if (amount >= 10000000) {
+        return `PKR ${(amount / 10000000).toFixed(2)} Crore`;
+      } else if (amount >= 100000) {
+        return `PKR ${(amount / 100000).toFixed(2)} Lacs`;
+      }
+      return `PKR ${Number(amount).toLocaleString('en-PK')}`;
+    }
+
+    // Update the live preview visual card
+    function updatePreviewCard() {
+      const make = makeSelect.value;
+      const model = modelSelect.value || '';
+      const year = yearSelect.value;
+      const mileage = mileageInput.value || '0 km';
+      const priceVal = Number(priceInput.value || 0);
+      const isCertified = certifiedCheck.checked;
+      const bodyType = document.getElementById('car-body-type').value;
+
+      const catalogData = CAR_CATALOG[make];
+      if (catalogData && previewImg) {
+        previewImg.src = catalogData.image;
+        previewImg.alt = `${year} ${make} ${model}`;
+      }
+
+      if (previewTitle) {
+        previewTitle.textContent = `${year} ${make} ${model}`;
+      }
+
+      if (previewPrice) {
+        previewPrice.textContent = formatPKRDisplay(priceVal);
+      }
+
+      if (priceHelper) {
+        priceHelper.textContent = `Estimated Value: ${formatPKRDisplay(priceVal)}`;
+      }
+
+      if (previewSpecs) {
+        previewSpecs.textContent = `${bodyType} • ${mileage} • ${isCertified ? 'FAST Certified' : 'Standard Ad'}`;
+      }
+    }
+
+    // Event Listeners
+    makeSelect.addEventListener('change', updateModelsDropdown);
+    modelSelect.addEventListener('change', updatePreviewCard);
+    yearSelect.addEventListener('change', updatePreviewCard);
+    mileageInput.addEventListener('input', updatePreviewCard);
+    priceInput.addEventListener('input', updatePreviewCard);
+    document.getElementById('car-body-type').addEventListener('change', updatePreviewCard);
+
+    certifiedCheck.addEventListener('change', () => {
+      if (certifiedCheck.checked) {
+        certifiedCard.classList.add('active');
+      } else {
+        certifiedCard.classList.remove('active');
+      }
+      updatePreviewCard();
+    });
+
+    // Form submission handling
+    formElement.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const make = makeSelect.value;
+      const model = modelSelect.value;
+      const year = yearSelect.value;
+      const price = Number(priceInput.value);
+      const seller = document.getElementById('seller-name').value;
+      const city = document.getElementById('seller-city').value;
+
+      // Update success message
+      successMsg.textContent = `Thank you, ${seller}! Your listing for the ${year} ${make} ${model} in ${city} (${formatPKRDisplay(price)}) has been submitted for verification on FastWheels.`;
+      successBanner.classList.add('show');
+      successBanner.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    function resetAdForm() {
+      successBanner.classList.remove('show');
+      formElement.reset();
+      updateModelsDropdown();
+      document.getElementById('sell-form-card').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Initial setup
+    document.addEventListener('DOMContentLoaded', () => {
+      updateModelsDropdown();
+    });
+  </script>
+</body>
+</html>

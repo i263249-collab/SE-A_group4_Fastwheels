@@ -1,953 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fastwheels - Sell Your Car</title>
-  
-  <!-- Tailwind CSS CDN for styling -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brandBlue: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              200: '#bfdbfe',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-              800: '#1e40af',
-              900: '#1e3a8a',
-            },
-            brandRed: {
-              50: '#fef2f2',
-              100: '#fee2e2',
-              500: '#ef4444',
-              600: '#dc2626',
-              700: '#b91c1c',
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FastWheels - Pakistan's leading automotive portal for buying and selling new and used cars. Group SE-A_Group04.">
+  <meta name="keywords" content="FastWheels, PakWheels, used cars Pakistan, buy cars Lahore Karachi Islamabad, electric cars Pakistan">
+  <meta name="author" content="Group SE-A_Group04">
+  <title>FastWheels | Pakistan's Premier Automotive Marketplace</title>
 
-  <!-- Font Awesome Icons CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  
-  <!-- Google Fonts: Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- React 18 & Babel Standalone (Runs React directly in browser without build tools) -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-  <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .custom-shadow {
-      box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.08), 0 8px 10px -6px rgba(30, 58, 138, 0.04);
-    }
-  </style>
+  <!-- Shared CSS Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
 </head>
-<body class="bg-white text-slate-800 antialiased min-h-screen flex flex-col">
+<body>
 
-  <div id="root"></div>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- React Application Script -->
-  <script type="text/babel">
-    const { useState, useMemo } = React;
+  <!-- Top Metadata Bar -->
+  <aside class="top-bar" aria-label="Course and Academic Information">
+    <div class="container top-bar-inner">
+      <div class="top-bar-meta">
+        <span class="top-bar-badge">Academic Project</span>
+        <span>Course: Software Engineering (SE-A)</span>
+        <span>Group: <strong>SE-A_Group04</strong></span>
+        <span>Roll No: <strong>i263000</strong></span>
+      </div>
+      <div>
+        <span>Helpline: 042-111-WHEELS (94335) | Mon - Sat: 9:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </aside>
 
-    // Available car models mapped by make with catalog images
-    const CAR_DATA = {
-      Porsche: {
-        models: ["Taycan", "911 Carrera", "Panamera", "Cayenne", "Macan"],
-        image: "images/taycan.webp"
-      },
-      Audi: {
-        models: ["A4", "A6", "Q7", "e-tron GT", "R8"],
-        image: "images/audi.webp"
-      },
-      Tesla: {
-        models: ["Model 3", "Model Y", "Model S", "Model X", "Cybertruck"],
-        image: "images/tesla.webp"
-      },
-      Bentley: {
-        models: ["Continental GT", "Flying Spur", "Bentayga"],
-        image: "images/bentley.webp"
-      },
-      Mazda: {
-        models: ["Mazda 3", "Mazda 6", "CX-5", "CX-9", "MX-5 Miata"],
-        image: "images/mazda.webp"
-      },
-      Peugeot: {
-        models: ["208", "308", "2008", "3008", "5008"],
-        image: "images/peugeot.webp"
-      },
-      Koenigsegg: {
-        models: ["Jesko", "Gemera", "Regera", "Agera RS"],
-        image: "images/konisegg.webp"
-      },
-      Toyota: {
-        models: ["Corolla", "Camry", "Yaris", "Fortuner", "Land Cruiser", "Prado"],
-        image: "images/taycan.webp"
-      },
-      Honda: {
-        models: ["Civic", "City", "Accord", "CR-V", "BR-V"],
-        image: "images/audi.webp"
-      }
-    };
+  <!-- Semantic Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <!-- Brand Logo & Identity -->
+      <a href="index.html" class="brand" aria-label="FastWheels Home">
+        <img src="images/logo.jpeg" alt="FastWheels Official Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-name">Fast<span>Wheels</span></span>
+          <span class="brand-tagline">Drive Your Passion</span>
+        </div>
+      </a>
 
-    function App() {
-      // 3 Connected Tabs: 'sell' (Tab 1), 'valuation' (Tab 2), 'confirmation' (Tab 3)
-      const [activeTab, setActiveTab] = useState('sell');
+      <!-- Mobile Navigation Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
 
-      // Form Data State
-      const [formData, setFormData] = useState({
-        make: "Porsche",
-        model: "Taycan",
-        variant: "Performance Battery Plus",
-        bodyType: "Sedan",
-        year: "2023",
-        mileage: "15,000 km",
-        price: "45000000",
-        isCertified: true,
-        sellerName: "FAST Student",
-        sellerPhone: "0300-1234567",
-        sellerCity: "Islamabad"
-      });
+      <!-- 7-Page Semantic Navigation -->
+      <nav id="primary-navigation" class="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+          <li><a href="pages/used-cars.html" class="nav-link">Used Cars</a></li>
+          <li><a href="pages/car-details.html" class="nav-link">Featured Specs</a></li>
+          <li><a href="#" class="nav-link" style="opacity: 0.6; cursor: default;" title="Page 4 (Reserved for Group Member)">Page 4</a></li>
+          <li><a href="#" class="nav-link" style="opacity: 0.6; cursor: default;" title="Page 5 (Reserved for Group Member)">Page 5</a></li>
+          <li><a href="#" class="nav-link" style="opacity: 0.6; cursor: default;" title="Page 6 (Reserved for Group Member)">Page 6</a></li>
+          <li><a href="pages/post-ad.html" class="nav-link">Sell Your Car</a></li>
+          <li><a href="#about-section" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
 
-      // Handle input change
-      const handleInputChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setFormData(prev => {
-          const updated = {
-            ...prev,
-            [name]: type === 'checkbox' ? checked : value
-          };
-          // Automatically update model if make changes
-          if (name === 'make' && CAR_DATA[value]) {
-            updated.model = CAR_DATA[value].models[0];
-          }
-          return updated;
-        });
-      };
+      <!-- Call to Action Button in Header -->
+      <div class="header-cta-group">
+        <a href="pages/post-ad.html" class="btn-post-ad">
+          <span>+</span> Post an Ad
+        </a>
+      </div>
+    </div>
+  </header>
 
-      // Form submission -> routes automatically to Tab 2 (Instant Valuation)
-      const handleFormSubmit = (e) => {
-        e.preventDefault();
-        setActiveTab('valuation');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      };
+  <!-- Semantic Main Content -->
+  <main id="main-content">
 
-      // Selected car image
-      const selectedCarImage = CAR_DATA[formData.make]?.image || "images/taycan.webp";
+    <!-- Hero & Search Section -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">Pakistan's #1 Car Portal</span>
+          <h1 id="hero-heading" class="hero-title">Find Used &amp; New Cars in Pakistan</h1>
+          <p class="hero-subtitle">Search over 250,000 verified cars, compare genuine prices, and connect with trusted dealers.</p>
+        </div>
 
-      return (
-        <div className="flex flex-col min-h-screen bg-white">
-          
-          {/* ================= 1. TOP NAVBAR ================= */}
-          <header className="bg-white border-b-2 border-brandBlue-100 sticky top-0 z-50 shadow-sm">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex items-center justify-between h-20">
-                
-                {/* Logo & Brand Name */}
-                <div 
-                  className="flex items-center space-x-3 cursor-pointer" 
-                  onClick={() => setActiveTab('sell')}>
-                  <img 
-                    src="images/logo.jpeg" 
-                    alt="Fastwheels Logo" 
-                    className="h-12 w-auto object-contain rounded-md border border-brandBlue-200 shadow-sm"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      const fallback = document.getElementById('brand-fallback-icon');
-                      if (fallback) fallback.style.display = 'inline-block';
-                    }}
-                  />
-                  <div id="brand-fallback-icon" className="hidden text-brandBlue-900 text-2xl font-bold">
-                    <i className="fa-solid fa-car-side text-brandRed-600 mr-1"></i>
-                  </div>
-                  <div>
-                    <span className="text-2xl font-extrabold tracking-tight text-brandBlue-900">
-                      FAST<span className="text-brandRed-600">WHEELS</span>
-                    </span>
-                    <span className="block text-[10px] uppercase tracking-widest text-brandBlue-600 font-semibold">
-                      Student Car Marketplace
-                    </span>
-                  </div>
-                </div>
+        <!-- Quick Search Form Widget -->
+        <div class="search-widget" role="search" aria-label="Car Search Widget">
+          <div class="search-tabs" role="tablist" aria-label="Vehicle Condition Tabs">
+            <button type="button" class="search-tab-btn active" role="tab" aria-selected="true" data-tab="All">All Vehicles</button>
+            <button type="button" class="search-tab-btn" role="tab" aria-selected="false" data-tab="Used">Used Cars</button>
+            <button type="button" class="search-tab-btn" role="tab" aria-selected="false" data-tab="New">New Cars</button>
+          </div>
 
-                {/* Navigation Links */}
-                <nav className="hidden md:flex space-x-8 text-sm font-semibold">
-                  <a 
-                    href="#home" 
-                    onClick={(e) => { e.preventDefault(); setActiveTab('sell'); }} 
-                    className={`transition-colors ${activeTab === 'sell' ? 'text-brandRed-600 font-bold' : 'text-brandBlue-900 hover:text-brandRed-600'}`}>
-                    Home
-                  </a>
-                  <a 
-                    href="#pricing" 
-                    onClick={(e) => { e.preventDefault(); setActiveTab('valuation'); }} 
-                    className={`transition-colors ${activeTab === 'valuation' ? 'text-brandRed-600 font-bold' : 'text-slate-600 hover:text-brandRed-600'}`}>
-                    Pricing
-                  </a>
-                  <a 
-                    href="#navigation" 
-                    onClick={(e) => { e.preventDefault(); setActiveTab('sell'); }} 
-                    className="text-slate-600 hover:text-brandRed-600 transition-colors">
-                    Navigation
-                  </a>
-                  <a 
-                    href="#blog" 
-                    onClick={(e) => { e.preventDefault(); }} 
-                    className="text-slate-600 hover:text-brandRed-600 transition-colors">
-                    Blog
-                  </a>
-                  <a 
-                    href="#contact" 
-                    onClick={(e) => { e.preventDefault(); setActiveTab('confirmation'); }} 
-                    className={`transition-colors ${activeTab === 'confirmation' ? 'text-brandRed-600 font-bold' : 'text-slate-600 hover:text-brandRed-600'}`}>
-                    Contact
-                  </a>
-                </nav>
-
-                {/* Navbar Icons (Search, User, Cart) & Red Action Button */}
-                <div className="flex items-center space-x-5">
-                  {/* Search Icon */}
-                  <button 
-                    type="button"
-                    title="Search Cars" 
-                    className="text-brandBlue-800 hover:text-brandRed-600 transition-colors p-2 text-lg">
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                  </button>
-
-                  {/* User Account Icon */}
-                  <button 
-                    type="button"
-                    title="User Profile" 
-                    className="text-brandBlue-800 hover:text-brandRed-600 transition-colors p-2 text-lg">
-                    <i className="fa-regular fa-circle-user"></i>
-                  </button>
-
-                  {/* Cart Icon with badge */}
-                  <div className="relative">
-                    <button 
-                      type="button"
-                      title="Shopping Cart" 
-                      className="text-brandBlue-800 hover:text-brandRed-600 transition-colors p-2 text-lg">
-                      <i className="fa-solid fa-cart-shopping"></i>
-                    </button>
-                    <span className="absolute top-1 -right-1 bg-brandRed-600 text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center">
-                      1
-                    </span>
-                  </div>
-
-                  {/* Quick Sell CTA Button */}
-                  <button 
-                    type="button"
-                    onClick={() => { setActiveTab('sell'); document.getElementById('sell-form-section')?.scrollIntoView({ behavior: 'smooth' }); }}
-                    className="hidden sm:inline-flex items-center space-x-2 bg-brandRed-600 hover:bg-brandRed-700 active:scale-95 text-white px-4 py-2 rounded-lg font-bold text-sm shadow hover:shadow-md transition-all">
-                    <i className="fa-solid fa-plus text-xs"></i>
-                    <span>Sell Car</span>
-                  </button>
-                </div>
-
-              </div>
+          <form id="fastwheels-search-form" class="search-form-grid">
+            <div class="form-group">
+              <label for="search-make">Make / Manufacturer</label>
+              <select id="search-make" class="form-control" name="make">
+                <option value="All">All Makes</option>
+                <option value="Audi">Audi</option>
+                <option value="Bentley">Bentley</option>
+                <option value="Koenigsegg">Koenigsegg</option>
+                <option value="Mazda">Mazda</option>
+                <option value="Peugeot">Peugeot</option>
+                <option value="Porsche">Porsche</option>
+                <option value="Tesla">Tesla</option>
+              </select>
             </div>
-          </header>
 
-          {/* ================= 3 CONNECTED TABS NAVIGATION BAR ================= */}
-          <div className="bg-brandBlue-50 border-b border-brandBlue-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex justify-center sm:justify-start space-x-2 sm:space-x-8 overflow-x-auto py-3">
-                
-                {/* Tab 1 */}
-                <button 
-                  type="button"
-                  onClick={() => setActiveTab('sell')}
-                  className={`flex items-center space-x-2 px-4 py-2 text-sm rounded-lg font-bold transition-all ${
-                    activeTab === 'sell'
-                      ? 'bg-brandBlue-900 text-white shadow'
-                      : 'text-brandBlue-900 hover:bg-white hover:text-brandRed-600'
-                  }`}>
-                  <span className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center text-xs">1</span>
-                  <span>1. Sell Your Car</span>
-                </button>
+            <div class="form-group">
+              <label for="search-city">City</label>
+              <select id="search-city" class="form-control" name="city">
+                <option value="All">All Cities (Pakistan)</option>
+                <option value="Lahore">Lahore</option>
+                <option value="Karachi">Karachi</option>
+                <option value="Islamabad">Islamabad</option>
+              </select>
+            </div>
 
-                {/* Tab 2 */}
-                <button 
-                  type="button"
-                  onClick={() => setActiveTab('valuation')}
-                  className={`flex items-center space-x-2 px-4 py-2 text-sm rounded-lg font-bold transition-all ${
-                    activeTab === 'valuation'
-                      ? 'bg-brandBlue-900 text-white shadow'
-                      : 'text-brandBlue-900 hover:bg-white hover:text-brandRed-600'
-                  }`}>
-                  <span className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center text-xs">2</span>
-                  <span>2. Instant Valuation</span>
-                  <span className="bg-brandRed-600 text-white text-[10px] px-2 py-0.5 rounded-full font-normal">Active</span>
-                </button>
+            <div class="form-group">
+              <label for="search-budget">Max Budget</label>
+              <select id="search-budget" class="form-control" name="budget">
+                <option value="">Any Budget</option>
+                <option value="25000000">Under PKR 2.5 Crore</option>
+                <option value="50000000">Under PKR 5.0 Crore</option>
+                <option value="100000000">Under PKR 10.0 Crore</option>
+                <option value="900000000">Luxury / Hypercars (All)</option>
+              </select>
+            </div>
 
-                {/* Tab 3 */}
-                <button 
-                  type="button"
-                  onClick={() => setActiveTab('confirmation')}
-                  className={`flex items-center space-x-2 px-4 py-2 text-sm rounded-lg font-bold transition-all ${
-                    activeTab === 'confirmation'
-                      ? 'bg-brandBlue-900 text-white shadow'
-                      : 'text-brandBlue-900 hover:bg-white hover:text-brandRed-600'
-                  }`}>
-                  <span className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center text-xs">3</span>
-                  <span>3. Finalize & Listing</span>
-                </button>
+            <input type="hidden" id="search-condition" value="All">
 
+            <div class="form-group">
+              <button type="submit" class="btn-search">Search Cars</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Highlights Strip -->
+    <section class="highlights-bar" aria-label="FastWheels Service Highlights">
+      <div class="container highlights-grid">
+        <div class="highlight-item">
+          <div class="highlight-icon" aria-hidden="true">✓</div>
+          <div class="highlight-text">
+            <h4>200+ Point Inspection</h4>
+            <p>Every certified car thoroughly vetted</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" aria-hidden="true">★</div>
+          <div class="highlight-text">
+            <h4>Verified Sellers Only</h4>
+            <p>Direct communication with trusted owners</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" aria-hidden="true">⚡</div>
+          <div class="highlight-text">
+            <h4>Free Ad Posting</h4>
+            <p>Reach over 5 Million Pakistani buyers</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" aria-hidden="true">🛡️</div>
+          <div class="highlight-text">
+            <h4>SafePay Protection</h4>
+            <p>Secure financial transfer assurance</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Vehicle Listings Section -->
+    <section id="featured-vehicles" class="section container" aria-labelledby="featured-heading">
+      <div class="section-title-wrap">
+        <h2 id="featured-heading" class="section-title">Featured Vehicles for Sale</h2>
+        <p class="section-subtitle">Hand-picked verified luxury, sport, and premium cars available across Lahore, Karachi, and Islamabad.</p>
+      </div>
+
+      <!-- Populated dynamically via js/main.js and fallback markup -->
+      <div id="featured-cars-container" class="cars-grid">
+        <article class="car-card" data-id="fw-001">
+          <div class="car-card-media">
+            <img src="images/audi.webp" alt="Audi e-tron GT Quattro in Metallic Blue" class="car-card-img" loading="lazy">
+            <span class="car-card-tag">Verified</span>
+          </div>
+          <div class="car-card-body">
+            <h3 class="car-card-title">2023 Audi e-tron GT Quattro</h3>
+            <div class="car-card-price">PKR 4.85 Crore</div>
+            <div class="car-card-location">📍 Lahore &bull; Used</div>
+            <div class="car-card-specs">
+              <div class="car-card-spec-item">
+                <span>12,500 km</span>
+                <span>Mileage</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>Electric</span>
+                <span>Fuel Type</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>Automatic</span>
+                <span>Gear</span>
               </div>
             </div>
           </div>
+          <div class="car-card-actions">
+            <button type="button" class="btn-card btn-card-primary" onclick="window.FastWheels.viewCarDetails('fw-001')">View Details</button>
+            <button type="button" class="btn-card btn-card-outline" onclick="window.FastWheels.contactSeller('fw-001')">Contact Seller</button>
+          </div>
+        </article>
 
-          {/* ================= TAB 1: SELL YOUR CAR ================= */}
-          {activeTab === 'sell' && (
-            <main className="flex-grow">
-              
-              {/* Hero Banner Section */}
-              <section className="relative bg-gradient-to-r from-brandBlue-900 via-blue-900 to-brandBlue-800 text-white py-14 px-4 sm:px-6 lg:px-8 border-b-4 border-brandRed-600 overflow-hidden">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                  
-                  {/* Hero Left Content */}
-                  <div className="lg:col-span-7 space-y-5">
-                    <div className="inline-flex items-center space-x-2 bg-brandRed-600/30 border border-brandRed-500 text-red-100 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                      <i className="fa-solid fa-bolt text-brandRed-500"></i>
-                      <span>Fast & Verified Car Selling</span>
-                    </div>
-
-                    <h1 className="text-4xl sm:text-5xl font-black tracking-tight leading-tight">
-                      Start Selling <br className="hidden sm:inline" />
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-rose-200">Your Car</span>
-                    </h1>
-
-                    <p className="text-blue-100 text-base sm:text-lg max-w-xl">
-                      Sell your automobile with FASTWHEELS. Fill out the vehicle specifications below to receive an <strong className="text-white">Instant Valuation</strong> and connect directly with verified buyers.
-                    </p>
-
-                    <div className="pt-2 flex flex-wrap gap-4">
-                      {/* Red Button "Start Your Car" */}
-                      <button 
-                        type="button"
-                        onClick={() => document.getElementById('sell-form-section')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="bg-brandRed-600 hover:bg-brandRed-700 active:scale-95 text-white font-bold text-base px-8 py-3.5 rounded-xl shadow-lg shadow-red-900/40 border-2 border-red-500 transition-all flex items-center space-x-3">
-                        <i className="fa-solid fa-key"></i>
-                        <span>Start Your Car</span>
-                      </button>
-
-                      <button 
-                        type="button"
-                        onClick={() => setActiveTab('valuation')}
-                        className="bg-white/10 hover:bg-white/20 text-white font-semibold text-base px-6 py-3.5 rounded-xl border border-white/20 transition-all flex items-center space-x-2">
-                        <i className="fa-solid fa-chart-line text-blue-300"></i>
-                        <span>Preview Instant Valuation</span>
-                      </button>
-                    </div>
-
-                    {/* Trust badges */}
-                    <div className="pt-4 grid grid-cols-3 gap-4 border-t border-blue-800/80 text-blue-200 text-xs">
-                      <div><i className="fa-solid fa-shield-halved text-brandRed-500 mr-1.5"></i>100% Free Listing</div>
-                      <div><i className="fa-solid fa-certificate text-brandRed-500 mr-1.5"></i>FAST Certified</div>
-                      <div><i className="fa-solid fa-handshake text-brandRed-500 mr-1.5"></i>Direct Dealings</div>
-                    </div>
-                  </div>
-
-                  {/* Hero Right Visual: Selected Car */}
-                  <div className="lg:col-span-5 relative">
-                    <div className="bg-white/5 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl">
-                      <div className="relative h-64 sm:h-72 w-full overflow-hidden rounded-xl bg-slate-900/40 flex items-center justify-center">
-                        <img 
-                          src={selectedCarImage} 
-                          alt="Featured Car Preview" 
-                          className="object-contain h-full w-full hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute top-3 left-3 bg-brandBlue-900/90 text-white text-xs font-bold px-3 py-1 rounded-full border border-blue-400">
-                          {formData.make} {formData.model}
-                        </div>
-                        <div className="absolute bottom-3 right-3 bg-brandRed-600 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow">
-                          Est. PKR {Number(formData.price || 0).toLocaleString()}
-                        </div>
-                      </div>
-                      <div className="mt-3 flex items-center justify-between text-xs text-blue-200 px-1">
-                        <span><i className="fa-solid fa-calendar mr-1"></i>Year: {formData.year}</span>
-                        <span><i className="fa-solid fa-gauge mr-1"></i>{formData.mileage}</span>
-                        <span><i className="fa-solid fa-car-side mr-1"></i>{formData.bodyType}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </section>
-
-              {/* 2-Column Form Section */}
-              <section id="sell-form-section" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                
-                {/* Section Header */}
-                <div className="text-center mb-8">
-                  <h2 className="text-3xl font-extrabold text-brandBlue-900 tracking-tight">
-                    Vehicle Specifications & Details
-                  </h2>
-                  <p className="text-slate-600 text-sm mt-2">
-                    Enter the car particulars below to calculate accurate market rates and submit to Instant Valuation.
-                  </p>
-                  <div className="w-16 h-1 bg-brandRed-600 mx-auto mt-3 rounded-full"></div>
-                </div>
-
-                {/* Form Card with Blue Borders and Clean White Background */}
-                <div className="bg-white rounded-2xl border-2 border-brandBlue-200 custom-shadow p-6 sm:p-10">
-                  <form onSubmit={handleFormSubmit} className="space-y-6">
-                    
-                    {/* 2-Column Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                      {/* 1. Make Dropdown */}
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-brandBlue-900 mb-2">
-                          <i className="fa-solid fa-industry mr-1.5 text-brandRed-600"></i> Make
-                        </label>
-                        <select 
-                          name="make"
-                          value={formData.make}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full bg-white border-2 border-brandBlue-200 text-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandBlue-700 focus:ring-1 focus:ring-brandBlue-700 transition">
-                          {Object.keys(CAR_DATA).map(m => (
-                            <option key={m} value={m}>{m}</option>
-                          ))}
-                        </select>
-                      </div>
-
-                      {/* 2. Model Dropdown */}
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-brandBlue-900 mb-2">
-                          <i className="fa-solid fa-car mr-1.5 text-brandRed-600"></i> Model
-                        </label>
-                        <select 
-                          name="model"
-                          value={formData.model}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full bg-white border-2 border-brandBlue-200 text-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandBlue-700 focus:ring-1 focus:ring-brandBlue-700 transition">
-                          {(CAR_DATA[formData.make]?.models || ["Standard Model"]).map(mod => (
-                            <option key={mod} value={mod}>{mod}</option>
-                          ))}
-                        </select>
-                      </div>
-
-                      {/* 3. Variant Dropdown */}
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-brandBlue-900 mb-2">
-                          <i className="fa-solid fa-layer-group mr-1.5 text-brandRed-600"></i> Variant
-                        </label>
-                        <select 
-                          name="variant"
-                          value={formData.variant}
-                          onChange={handleInputChange}
-                          className="w-full bg-white border-2 border-brandBlue-200 text-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandBlue-700 focus:ring-1 focus:ring-brandBlue-700 transition">
-                          <option value="Standard / Base Edition">Standard / Base Edition</option>
-                          <option value="Performance Battery Plus">Performance Battery Plus</option>
-                          <option value="Sport Edition (AWD)">Sport Edition (AWD)</option>
-                          <option value="Hybrid Synergy Drive">Hybrid Synergy Drive</option>
-                          <option value="Turbocharged V6">Turbocharged V6</option>
-                          <option value="Luxury Trim Package">Luxury Trim Package</option>
-                        </select>
-                      </div>
-
-                      {/* 4. Body Type Dropdown */}
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-brandBlue-900 mb-2">
-                          <i className="fa-solid fa-truck-pickup mr-1.5 text-brandRed-600"></i> Body Type
-                        </label>
-                        <select 
-                          name="bodyType"
-                          value={formData.bodyType}
-                          onChange={handleInputChange}
-                          className="w-full bg-white border-2 border-brandBlue-200 text-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandBlue-700 focus:ring-1 focus:ring-brandBlue-700 transition">
-                          <option value="Sedan">Sedan</option>
-                          <option value="SUV">SUV (Sport Utility)</option>
-                          <option value="Coupe">Coupe</option>
-                          <option value="Hatchback">Hatchback</option>
-                          <option value="Crossover">Crossover</option>
-                          <option value="Supercar / Hypercar">Supercar / Hypercar</option>
-                        </select>
-                      </div>
-
-                      {/* 5. Year Dropdown */}
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-brandBlue-900 mb-2">
-                          <i className="fa-solid fa-calendar-days mr-1.5 text-brandRed-600"></i> Year
-                        </label>
-                        <select 
-                          name="year"
-                          value={formData.year}
-                          onChange={handleInputChange}
-                          className="w-full bg-white border-2 border-brandBlue-200 text-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandBlue-700 focus:ring-1 focus:ring-brandBlue-700 transition">
-                          <option value="2025">2025 (Latest)</option>
-                          <option value="2024">2024</option>
-                          <option value="2023">2023</option>
-                          <option value="2022">2022</option>
-                          <option value="2021">2021</option>
-                          <option value="2020">2020</option>
-                          <option value="2019">2019</option>
-                          <option value="2018">2018</option>
-                          <option value="2017">2017</option>
-                          <option value="2015">2015 & Older</option>
-                        </select>
-                      </div>
-
-                      {/* 6. Mileage Dropdown */}
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-brandBlue-900 mb-2">
-                          <i className="fa-solid fa-tachometer-alt mr-1.5 text-brandRed-600"></i> Mileage
-                        </label>
-                        <select 
-                          name="mileage"
-                          value={formData.mileage}
-                          onChange={handleInputChange}
-                          className="w-full bg-white border-2 border-brandBlue-200 text-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandBlue-700 focus:ring-1 focus:ring-brandBlue-700 transition">
-                          <option value="0 - 5,000 km (Brand New)">0 - 5,000 km (Brand New)</option>
-                          <option value="15,000 km">10,000 - 25,000 km</option>
-                          <option value="35,000 km">25,000 - 50,000 km</option>
-                          <option value="65,000 km">50,000 - 80,000 km</option>
-                          <option value="100,000+ km">80,000 - 120,000+ km</option>
-                        </select>
-                      </div>
-
-                      {/* 7. Price Dropdown */}
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-brandBlue-900 mb-2">
-                          <i className="fa-solid fa-money-bill-wave mr-1.5 text-brandRed-600"></i> Expected Asking Price (PKR)
-                        </label>
-                        <select 
-                          name="price"
-                          value={formData.price}
-                          onChange={handleInputChange}
-                          className="w-full bg-white border-2 border-brandBlue-200 text-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandBlue-700 focus:ring-1 focus:ring-brandBlue-700 transition">
-                          <option value="2500000">PKR 2,500,000 (25 Lakhs)</option>
-                          <option value="4500000">PKR 4,500,000 (45 Lakhs)</option>
-                          <option value="7500000">PKR 7,500,000 (75 Lakhs)</option>
-                          <option value="12000000">PKR 12,000,000 (1.2 Crore)</option>
-                          <option value="25000000">PKR 25,000,000 (2.5 Crore)</option>
-                          <option value="45000000">PKR 45,000,000 (4.5 Crore)</option>
-                          <option value="85000000">PKR 85,000,000 (8.5 Crore)</option>
-                        </select>
-                      </div>
-
-                      {/* 8. "Certified" Checkbox */}
-                      <div className="flex items-center">
-                        <label className="relative flex items-center p-4 bg-brandBlue-50/70 border-2 border-brandBlue-200 rounded-xl cursor-pointer hover:border-brandBlue-500 w-full transition">
-                          <input 
-                            type="checkbox"
-                            name="isCertified"
-                            checked={formData.isCertified}
-                            onChange={handleInputChange}
-                            className="h-5 w-5 rounded border-brandBlue-300 text-brandRed-600 focus:ring-brandRed-500 cursor-pointer"
-                          />
-                          <div className="ml-3">
-                            <span className="text-sm font-bold text-brandBlue-900 block">
-                              FAST Certified Inspection
-                            </span>
-                            <span className="text-xs text-slate-500 block">
-                              Get our 200+ point inspection seal to boost buyer trust and resale value.
-                            </span>
-                          </div>
-                        </label>
-                      </div>
-
-                    </div>
-
-                    {/* Submit Button -> Navigates to Instant Valuation */}
-                    <div className="pt-6 border-t-2 border-brandBlue-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-                      <div className="text-xs text-slate-500 flex items-center">
-                        <i className="fa-solid fa-circle-check text-green-600 mr-2 text-base"></i>
-                        <span>Specifications directly feed Tab 2: Instant Valuation</span>
-                      </div>
-
-                      <button 
-                        type="submit"
-                        className="w-full sm:w-auto bg-brandRed-600 hover:bg-brandRed-700 active:scale-95 text-white font-extrabold text-base px-10 py-4 rounded-xl shadow-lg shadow-red-600/30 transition-all flex items-center justify-center space-x-3">
-                        <span>Get Instant Valuation</span>
-                        <i className="fa-solid fa-arrow-right"></i>
-                      </button>
-                    </div>
-
-                  </form>
-                </div>
-
-              </section>
-
-              {/* Showcase Cards (Images from local images directory) */}
-              <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-6">
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <h3 className="text-2xl font-bold text-brandBlue-900">Featured Fastwheels Garage</h3>
-                    <p className="text-xs text-slate-500">Live listings verified with our certified inspection</p>
-                  </div>
-                  <span className="text-brandBlue-700 font-bold text-xs uppercase tracking-wider">Student Verified</span>
-                </div>
-
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {[
-                    { name: "Porsche Taycan", price: "PKR 45M", img: "images/taycan.webp", tag: "Certified" },
-                    { name: "Audi Sport", price: "PKR 18.5M", img: "images/audi.webp", tag: "Inspected" },
-                    { name: "Tesla Model 3", price: "PKR 22M", img: "images/tesla.webp", tag: "Electric" },
-                    { name: "Bentley GT", price: "PKR 65M", img: "images/bentley.webp", tag: "Luxury" }
-                  ].map((car, idx) => (
-                    <div key={idx} className="bg-white border-2 border-brandBlue-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:border-brandBlue-500 transition">
-                      <div className="h-32 bg-slate-50 flex items-center justify-center p-2">
-                        <img src={car.img} alt={car.name} className="h-full object-contain" />
-                      </div>
-                      <div className="p-3 border-t border-brandBlue-100">
-                        <div className="flex justify-between items-center">
-                          <span className="text-xs font-bold text-brandBlue-900 truncate">{car.name}</span>
-                          <span className="bg-red-100 text-brandRed-700 text-[10px] font-bold px-1.5 py-0.5 rounded">{car.tag}</span>
-                        </div>
-                        <p className="text-sm font-black text-brandRed-600 mt-1">{car.price}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-            </main>
-          )}
-
-          {/* ================= TAB 2: INSTANT VALUATION ================= */}
-          {activeTab === 'valuation' && (
-            <main className="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
-              
-              <div className="bg-brandBlue-900 text-white rounded-2xl p-6 sm:p-8 mb-8 border-b-4 border-brandRed-600 shadow-xl">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div>
-                    <span className="bg-brandRed-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                      Automated Valuation Model (AVM)
-                    </span>
-                    <h2 className="text-3xl font-black mt-2">
-                      Instant Valuation Result
-                    </h2>
-                    <p className="text-blue-200 text-sm mt-1">
-                      Calculated for <strong className="text-white">{formData.year} {formData.make} {formData.model} ({formData.variant})</strong>
-                    </p>
-                  </div>
-
-                  <div className="bg-white/10 border border-white/20 p-4 rounded-xl text-center md:text-right">
-                    <span className="text-xs uppercase text-blue-200 font-bold block">Estimated Fair Market Value</span>
-                    <span className="text-2xl sm:text-3xl font-black text-brandRed-500">
-                      PKR {(Number(formData.price || 45000000) * 0.98).toLocaleString(undefined, { maximumFractionDigits: 0 })}
-                    </span>
-                  </div>
-                </div>
+        <article class="car-card" data-id="fw-002">
+          <div class="car-card-media">
+            <img src="images/bentley.webp" alt="Bentley Continental GT V8 Luxury Coupe" class="car-card-img" loading="lazy">
+            <span class="car-card-tag">Featured</span>
+          </div>
+          <div class="car-card-body">
+            <h3 class="car-card-title">2022 Bentley Continental GT V8</h3>
+            <div class="car-card-price">PKR 11.50 Crore</div>
+            <div class="car-card-location">📍 Islamabad &bull; Used</div>
+            <div class="car-card-specs">
+              <div class="car-card-spec-item">
+                <span>8,200 km</span>
+                <span>Mileage</span>
               </div>
-
-              {/* Valuation Breakdown Cards */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                
-                {/* 1. Valuation Meter */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-brandBlue-200 custom-shadow">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="h-10 w-10 rounded-full bg-brandBlue-100 flex items-center justify-center text-brandBlue-900 font-bold">
-                      <i className="fa-solid fa-scale-balanced"></i>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-brandBlue-900 text-base">Estimated Price Range</h4>
-                      <p className="text-xs text-slate-500">Based on recent sales</p>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3">
-                    <div className="flex justify-between text-xs font-semibold">
-                      <span className="text-slate-500">Minimum:</span>
-                      <span className="text-slate-800">PKR {(Number(formData.price) * 0.92).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
-                    </div>
-                    <div className="w-full bg-slate-100 h-3 rounded-full overflow-hidden flex">
-                      <div className="bg-yellow-400 h-full w-[25%]"></div>
-                      <div className="bg-green-500 h-full w-[55%]"></div>
-                      <div className="bg-brandRed-600 h-full w-[20%]"></div>
-                    </div>
-                    <div className="flex justify-between text-xs font-semibold">
-                      <span className="text-slate-500">Maximum:</span>
-                      <span className="text-brandRed-600 font-bold">PKR {(Number(formData.price) * 1.05).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg text-xs text-green-800 flex items-center">
-                    <i className="fa-solid fa-circle-check text-green-600 mr-2"></i>
-                    <span>Your asking price is within fair market territory!</span>
-                  </div>
-                </div>
-
-                {/* 2. Market Demand & Velocity */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-brandBlue-200 custom-shadow">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="h-10 w-10 rounded-full bg-red-100 flex items-center justify-center text-brandRed-600 font-bold">
-                      <i className="fa-solid fa-fire-flame-curved"></i>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-brandBlue-900 text-base">Buyer Demand</h4>
-                      <p className="text-xs text-slate-500">Fastwheels Active Leads</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-bold text-slate-700">Market Velocity</span>
-                    <span className="text-sm font-extrabold text-brandRed-600">HIGH DEMAND (88%)</span>
-                  </div>
-                  <div className="w-full bg-slate-100 h-3 rounded-full overflow-hidden">
-                    <div className="bg-brandRed-600 h-full rounded-full" style={{ width: '88%' }}></div>
-                  </div>
-
-                  <div className="mt-4 grid grid-cols-2 gap-2 text-center text-xs">
-                    <div className="bg-brandBlue-50 p-2 rounded-lg border border-brandBlue-100">
-                      <span className="block text-slate-500">Est. Days to Sell</span>
-                      <strong className="text-brandBlue-900 text-sm">7 - 12 Days</strong>
-                    </div>
-                    <div className="bg-brandBlue-50 p-2 rounded-lg border border-brandBlue-100">
-                      <span className="block text-slate-500">Active Buyers</span>
-                      <strong className="text-brandBlue-900 text-sm">34 Looking</strong>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 3. Certification Impact */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-brandBlue-200 custom-shadow">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="h-10 w-10 rounded-full bg-brandBlue-100 flex items-center justify-center text-brandBlue-900 font-bold">
-                      <i className="fa-solid fa-award"></i>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-brandBlue-900 text-base">Certified Inspection</h4>
-                      <p className="text-xs text-slate-500">Trust & Quality Seal</p>
-                    </div>
-                  </div>
-
-                  {formData.isCertified ? (
-                    <div className="space-y-3">
-                      <div className="p-3 bg-blue-50 border border-brandBlue-200 rounded-lg text-xs text-brandBlue-900">
-                        <strong className="block font-bold mb-1 text-sm text-brandBlue-900">
-                          <i className="fa-solid fa-shield-check text-green-600 mr-1.5"></i> Certified Status Active
-                        </strong>
-                        Cars with the FAST Certified inspection badge sell <strong>40% faster</strong> with fewer price negotiations.
-                      </div>
-                      <span className="text-xs text-green-700 font-bold block text-center">
-                        + PKR 150,000 value premium added
-                      </span>
-                    </div>
-                  ) : (
-                    <div className="space-y-3">
-                      <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg text-xs text-yellow-800">
-                        <strong className="block font-bold mb-1">Standard Listing</strong>
-                        Check the "Certified" box in Tab 1 if you wish to unlock our 200+ point verified report.
-                      </div>
-                    </div>
-                  )}
-                </div>
-
+              <div class="car-card-spec-item">
+                <span>Petrol</span>
+                <span>Fuel Type</span>
               </div>
-
-              {/* Navigation Actions for Valuation */}
-              <div className="bg-white border-2 border-brandBlue-200 rounded-2xl p-6 custom-shadow flex flex-col sm:flex-row items-center justify-between gap-4">
-                <button 
-                  type="button"
-                  onClick={() => setActiveTab('sell')}
-                  className="w-full sm:w-auto px-6 py-3 rounded-xl border-2 border-brandBlue-200 text-brandBlue-900 font-bold text-sm hover:bg-brandBlue-50 transition">
-                  <i className="fa-solid fa-arrow-left mr-2"></i> Edit Car Specs (Tab 1)
-                </button>
-
-                <button 
-                  type="button"
-                  onClick={() => setActiveTab('confirmation')}
-                  className="w-full sm:w-auto bg-brandRed-600 hover:bg-brandRed-700 active:scale-95 text-white font-extrabold text-sm px-8 py-3.5 rounded-xl shadow-lg shadow-red-600/30 transition flex items-center justify-center space-x-2">
-                  <span>Proceed to Tab 3 (Confirm Listing)</span>
-                  <i className="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-
-            </main>
-          )}
-
-          {/* ================= TAB 3: LISTING CONFIRMATION ================= */}
-          {activeTab === 'confirmation' && (
-            <main className="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
-              
-              {/* Badge & Title */}
-              <div className="text-center mb-8">
-                <div className="inline-flex h-16 w-16 bg-red-100 text-brandRed-600 rounded-full items-center justify-center text-3xl mb-3 shadow">
-                  <i className="fa-solid fa-check"></i>
-                </div>
-                <h2 className="text-3xl font-extrabold text-brandBlue-900">
-                  Confirm & Publish Your Car
-                </h2>
-                <p className="text-slate-600 text-sm mt-1">
-                  Review your specifications and seller details before going live on Fastwheels.
-                </p>
-                <div className="w-16 h-1 bg-brandRed-600 mx-auto mt-3 rounded-full"></div>
-              </div>
-
-              {/* Review Card */}
-              <div className="bg-white border-2 border-brandBlue-200 rounded-2xl overflow-hidden custom-shadow mb-8">
-                <div className="bg-brandBlue-900 text-white p-5 flex justify-between items-center">
-                  <div>
-                    <span className="text-xs uppercase tracking-widest text-blue-200 font-bold">Listing Summary</span>
-                    <h3 className="text-xl font-bold">{formData.year} {formData.make} {formData.model}</h3>
-                  </div>
-                  <span className="bg-brandRed-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    PKR {Number(formData.price).toLocaleString()}
-                  </span>
-                </div>
-
-                <div className="p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                  
-                  {/* Car Image Preview */}
-                  <div className="md:col-span-5 bg-slate-50 border-2 border-brandBlue-100 rounded-xl p-3 flex flex-col items-center">
-                    <img 
-                      src={selectedCarImage} 
-                      alt={formData.model} 
-                      className="h-44 object-contain rounded-lg"
-                    />
-                    <div className="mt-2 flex items-center space-x-2 text-xs text-brandBlue-900 font-bold">
-                      <i className="fa-solid fa-camera text-brandRed-600"></i>
-                      <span>Fastwheels Verified Catalog Photo</span>
-                    </div>
-                  </div>
-
-                  {/* Summary Spec Grid */}
-                  <div className="md:col-span-7">
-                    <div className="grid grid-cols-2 gap-4 text-xs sm:text-sm">
-                      <div className="p-3 bg-brandBlue-50/60 rounded-xl border border-brandBlue-100">
-                        <span className="text-slate-500 block">Make & Model</span>
-                        <strong className="text-brandBlue-900 font-bold">{formData.make} {formData.model}</strong>
-                      </div>
-                      <div className="p-3 bg-brandBlue-50/60 rounded-xl border border-brandBlue-100">
-                        <span className="text-slate-500 block">Variant</span>
-                        <strong className="text-brandBlue-900 font-bold">{formData.variant}</strong>
-                      </div>
-                      <div className="p-3 bg-brandBlue-50/60 rounded-xl border border-brandBlue-100">
-                        <span className="text-slate-500 block">Body Type</span>
-                        <strong className="text-brandBlue-900 font-bold">{formData.bodyType}</strong>
-                      </div>
-                      <div className="p-3 bg-brandBlue-50/60 rounded-xl border border-brandBlue-100">
-                        <span className="text-slate-500 block">Year / Mileage</span>
-                        <strong className="text-brandBlue-900 font-bold">{formData.year} • {formData.mileage}</strong>
-                      </div>
-                      <div className="p-3 bg-brandBlue-50/60 rounded-xl border border-brandBlue-100">
-                        <span className="text-slate-500 block">Inspection Seal</span>
-                        <strong className="text-green-700 font-bold">
-                          {formData.isCertified ? '✓ Certified Inspected' : 'Standard'}
-                        </strong>
-                      </div>
-                      <div className="p-3 bg-brandBlue-50/60 rounded-xl border border-brandBlue-100">
-                        <span className="text-slate-500 block">Asking Price</span>
-                        <strong className="text-brandRed-600 font-extrabold">PKR {Number(formData.price).toLocaleString()}</strong>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* Seller Contact Info Inputs */}
-                <div className="p-6 bg-slate-50 border-t-2 border-brandBlue-100">
-                  <h4 className="text-sm font-bold text-brandBlue-900 uppercase tracking-wider mb-4">
-                    <i className="fa-solid fa-address-card text-brandRed-600 mr-2"></i> Seller Contact Information
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-slate-600 mb-1">Seller Name</label>
-                      <input 
-                        type="text" 
-                        name="sellerName"
-                        value={formData.sellerName}
-                        onChange={handleInputChange}
-                        className="w-full bg-white border border-brandBlue-200 rounded-lg px-3 py-2 text-sm focus:border-brandBlue-700 outline-none"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-slate-600 mb-1">Phone Number</label>
-                      <input 
-                        type="text" 
-                        name="sellerPhone"
-                        value={formData.sellerPhone}
-                        onChange={handleInputChange}
-                        className="w-full bg-white border border-brandBlue-200 rounded-lg px-3 py-2 text-sm focus:border-brandBlue-700 outline-none"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-slate-600 mb-1">City Location</label>
-                      <input 
-                        type="text" 
-                        name="sellerCity"
-                        value={formData.sellerCity}
-                        onChange={handleInputChange}
-                        className="w-full bg-white border border-brandBlue-200 rounded-lg px-3 py-2 text-sm focus:border-brandBlue-700 outline-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Final Submission Buttons */}
-                <div className="p-6 bg-white border-t-2 border-brandBlue-100 flex flex-col sm:flex-row justify-between items-center gap-4">
-                  <button 
-                    type="button"
-                    onClick={() => setActiveTab('valuation')}
-                    className="w-full sm:w-auto px-6 py-3 rounded-xl border-2 border-brandBlue-200 text-brandBlue-900 font-bold text-sm hover:bg-brandBlue-50 transition">
-                    <i className="fa-solid fa-arrow-left mr-2"></i> Back to Valuation
-                  </button>
-
-                  {/* Red Publish Button */}
-                  <button 
-                    type="button"
-                    onClick={() => alert(`🎉 Congratulations ${formData.sellerName}!\n\nYour ad for the ${formData.year} ${formData.make} ${formData.model} priced at PKR ${Number(formData.price).toLocaleString()} has been published on Fastwheels!`)}
-                    className="w-full sm:w-auto bg-brandRed-600 hover:bg-brandRed-700 active:scale-95 text-white font-extrabold text-base px-10 py-4 rounded-xl shadow-lg shadow-red-600/30 transition flex items-center justify-center space-x-2">
-                    <i className="fa-solid fa-paper-plane mr-1"></i>
-                    <span>Publish Listing Now</span>
-                  </button>
-                </div>
-              </div>
-
-            </main>
-          )}
-
-          {/* ================= FOOTER ================= */}
-          <footer className="bg-brandBlue-900 text-white border-t-4 border-brandRed-600 mt-auto">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                
-                <div className="flex items-center space-x-3">
-                  <span className="text-xl font-extrabold tracking-tight">
-                    FAST<span className="text-brandRed-500">WHEELS</span>
-                  </span>
-                  <span className="text-xs text-blue-300 border-l border-blue-700 pl-3">
-                    SE-A Group 4 Semester Project
-                  </span>
-                </div>
-
-                <div className="text-xs text-blue-300 text-center md:text-right">
-                  Blue, Red & White Theme • Single-File React & Tailwind Web App
-                </div>
-
+              <div class="car-card-spec-item">
+                <span>Automatic</span>
+                <span>Gear</span>
               </div>
             </div>
-          </footer>
+          </div>
+          <div class="car-card-actions">
+            <button type="button" class="btn-card btn-card-primary" onclick="window.FastWheels.viewCarDetails('fw-002')">View Details</button>
+            <button type="button" class="btn-card btn-card-outline" onclick="window.FastWheels.contactSeller('fw-002')">Contact Seller</button>
+          </div>
+        </article>
 
+        <article class="car-card" data-id="fw-003">
+          <div class="car-card-media">
+            <img src="images/konisegg.webp" alt="Koenigsegg Jesko Absolut Hypercar" class="car-card-img" loading="lazy">
+            <span class="car-card-tag">Exclusive</span>
+          </div>
+          <div class="car-card-body">
+            <h3 class="car-card-title">2024 Koenigsegg Jesko Absolut</h3>
+            <div class="car-card-price">PKR 85.0 Crore</div>
+            <div class="car-card-location">📍 Karachi &bull; New</div>
+            <div class="car-card-specs">
+              <div class="car-card-spec-item">
+                <span>150 km</span>
+                <span>Mileage</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>Twin-Turbo V8</span>
+                <span>Fuel Type</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>9-Speed LST</span>
+                <span>Gear</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-card-actions">
+            <button type="button" class="btn-card btn-card-primary" onclick="window.FastWheels.viewCarDetails('fw-003')">View Details</button>
+            <button type="button" class="btn-card btn-card-outline" onclick="window.FastWheels.contactSeller('fw-003')">Contact Seller</button>
+          </div>
+        </article>
+
+        <article class="car-card" data-id="fw-006">
+          <div class="car-card-media">
+            <img src="images/taycan.webp" alt="Porsche Taycan Turbo S Sports Sedan" class="car-card-img" loading="lazy">
+            <span class="car-card-tag">Verified</span>
+          </div>
+          <div class="car-card-body">
+            <h3 class="car-card-title">2023 Porsche Taycan Turbo S</h3>
+            <div class="car-card-price">PKR 6.20 Crore</div>
+            <div class="car-card-location">📍 Karachi &bull; Used</div>
+            <div class="car-card-specs">
+              <div class="car-card-spec-item">
+                <span>9,800 km</span>
+                <span>Mileage</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>Electric</span>
+                <span>Fuel Type</span>
+              </div>
+              <div class="car-card-spec-item">
+                <span>Automatic</span>
+                <span>Gear</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-card-actions">
+            <button type="button" class="btn-card btn-card-primary" onclick="window.FastWheels.viewCarDetails('fw-006')">View Details</button>
+            <button type="button" class="btn-card btn-card-outline" onclick="window.FastWheels.contactSeller('fw-006')">Contact Seller</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Browse by Category Section -->
+    <section class="section container" aria-labelledby="categories-heading">
+      <div class="section-title-wrap">
+        <h2 id="categories-heading" class="section-title">Browse by Body Type</h2>
+        <p class="section-subtitle">Select from popular vehicle categories in Pakistan's automotive market.</p>
+      </div>
+
+      <div class="categories-grid">
+        <div class="category-card" tabindex="0" role="button" aria-label="Browse Sedans">
+          <div class="category-icon">🚗</div>
+          <div class="category-name">Sedans</div>
+          <div class="category-count">14,230 ads</div>
         </div>
-      );
-    }
+        <div class="category-card" tabindex="0" role="button" aria-label="Browse SUVs and Crossovers">
+          <div class="category-icon">🚙</div>
+          <div class="category-name">SUVs &amp; 4x4</div>
+          <div class="category-count">9,410 ads</div>
+        </div>
+        <div class="category-card" tabindex="0" role="button" aria-label="Browse Sports Cars and Hypercars">
+          <div class="category-icon">🏎️</div>
+          <div class="category-name">Sports Cars</div>
+          <div class="category-count">1,890 ads</div>
+        </div>
+        <div class="category-card" tabindex="0" role="button" aria-label="Browse Electric Vehicles">
+          <div class="category-icon">⚡</div>
+          <div class="category-name">Electric (EV)</div>
+          <div class="category-count">2,340 ads</div>
+        </div>
+        <div class="category-card" tabindex="0" role="button" aria-label="Browse Hatchbacks">
+          <div class="category-icon">🚘</div>
+          <div class="category-name">Hatchbacks</div>
+          <div class="category-count">18,500 ads</div>
+        </div>
+        <div class="category-card" tabindex="0" role="button" aria-label="Browse Commercial and Pickups">
+          <div class="category-icon">🛻</div>
+          <div class="category-name">Pickups</div>
+          <div class="category-count">3,120 ads</div>
+        </div>
+      </div>
+    </section>
 
-    // Render React Application
-    const rootElement = document.getElementById('root');
-    const root = ReactDOM.createRoot(rootElement);
-    root.render(<App />);
-  </script>
+    <!-- Value Proposition Section -->
+    <section id="about-section" class="section container" aria-labelledby="why-heading">
+      <div class="section-title-wrap">
+        <h2 id="why-heading" class="section-title">Why Choose FastWheels?</h2>
+        <p class="section-subtitle">Bringing transparency, digital security, and fair market valuation to Pakistan's car buyers.</p>
+      </div>
+
+      <div class="value-props-grid">
+        <article class="prop-card">
+          <div class="prop-card-icon">🔍</div>
+          <h3 class="prop-card-title">Comprehensive Inspection</h3>
+          <p class="prop-card-text">Our certified mechanical engineers examine engine compression, chassis integrity, computer diagnostics, paint meter readings, and suspension road tests.</p>
+        </article>
+
+        <article class="prop-card">
+          <div class="prop-card-icon">🤝</div>
+          <h3 class="prop-card-title">FastWheels Sell It For Me</h3>
+          <p class="prop-card-text">Short on time? Let our professional team handle buyer calls, manage physical viewings, arrange documentation, and ensure you get top market value without headaches.</p>
+        </article>
+
+        <article class="prop-card">
+          <div class="prop-card-icon">🛡️</div>
+          <h3 class="prop-card-title">Authentic Ownership Papers</h3>
+          <p class="prop-card-text">Every vehicle listed under our certified program goes through excise duty clearance, biometric verification check, and anti-fraud chassis numbering match.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="section container" aria-label="Sell Car Call to Action">
+      <div class="cta-banner">
+        <h2 class="cta-banner-title">Are You Looking to Sell Your Car Today?</h2>
+        <p class="cta-banner-text">List your car for free on FastWheels in less than 2 minutes and connect with thousands of genuine verified car buyers across Pakistan.</p>
+        <a href="pages/post-ad.html" class="btn-cta">Post Your Free Ad Now</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Semantic Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <!-- Brand & Assignment Info -->
+        <div class="footer-brand">
+          <h3>Fast<span>Wheels</span></h3>
+          <p>FastWheels is Pakistan's premier automotive technology marketplace, modeled with high performance, semantic HTML5, pure CSS3, and vanilla JavaScript.</p>
+          <div class="footer-meta-box">
+            <p><strong>Course:</strong> Software Engineering (Section A)</p>
+            <p><strong>Project Group:</strong> SE-A_Group04</p>
+            <p><strong>Student ID / Roll:</strong> i263000</p>
+            <p><strong>Base Framework:</strong> Vanilla Web Standards (Zero external libraries)</p>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Explore Cars</h4>
+          <ul class="footer-links">
+            <li><a href="pages/used-cars.html">Used Cars for Sale</a></li>
+            <li><a href="index.html#featured-vehicles">Featured Luxury Cars</a></li>
+            <li><a href="pages/car-details.html">Car Technical Specs</a></li>
+            <li><a href="pages/post-ad.html">Sell Your Car (Page 7)</a></li>
+          </ul>
+        </div>
+
+        <!-- Major Cities -->
+        <div class="footer-col">
+          <h4>Cars by City</h4>
+          <ul class="footer-links">
+            <li><a href="pages/used-cars.html?city=Lahore">Cars in Lahore</a></li>
+            <li><a href="pages/used-cars.html?city=Karachi">Cars in Karachi</a></li>
+            <li><a href="pages/used-cars.html?city=Islamabad">Cars in Islamabad</a></li>
+            <li><a href="pages/used-cars.html?city=Rawalpindi">Cars in Rawalpindi</a></li>
+          </ul>
+        </div>
+
+        <!-- Support & Policies -->
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="#about-section">About FastWheels</a></li>
+            <li><a href="docs/README.md">Developer Docs</a></li>
+            <li><a href="pages/post-ad.html">Sell Your Car</a></li>
+            <li><a href="#primary-navigation">Privacy &amp; Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>
+          &copy; 2026 FastWheels Pakistan. All rights reserved. Developed for SE-A_Group04.
+        </div>
+        <div>
+          Theme: Royal-Blue &amp; Crimson-Red &bull; Roll Number: i263000
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript -->
+  <script src="js/main.js"></script>
 </body>
 </html>
