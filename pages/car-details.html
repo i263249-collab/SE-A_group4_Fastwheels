@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vehicle details, technical specifications, and seller inquiry on FastWheels. Pure HTML5, CSS3, and vanilla JS. Group SE-A_Group04, Roll No. i263249.">
+  <meta name="description" content="Vehicle details, technical specifications, and seller inquiry on FastWheels. Pure HTML5, CSS3, and vanilla JS.">
   <title>Vehicle Details &amp; Specifications | FastWheels</title>
 
   <!-- Shared Stylesheet -->
@@ -15,30 +15,13 @@
   <!-- Accessible Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Academic Top Metadata Bar -->
-  <aside class="top-bar" aria-label="Course and Academic Information">
-    <div class="container top-bar-inner">
-      <div class="top-bar-meta">
-        <span class="top-bar-badge">Assigned Page 2</span>
-        <span>Course: Software Engineering (SE-A)</span>
-        <span>Group: <strong>SE-A_Group04</strong></span>
-        <span>Roll No: <strong>i263249</strong></span>
-      </div>
-      <div>
-        <span>Helpline: 042-111-WHEELS (94335) | Mon - Sat: 9:00 AM - 8:00 PM</span>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Semantic Header (Clean navigation links without teammate's sell car feature logic) -->
+  <!-- Unified Semantic Header Across All Pages -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
 
       <!-- Mobile Hamburger Toggle (<768px: Left via CSS order: 1) -->
       <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" width="24" height="24">
-          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-        </svg>
+        <span class="hamburger-icon" aria-hidden="true">&#9776;</span>
       </button>
 
       <!-- FastWheels Brand Identity (Left on Desktop, Center on Mobile) -->
@@ -56,10 +39,17 @@
           <li><a href="../index.html" class="nav-link">Home</a></li>
           <li><a href="used-cars.html" class="nav-link">Used Cars</a></li>
           <li><a href="car-details.html" class="nav-link active" aria-current="page">Car Details</a></li>
-          <li><a href="post-ad.html" class="nav-link">Sell Car</a></li>
-          <li><a href="../docs/README.md" class="nav-link">Docs</a></li>
+          <li><a href="post-ad.html" class="nav-link">Sell Your Car</a></li>
+          <li><a href="../index.html#about-section" class="nav-link">About Us</a></li>
         </ul>
       </nav>
+
+      <!-- Action Button in Header (Right on Desktop & Mobile) -->
+      <div class="header-cta-group">
+        <a href="post-ad.html" class="btn-post-ad">
+          <span>+</span> <span class="desktop-text">Post an </span>Ad
+        </a>
+      </div>
 
     </div>
   </header>
@@ -74,17 +64,17 @@
       <span id="breadcrumb-car-title" style="color: var(--color-text-main); font-weight: 600;">2023 Audi e-tron GT Quattro</span>
     </nav>
 
-    <!-- Two-Column Grid: Left Media & Specs | Right Price, Contact & Inquiry -->
-    <div style="display: grid; grid-template-columns: 1.6fr 1fr; gap: var(--spacing-xl); align-items: flex-start;">
+    <!-- Details Page Layout (Desktop: 2 Columns | Mobile: Cleanly Ordered 1-8 Stack) -->
+    <div class="details-page-layout" style="display: grid; grid-template-columns: 1.6fr 1fr; gap: var(--spacing-xl); align-items: flex-start;">
 
       <!-- ===================================================================
-           LEFT COLUMN: IMAGE SLIDER, SPECS TABLE & SELLER COMMENTS
+           LEFT COLUMN CONTAINER (Desktop: Media, Key Specs, Seller Comments)
            =================================================================== -->
-      <section aria-labelledby="car-title-heading">
+      <div style="display: flex; flex-direction: column;">
 
-        <!-- 1. Image Slider (<, >, and dots) -->
-        <div class="car-slider-container" role="region" aria-label="Vehicle Photo Gallery Slider">
-          <!-- Slide Image Element -->
+        <!-- ITEM 1: Image Carousel with Dots & Arrows (Mobile Order: 1) -->
+        <div class="details-item-slider car-slider-container" role="region" aria-label="Vehicle Photo Gallery Slider">
+          <!-- Slide Image -->
           <img id="slider-current-img" src="../images/audi.webp" alt="Audi e-tron GT Quattro" class="slider-slide-img">
 
           <!-- Previous Button (<) -->
@@ -103,14 +93,26 @@
           </div>
         </div>
 
-        <!-- 2. Key Specifications Table -->
-        <article class="specs-card-box">
+        <!-- ITEM 4: Key Information Grid (Mobile Order: 4) -->
+        <article class="details-item-specs-grid specs-card-box">
           <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem; border-bottom: 2px solid var(--color-border); padding-bottom: 0.5rem;">
-            Key Specifications
+            Key Information
           </h2>
 
           <table class="specs-grid-table" aria-label="Vehicle Technical Specifications">
             <tbody>
+              <tr>
+                <th scope="row">Registered Year</th>
+                <td id="spec-year">2023</td>
+              </tr>
+              <tr>
+                <th scope="row">Mileage</th>
+                <td id="spec-mileage">12,500 km</td>
+              </tr>
+              <tr>
+                <th scope="row">Fuel Type</th>
+                <td id="spec-fuel">Electric</td>
+              </tr>
               <tr>
                 <th scope="row">Engine</th>
                 <td id="spec-engine">93.4 kWh Dual Permanent Magnet Electric Motors (523 bhp)</td>
@@ -120,24 +122,12 @@
                 <td id="spec-transmission">Automatic (2-Speed Rear / 1-Speed Front)</td>
               </tr>
               <tr>
-                <th scope="row">Mileage</th>
-                <td id="spec-mileage">12,500 km</td>
-              </tr>
-              <tr>
                 <th scope="row">Color</th>
                 <td id="spec-color">Daytona Gray Pearl</td>
               </tr>
               <tr>
-                <th scope="row">Fuel Type</th>
-                <td id="spec-fuel">Electric</td>
-              </tr>
-              <tr>
                 <th scope="row">Assembly</th>
                 <td id="spec-assembly">Imported (Germany)</td>
-              </tr>
-              <tr>
-                <th scope="row">Registered In</th>
-                <td id="spec-registered">Lahore</td>
               </tr>
               <tr>
                 <th scope="row">Inspection Score</th>
@@ -147,8 +137,8 @@
           </table>
         </article>
 
-        <!-- 3. Seller Comments -->
-        <article class="seller-comments-box">
+        <!-- ITEM 5: Seller Comments Box (Mobile Order: 5) -->
+        <article class="details-item-seller-comments seller-comments-box">
           <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">
             Seller Comments
           </h3>
@@ -157,16 +147,18 @@
           </p>
         </article>
 
-      </section>
+      </div>
 
       <!-- ===================================================================
-           RIGHT COLUMN: CAR TITLE, PKR PRICE, CONTACT BUTTONS & 4-STATE INQUIRY FORM
+           RIGHT COLUMN CONTAINER (Desktop: Price, Action Buttons, Inspection, Offer, Inquiry)
            =================================================================== -->
-      <aside aria-label="Pricing and Seller Inquiry Form">
+      <aside style="display: flex; flex-direction: column;">
 
-        <!-- Price & Title Card -->
-        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
-          <span class="top-bar-badge" style="margin-bottom: 0.5rem; display: inline-block;">FastWheels Certified</span>
+        <!-- ITEM 2: Car Title & PKR Price Card (Mobile Order: 2) -->
+        <div class="details-item-price-card" style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+          <span class="top-bar-badge" style="background-color: var(--color-accent); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">
+            FastWheels Certified
+          </span>
           
           <!-- Car Title -->
           <h1 id="car-title-heading" style="font-size: 1.6rem; font-weight: 800; color: var(--color-primary); margin-bottom: 0.25rem; line-height: 1.25;">
@@ -175,7 +167,7 @@
 
           <!-- Location & Condition -->
           <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1rem;">
-            📍 <span id="car-city-text">Lahore</span> &bull; <span id="car-condition-text">Used</span> &bull; Verified Documentation
+            📍 <span id="car-city-text">Lahore</span> &bull; <span id="car-condition-text">Used</span> &bull; Verified Documents
           </div>
 
           <!-- PKR Price (NO "$" anywhere) -->
@@ -184,39 +176,52 @@
           </div>
 
           <!-- Seller Info Summary -->
-          <div style="font-size: 0.85rem; color: var(--color-text-main); margin-bottom: 1rem;">
+          <div style="font-size: 0.85rem; color: var(--color-text-main); margin-bottom: 0.75rem;">
             <div>Seller: <strong id="seller-name-text">Malik Zulfiqar Autos</strong></div>
             <div style="font-size: 0.75rem; color: var(--color-text-muted);">Member since 2021 &bull; 100% Response Rate</div>
           </div>
+        </div>
 
-          <!-- Seller Action Buttons ("Show Phone Number" and "Send Message") -->
-          <div class="seller-action-group">
-            
-            <!-- Button 1: Show Phone Number (Toggles hidden phone in vanilla JS) -->
-            <button type="button" class="btn-show-phone" id="btn-reveal-phone" onclick="revealSellerPhone()" aria-expanded="false">
-              <span>📞</span> <span id="phone-button-text">Show Phone Number</span>
-            </button>
+        <!-- ITEM 3: Call Seller (Red) and Message (Blue) Buttons Side by Side (Mobile Order: 3) -->
+        <div class="details-item-call-msg-buttons seller-action-group">
+          <!-- Button 1: Call Seller (Red) -->
+          <button type="button" class="btn-call-seller" id="btn-reveal-phone" onclick="revealSellerPhone()" aria-expanded="false">
+            <span>📞</span> <span id="phone-button-text">Call Seller</span>
+          </button>
 
-            <!-- Button 2: Send Message (Smooth scrolls to Inquiry Form) -->
-            <button type="button" class="btn-send-message" onclick="focusInquiryForm()">
-              <span>✉️</span> <span>Send Message / Inquiry</span>
-            </button>
-          </div>
+          <!-- Button 2: Message (Blue) -->
+          <button type="button" class="btn-send-message" onclick="focusInquiryForm()">
+            <span>✉️</span> <span>Message</span>
+          </button>
+        </div>
+
+        <!-- ITEM 6: Request Inspection Button (Mobile Order: 6) -->
+        <div class="details-item-request-inspection">
+          <button type="button" class="btn-request-inspection" onclick="handleInspectionRequest()">
+            <span>🔍</span> Request FastWheels 200+ Inspection
+          </button>
+        </div>
+
+        <!-- ITEM 7: Make Offer Button (Mobile Order: 7) -->
+        <div class="details-item-make-offer">
+          <button type="button" class="btn-make-offer" onclick="handleMakeOffer()">
+            <span>🤝</span> Make an Offer
+          </button>
         </div>
 
         <!-- ===================================================================
-             INQUIRY FORM (4 STATES HANDLED VIA VANILLA JS)
+             ITEM 8: 4-STATE INQUIRY / MESSAGE FORM (Mobile Order: 8)
              State 1: Empty (Ready)
              State 2: Filling (In Progress)
              State 3: Error (Validation Failed)
              State 4: Inquiry Sent Successfully!
              =================================================================== -->
-        <section class="inquiry-card" id="inquiry-section" aria-labelledby="inquiry-form-title">
+        <section class="details-item-inquiry-section inquiry-card" id="inquiry-section" aria-labelledby="inquiry-form-title">
           
           <!-- State Indicator Header -->
           <div class="inquiry-header-status">
             <h2 id="inquiry-form-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-primary); margin: 0;">
-              Send Seller Inquiry
+              Send Message / Inquiry
             </h2>
             
             <!-- State Badge Visual Indicator -->
@@ -263,7 +268,7 @@
 
             <!-- Form Actions (Submit & Small Reset) -->
             <div style="display: flex; gap: 0.5rem; align-items: center;">
-              <button type="submit" class="btn-search-action" style="flex: 1; padding: 0.75rem;" id="btn-submit-inquiry">
+              <button type="submit" class="btn-search" style="flex: 1; padding: 0.75rem;" id="btn-submit-inquiry">
                 Submit Inquiry
               </button>
 
@@ -283,7 +288,7 @@
               <br><br>
               <strong>Inquiry Reference:</strong> <span id="success-ref-id" style="color: var(--color-primary); font-family: monospace;">#FW-78421</span>
             </p>
-            <button type="button" class="btn-search-action" onclick="resetInquiryForm()" style="padding: 0.6rem 1.5rem;">
+            <button type="button" class="btn-search" onclick="resetInquiryForm()" style="padding: 0.6rem 1.5rem; display: inline-flex; width: auto; margin: 0 auto;">
               Send Another Inquiry
             </button>
           </div>
@@ -296,54 +301,60 @@
 
   </main>
 
-  <!-- Semantic Footer -->
+  <!-- Unified Semantic Footer Across All Pages -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-top">
       <div class="footer-grid">
+        
+        <!-- Brand Summary -->
         <div class="footer-brand">
           <h3>Fast<span>Wheels</span></h3>
-          <p>Assigned Page 2: Vehicle Technical Specification Sheet &amp; Seller Inquiry Module.</p>
-          <div class="footer-meta-box">
-            <p><strong>Course:</strong> Software Engineering (SE-A)</p>
-            <p><strong>Group:</strong> SE-A_Group04</p>
-            <p><strong>Student ID / Roll No:</strong> i263249</p>
-            <p><strong>Stack:</strong> Pure HTML5 &bull; CSS3 &bull; Vanilla JavaScript Only</p>
-          </div>
+          <p>FastWheels is Pakistan's premier automotive technology marketplace, modeled with high performance, semantic HTML5, pure CSS3, and vanilla JavaScript.</p>
         </div>
 
+        <!-- Quick Links -->
         <div class="footer-col">
-          <h4>Navigation</h4>
+          <h4>Explore Cars</h4>
           <ul class="footer-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="used-cars.html">Used Cars</a></li>
-            <li><a href="car-details.html">Car Details</a></li>
-            <li><a href="post-ad.html">Post an Ad</a></li>
+            <li><a href="used-cars.html">Used Cars for Sale</a></li>
+            <li><a href="car-details.html">Car Details &amp; Specs</a></li>
+            <li><a href="post-ad.html">Post Vehicle Ad</a></li>
+            <li><a href="../index.html#featured-vehicles">Featured Cars</a></li>
           </ul>
         </div>
 
+        <!-- Major Cities -->
         <div class="footer-col">
-          <h4>Certified Inspection</h4>
+          <h4>Cars by City</h4>
           <ul class="footer-links">
-            <li><a href="javascript:void(0)" onclick="alert('Inspection Report: Engine 100%, Transmission 100%, Suspension 98%, Body 99%. Score 9.9/10.')">View Full Inspection Report</a></li>
-            <li><a href="javascript:void(0)" onclick="alert('Verification Check: Excise Duty Cleared, Biometric Ready, No Police Records.')">Verify Excise Status</a></li>
+            <li><a href="used-cars.html?city=Lahore">Cars in Lahore</a></li>
+            <li><a href="used-cars.html?city=Karachi">Cars in Karachi</a></li>
+            <li><a href="used-cars.html?city=Islamabad">Cars in Islamabad</a></li>
           </ul>
         </div>
 
+        <!-- Customer Care -->
         <div class="footer-col">
-          <h4>Documentation</h4>
+          <h4>Customer Care</h4>
           <ul class="footer-links">
-            <li><a href="../docs/README.md">Developer Docs</a></li>
-            <li><a href="../docs/ai-logs/26i-3249/session-01-base-setup.md">Session 01 Log</a></li>
-            <li><a href="../docs/ai-logs/26i-3249/session-02-used-cars.md">Session 02 Log</a></li>
+            <li><a href="../index.html#about-section">About FastWheels</a></li>
+            <li><a href="../docs/README.md">Developer Guide</a></li>
+            <li><a href="../docs/ai-logs/26i-3249/README.md">Session Logs</a></li>
           </ul>
         </div>
+
       </div>
     </div>
 
+    <!-- Bottom Copyright Bar -->
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <div>&copy; 2026 FastWheels. Group SE-A_Group04. All rights reserved.</div>
-        <div>Theme: Royal-Blue &amp; Crimson-Red &bull; Roll Number: i263249</div>
+        <div>
+          &copy; 2026 FastWheels Pakistan. All rights reserved.
+        </div>
+        <div>
+          Helpline: 042-111-WHEELS (94335) &bull; Mon - Sat: 9:00 AM - 8:00 PM
+        </div>
       </div>
     </div>
   </footer>
@@ -351,33 +362,21 @@
   <!-- Shared Vanilla JavaScript -->
   <script src="../js/main.js"></script>
 
-  <!-- Car Details Page Controller (Image Slider, Phone Reveal & 4-State Inquiry Form) -->
+  <!-- Car Details Page Controller (Image Slider, Phone Reveal, Actions & 4-State Inquiry Form) -->
   <script>
     /**
      * FASTWHEELS CAR DETAILS CONTROLLER
-     * Group: SE-A_Group04 | Student ID: i263249
-     * Implements Slider, Phone Reveal, and 4-State Inquiry Form via clean Vanilla JS.
+     * Implements Slider, Phone Reveal, Inspection, Offer, and 4-State Inquiry Form via clean Vanilla JS.
      */
     'use strict';
 
-    // Active car data object
     let currentCar = null;
-
-    // Slider state
     let activeSlideIndex = 0;
     let slideImages = [];
-
-    // Phone reveal state
     let isPhoneRevealed = false;
-
-    // Inquiry Form State: 1 = Empty, 2 = Filling, 3 = Error, 4 = Success
     let currentInquiryState = 1;
 
-    /**
-     * Initialize on DOM Ready
-     */
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Identify which car to load from query param ?id=
       const urlParams = new URLSearchParams(window.location.search);
       const requestedId = urlParams.get('id') || 'fw-001';
 
@@ -390,43 +389,34 @@
       }
     });
 
-    /**
-     * Populate vehicle specifications into DOM
-     */
     function loadCarData(car) {
-      // Titles and breadcrumbs
       const fullTitle = `${car.year} ${car.make} ${car.model}`;
       document.title = `${fullTitle} | FastWheels Pakistan`;
       document.getElementById('breadcrumb-car-title').textContent = fullTitle;
       document.getElementById('car-title-heading').textContent = fullTitle;
 
-      // Price and location (Strictly PKR Lakh / PKR Crore, NO "$")
       document.getElementById('car-price-display').textContent = car.priceDisplay;
       document.getElementById('car-city-text').textContent = car.city;
       document.getElementById('car-condition-text').textContent = car.condition;
 
-      // Key specifications table
+      // Key Information specs
+      document.getElementById('spec-year').textContent = car.year;
+      document.getElementById('spec-mileage').textContent = car.mileage || 'Low Mileage';
+      document.getElementById('spec-fuel').textContent = car.fuel || 'Petrol';
       document.getElementById('spec-engine').textContent = car.engine || 'High Performance Engine';
       document.getElementById('spec-transmission').textContent = car.transmission || 'Automatic';
-      document.getElementById('spec-mileage').textContent = car.mileage || 'Low Mileage';
       document.getElementById('spec-color').textContent = car.color || 'Original Paint';
-      document.getElementById('spec-fuel').textContent = car.fuel || 'Petrol';
       document.getElementById('spec-assembly').textContent = car.assembly || 'Imported';
-      document.getElementById('spec-registered').textContent = car.registeredIn || car.city;
 
-      // Seller information
       document.getElementById('seller-name-text').textContent = car.sellerName || 'Verified FastWheels Dealer';
       document.getElementById('seller-comments-text').textContent = car.sellerComments || 'Verified vehicle in immaculate condition with genuine mileage.';
 
-      // Image slider initialization
       slideImages = car.sliderImages && car.sliderImages.length ? car.sliderImages : [car.image];
       activeSlideIndex = 0;
       initSliderUI();
     }
 
-    /* ==========================================================================
-       IMAGE SLIDER LOGIC (<, >, DOTS)
-       ========================================================================== */
+    /* Slider logic */
     function initSliderUI() {
       const imgEl = document.getElementById('slider-current-img');
       const dotsContainer = document.getElementById('slider-dots-container');
@@ -436,7 +426,6 @@
         imgEl.alt = `${currentCar.make} ${currentCar.model} - View ${activeSlideIndex + 1}`;
       }
 
-      // Render dots
       if (dotsContainer) {
         dotsContainer.innerHTML = slideImages.map((_, idx) => `
           <button type="button" class="slider-dot ${idx === activeSlideIndex ? 'active' : ''}" 
@@ -476,7 +465,6 @@
         }, 120);
       }
 
-      // Update dots UI
       const dots = document.querySelectorAll('.slider-dot');
       dots.forEach((dot, idx) => {
         dot.classList.toggle('active', idx === activeSlideIndex);
@@ -484,20 +472,16 @@
       });
     }
 
-    /* ==========================================================================
-       SELLER ACTIONS (PHONE REVEAL & SEND MESSAGE SCROLL)
-       ========================================================================== */
+    /* Seller Action Handlers */
     function revealSellerPhone() {
       const textSpan = document.getElementById('phone-button-text');
       const btn = document.getElementById('btn-reveal-phone');
 
       if (!isPhoneRevealed && currentCar) {
         isPhoneRevealed = true;
-        textSpan.textContent = `Call: ${currentCar.sellerPhone}`;
+        textSpan.textContent = currentCar.sellerPhone;
         btn.setAttribute('aria-expanded', 'true');
-        btn.style.backgroundColor = '#166534';
       } else if (currentCar) {
-        // Toggle phone dialer
         window.location.href = `tel:${currentCar.sellerPhone}`;
       }
     }
@@ -513,13 +497,24 @@
       }
     }
 
-    /* ==========================================================================
-       INQUIRY FORM 4-STATE ENGINE
-       State 1: Empty
-       State 2: Filling
-       State 3: Error
-       State 4: Inquiry Sent Successfully!
-       ========================================================================== */
+    function handleInspectionRequest() {
+      if (!currentCar) return;
+      alert(`FastWheels Inspection Desk:\nBooking 200+ Point Inspection for ${currentCar.year} ${currentCar.make} ${carTitleSummary()}.\nOur certified mechanic will contact the seller in ${currentCar.city}.`);
+    }
+
+    function handleMakeOffer() {
+      if (!currentCar) return;
+      const offer = prompt(`Enter your offer price in PKR for ${currentCar.make} ${currentCar.model} (Listed: ${currentCar.priceDisplay}):`, currentCar.pricePKR);
+      if (offer) {
+        alert(`Offer of PKR ${Number(offer).toLocaleString('en-PK')} submitted to ${currentCar.sellerName}. You will receive an SMS response.`);
+      }
+    }
+
+    function carTitleSummary() {
+      return currentCar ? `${currentCar.make} ${currentCar.model}` : 'Vehicle';
+    }
+
+    /* 4-State Inquiry Form Engine */
     function setInquiryState(stateNum) {
       currentInquiryState = stateNum;
       const badge = document.getElementById('inquiry-state-badge');
@@ -528,36 +523,30 @@
 
       if (!badge) return;
 
-      // Remove existing badge styles
       badge.className = 'inquiry-state-badge';
 
       if (stateNum === 1) {
-        // State 1: Empty
         badge.classList.add('badge-state-empty');
         badge.textContent = 'State 1: Empty';
         formEl.style.display = 'block';
         successEl.style.display = 'none';
         clearAllFormErrors();
       } else if (stateNum === 2) {
-        // State 2: Filling
         badge.classList.add('badge-state-filling');
         badge.textContent = 'State 2: Filling';
         formEl.style.display = 'block';
         successEl.style.display = 'none';
       } else if (stateNum === 3) {
-        // State 3: Error
         badge.classList.add('badge-state-error');
         badge.textContent = 'State 3: Error';
         formEl.style.display = 'block';
         successEl.style.display = 'none';
       } else if (stateNum === 4) {
-        // State 4: Sent / Success
         badge.classList.add('badge-state-success');
         badge.textContent = 'State 4: Sent';
         formEl.style.display = 'none';
         successEl.style.display = 'block';
 
-        // Set reference ID and seller name
         const refId = `#FW-${Math.floor(10000 + Math.random() * 90000)}`;
         document.getElementById('success-ref-id').textContent = refId;
         if (currentCar) {
@@ -566,11 +555,7 @@
       }
     }
 
-    /**
-     * State 2 Trigger: User typing into any form field
-     */
     function handleInquiryInput() {
-      // Only switch to State 2 if not currently showing State 4
       if (currentInquiryState !== 4) {
         const nameVal = document.getElementById('inquiry-name').value.trim();
         const emailVal = document.getElementById('inquiry-email').value.trim();
@@ -578,16 +563,13 @@
         const msgVal = document.getElementById('inquiry-message').value.trim();
 
         if (nameVal || emailVal || phoneVal || msgVal) {
-          setInquiryState(2); // State 2: Filling
+          setInquiryState(2);
         } else {
-          setInquiryState(1); // State 1: Empty
+          setInquiryState(1);
         }
       }
     }
 
-    /**
-     * Submit Handler: Validates and transitions to State 3 (Error) or State 4 (Sent)
-     */
     function handleInquirySubmit(event) {
       if (event) event.preventDefault();
 
@@ -600,37 +582,31 @@
 
       let hasError = false;
 
-      // Validate Name
       if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
         showFieldError('inquiry-name', 'error-name');
         hasError = true;
       }
 
-      // Validate Email (standard email regex pattern)
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(emailInput.value.trim())) {
         showFieldError('inquiry-email', 'error-email');
         hasError = true;
       }
 
-      // Validate Pakistani Phone (e.g. 03001234567 or at least 11 digits)
       const digitsOnly = phoneInput.value.replace(/\D/g, '');
       if (digitsOnly.length < 11) {
         showFieldError('inquiry-phone', 'error-phone');
         hasError = true;
       }
 
-      // Validate Message
       if (!msgInput.value.trim() || msgInput.value.trim().length < 5) {
         showFieldError('inquiry-message', 'error-message');
         hasError = true;
       }
 
       if (hasError) {
-        // Transition to State 3: Error
         setInquiryState(3);
       } else {
-        // Transition to State 4: "Inquiry Sent Successfully!"
         setInquiryState(4);
       }
     }
@@ -655,14 +631,11 @@
       });
     }
 
-    /**
-     * Small Reset Button Action (Clears fields & returns to State 1)
-     */
     function resetInquiryForm() {
       const form = document.getElementById('vehicle-inquiry-form');
       if (form) form.reset();
       clearAllFormErrors();
-      setInquiryState(1); // Return to State 1: Empty
+      setInquiryState(1);
     }
   </script>
 </body>

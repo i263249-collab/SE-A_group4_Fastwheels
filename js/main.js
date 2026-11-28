@@ -1,6 +1,5 @@
 /**
  * FASTWHEELS - Shared JavaScript Utilities & Vehicle Catalog
- * Group: SE-A_Group04 | Student ID: i263249
  * Vanilla JavaScript (Zero third-party frameworks/libraries)
  */
 

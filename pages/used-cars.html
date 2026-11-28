@@ -3,42 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse verified used cars for sale in Pakistan on FastWheels. Pure HTML5, CSS3, and vanilla JS. Group SE-A_Group04, Roll No. i263249.">
+  <meta name="description" content="Browse verified used cars for sale in Pakistan on FastWheels with live filters, transparent pricing, and inspection certification.">
   <title>Used Cars for Sale in Pakistan | FastWheels</title>
 
   <!-- Shared Stylesheet -->
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" type="image/jpeg" href="../images/logo.jpeg">
 </head>
-<body>
+<body class="used-cars-page">
 
   <!-- Accessible Skip Link for Keyboard Navigation -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Top Academic Metadata Bar -->
-  <aside class="top-bar" aria-label="Course and Academic Information">
-    <div class="container top-bar-inner">
-      <div class="top-bar-meta">
-        <span class="top-bar-badge">Assigned Page 1</span>
-        <span>Course: Software Engineering (SE-A)</span>
-        <span>Group: <strong>SE-A_Group04</strong></span>
-        <span>Roll No: <strong>i263249</strong></span>
-      </div>
-      <div>
-        <span>Helpline: 042-111-WHEELS (94335) | Mon - Sat: 9:00 AM - 8:00 PM</span>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Semantic Header (Clean navigation links without external teammate feature logic) -->
+  <!-- Unified Semantic Header Across All Pages -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
 
       <!-- Mobile Hamburger Toggle (Left on Mobile <768px via CSS order: 1) -->
       <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" width="24" height="24">
-          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-        </svg>
+        <span class="hamburger-icon" aria-hidden="true">&#9776;</span>
       </button>
 
       <!-- FastWheels Brand Identity (Left on Desktop, Centered on Mobile <768px) -->
@@ -54,12 +37,19 @@
       <nav id="primary-navigation" class="main-nav" role="navigation" aria-label="Main Navigation">
         <ul class="nav-list">
           <li><a href="../index.html" class="nav-link">Home</a></li>
-          <li><a href="used-cars.html" class="nav-link active" aria-current="page">Used Cars</a></li>
+          <li><a href="used-cars.html" class="nav-link active" aria-current="page">Featured Inventory</a></li>
           <li><a href="car-details.html" class="nav-link">Car Details</a></li>
-          <li><a href="post-ad.html" class="nav-link">Sell Car</a></li>
-          <li><a href="../docs/README.md" class="nav-link">Docs</a></li>
+          <li><a href="post-ad.html" class="nav-link">Sell Your Car</a></li>
+          <li><a href="../index.html#about-section" class="nav-link">About Us</a></li>
         </ul>
       </nav>
+
+      <!-- Action Button in Header (Right on Desktop & Mobile) -->
+      <div class="header-cta-group">
+        <a href="post-ad.html" class="btn-post-ad">
+          <span>+</span> <span class="desktop-text">Post an </span>Ad
+        </a>
+      </div>
 
     </div>
   </header>
@@ -110,7 +100,7 @@
               <input type="range" id="filter-price-slider" class="price-range-slider" min="2000000" max="100000000" step="1000000" value="100000000" oninput="handlePriceSliderChange(this.value)">
               <div class="price-display-label">
                 <span>Min: PKR 20 Lacs</span>
-                <span id="price-slider-val">Up to: <strong>PKR 10.0 Crore</strong></span>
+                <span id="price-slider-val">Up to: <strong>PKR 10.0+ Crore</strong></span>
               </div>
             </div>
           </div>
@@ -267,9 +257,9 @@
           </div>
         </div>
 
-        <!-- Cards Grid Container (Populated dynamically via Vanilla JS) -->
+        <!-- Cards Grid Container (Desktop: Multi-column grid | Mobile: Single-column horizontal cards) -->
         <div id="featured-cars-container" class="cars-grid">
-          <!-- Populated by renderInventoryCards() -->
+          <!-- Populated dynamically by renderInventoryCards() -->
         </div>
 
       </section>
@@ -278,55 +268,60 @@
 
   </main>
 
-  <!-- Semantic Footer -->
+  <!-- Unified Semantic Footer Across All Pages -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-top">
       <div class="footer-grid">
+        
+        <!-- Brand Summary -->
         <div class="footer-brand">
           <h3>Fast<span>Wheels</span></h3>
-          <p>Assigned Page 1: Used Cars Marketplace &amp; Filterable Catalog.</p>
-          <div class="footer-meta-box">
-            <p><strong>Course:</strong> Software Engineering (SE-A)</p>
-            <p><strong>Group:</strong> SE-A_Group04</p>
-            <p><strong>Student ID / Roll No:</strong> i263249</p>
-            <p><strong>Stack:</strong> Pure HTML5 &bull; CSS3 &bull; Vanilla JavaScript Only</p>
-          </div>
+          <p>FastWheels is Pakistan's premier automotive technology marketplace, modeled with high performance, semantic HTML5, pure CSS3, and vanilla JavaScript.</p>
         </div>
 
+        <!-- Quick Links -->
         <div class="footer-col">
-          <h4>Navigation</h4>
+          <h4>Explore Cars</h4>
           <ul class="footer-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="used-cars.html">Used Cars</a></li>
-            <li><a href="car-details.html">Car Details</a></li>
-            <li><a href="post-ad.html">Post an Ad</a></li>
+            <li><a href="used-cars.html">Used Cars for Sale</a></li>
+            <li><a href="car-details.html">Car Details &amp; Specs</a></li>
+            <li><a href="post-ad.html">Post Vehicle Ad</a></li>
+            <li><a href="../index.html#featured-vehicles">Featured Cars</a></li>
           </ul>
         </div>
 
+        <!-- Major Cities -->
         <div class="footer-col">
-          <h4>Cities</h4>
+          <h4>Cars by City</h4>
           <ul class="footer-links">
-            <li><a href="javascript:void(0)" onclick="quickSelectCity('Lahore')">Used Cars in Lahore</a></li>
-            <li><a href="javascript:void(0)" onclick="quickSelectCity('Karachi')">Used Cars in Karachi</a></li>
-            <li><a href="javascript:void(0)" onclick="quickSelectCity('Islamabad')">Used Cars in Islamabad</a></li>
+            <li><a href="javascript:void(0)" onclick="quickSelectCity('Lahore')">Cars in Lahore</a></li>
+            <li><a href="javascript:void(0)" onclick="quickSelectCity('Karachi')">Cars in Karachi</a></li>
+            <li><a href="javascript:void(0)" onclick="quickSelectCity('Islamabad')">Cars in Islamabad</a></li>
           </ul>
         </div>
 
+        <!-- Customer Care -->
         <div class="footer-col">
-          <h4>Documentation</h4>
+          <h4>Customer Care</h4>
           <ul class="footer-links">
-            <li><a href="../docs/README.md">Developer Docs</a></li>
-            <li><a href="../docs/ai-logs/26i-3249/session-01-base-setup.md">Session 01 Log</a></li>
-            <li><a href="../docs/ai-logs/26i-3249/session-02-used-cars.md">Session 02 Log</a></li>
+            <li><a href="../index.html#about-section">About FastWheels</a></li>
+            <li><a href="../docs/README.md">Developer Guide</a></li>
+            <li><a href="../docs/ai-logs/26i-3249/README.md">Session Logs</a></li>
           </ul>
         </div>
+
       </div>
     </div>
 
+    <!-- Bottom Copyright Bar -->
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <div>&copy; 2026 FastWheels Pakistan. Group SE-A_Group04. All rights reserved.</div>
-        <div>Theme: Royal-Blue &amp; Crimson-Red &bull; Roll Number: i263249</div>
+        <div>
+          &copy; 2026 FastWheels Pakistan. All rights reserved.
+        </div>
+        <div>
+          Helpline: 042-111-WHEELS (94335) &bull; Mon - Sat: 9:00 AM - 8:00 PM
+        </div>
       </div>
     </div>
   </footer>
@@ -338,8 +333,7 @@
   <script>
     /**
      * FASTWHEELS USED CARS CONTROLLER
-     * Group: SE-A_Group04 | Student Roll Number: i263249
-     * Clean, modular, viva-ready vanilla JavaScript.
+     * Clean, modular, responsive vanilla JavaScript.
      */
     'use strict';
 
@@ -407,15 +401,9 @@
      * Handle Checkbox Changes (Cities, Years, Makes)
      */
     function handleFilterChange() {
-      // Gather checked cities
       activeFilters.cities = Array.from(document.querySelectorAll('input[name="city-filter"]:checked')).map(el => el.value);
-
-      // Gather checked years
       activeFilters.years = Array.from(document.querySelectorAll('input[name="year-filter"]:checked')).map(el => Number(el.value));
-
-      // Gather checked makes
       activeFilters.makes = Array.from(document.querySelectorAll('input[name="make-filter"]:checked')).map(el => el.value);
-
       applyFilters();
     }
 
@@ -431,18 +419,15 @@
      * Reset All Sidebar Filters in One Click
      */
     function resetAllSidebarFilters() {
-      // Reset checkboxes
       document.querySelectorAll('#sidebar-filters-form input[type="checkbox"]').forEach(ch => ch.checked = false);
 
-      // Reset slider
       const slider = document.getElementById('filter-price-slider');
       if (slider) {
         slider.value = 100000000;
         const displayEl = document.getElementById('price-slider-val');
-        if (displayEl) displayEl.innerHTML = 'Up to: <strong>PKR 10.0 Crore</strong>';
+        if (displayEl) displayEl.innerHTML = 'Up to: <strong>PKR 10.0+ Crore</strong>';
       }
 
-      // Reset state
       activeFilters.maxPrice = 100000000;
       activeFilters.cities = [];
       activeFilters.years = [];
@@ -480,17 +465,17 @@
         list = list.filter(car => car.pricePKR <= activeFilters.maxPrice);
       }
 
-      // 2. Filter by Selected Cities (if any checked)
+      // 2. Filter by Selected Cities
       if (activeFilters.cities.length > 0) {
         list = list.filter(car => activeFilters.cities.some(c => c.toLowerCase() === car.city.toLowerCase()));
       }
 
-      // 3. Filter by Selected Years (if any checked)
+      // 3. Filter by Selected Years
       if (activeFilters.years.length > 0) {
         list = list.filter(car => activeFilters.years.includes(car.year));
       }
 
-      // 4. Filter by Selected Makes (if any checked)
+      // 4. Filter by Selected Makes
       if (activeFilters.makes.length > 0) {
         list = list.filter(car => activeFilters.makes.some(m => m.toLowerCase() === car.make.toLowerCase()));
       }
@@ -573,22 +558,11 @@
             </div>
 
             <div class="car-card-actions">
-              <a href="car-details.html?id=${car.id}" class="btn-card btn-card-primary" style="display:inline-flex;align-items:center;justify-content:center;">View Details</a>
-              <button type="button" class="btn-card btn-card-outline" onclick="contactDealer('${car.id}')">Call Seller</button>
+              <a href="car-details.html?id=${car.id}" class="btn-card btn-card-primary">View Details</a>
             </div>
           </article>
         `;
       }).join('');
-    }
-
-    /**
-     * Contact Dealer helper
-     */
-    function contactDealer(carId) {
-      const car = window.FastWheels.inventory.find(c => c.id === carId);
-      if (car) {
-        alert(`FastWheels Verified Seller:\n${car.sellerName} (${car.city})\nContact: ${car.sellerPhone}\nVehicle: ${car.year} ${car.make} ${car.model}`);
-      }
     }
   </script>
 </body>
