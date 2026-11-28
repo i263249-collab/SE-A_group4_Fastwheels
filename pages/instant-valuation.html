@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Instant Valuation - Estimate the market value of your vehicle with FastWheels intelligent market analysis. Group SE-A_Group04, Roll No. i263000.">
+  <meta name="keywords" content="Instant Valuation, car valuation, car price estimator, FastWheels, used car appraisal">
+  <meta name="author" content="Group SE-A_Group04 (Roll No. i263000)">
+  <title>INSTANT VALUATION | FastWheels</title>
+
+  <!-- Shared CSS Stylesheet -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/jpeg" href="../images/logo.jpeg">
+
+  <style>
+    /* ==========================================================================
+       Instant Valuation Page Styles
+       Theme: Royal-Blue (#0a3672) & Crimson-Red (#d32f2f)
+       ========================================================================== */
+
+    /* Hero Banner */
+    .valuation-hero {
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 70%, #0d47a1 100%);
+      color: #ffffff;
+      padding: 3rem 0 3.25rem;
+      border-bottom: 4px solid var(--color-accent);
+    }
+
+    .valuation-hero-badge {
+      display: inline-block;
+      background-color: rgba(211, 47, 47, 0.25);
+      border: 1px solid var(--color-accent);
+      color: #ff8a80;
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      padding: 0.25rem 0.85rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .valuation-hero-title {
+      font-size: var(--font-size-3xl);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: var(--spacing-xs);
+      letter-spacing: -0.02em;
+    }
+
+    .valuation-hero-subtitle {
+      font-size: var(--font-size-md);
+      color: #cbd5e1;
+      max-width: 680px;
+      line-height: 1.6;
+    }
+
+    /* Submitted Vehicle Brief Card */
+    .vehicle-brief-bar {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-sm);
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .vehicle-brief-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .vehicle-brief-name {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--color-primary);
+    }
+
+    .vehicle-brief-pill {
+      background: #f1f5f9;
+      color: var(--color-text-main);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Main Valuation Grid */
+    .valuation-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 960px) {
+      .valuation-layout-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Section Cards */
+    .valuation-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-header-box {
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-main-heading {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .section-sub-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Questionnaire: Condition Selection Options */
+    .condition-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .condition-option-card {
+      position: relative;
+      border: 2px solid var(--color-border);
+      border-radius: var(--border-radius-sm);
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      background-color: #ffffff;
+      transition: all var(--transition-fast);
+      user-select: none;
+    }
+
+    .condition-option-card:hover {
+      border-color: var(--color-border-hover);
+      background-color: #f8fafc;
+    }
+
+    .condition-option-card.selected {
+      border-color: var(--color-primary);
+      background-color: #f0f7ff;
+      box-shadow: 0 0 0 2px rgba(10, 54, 114, 0.15);
+    }
+
+    .condition-radio-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: border-color var(--transition-fast);
+    }
+
+    .condition-option-card.selected .condition-radio-circle {
+      border-color: var(--color-primary);
+    }
+
+    .condition-radio-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+      display: none;
+    }
+
+    .condition-option-card.selected .condition-radio-dot {
+      display: block;
+    }
+
+    .condition-option-card input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .condition-text-wrap {
+      flex: 1;
+    }
+
+    .condition-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .condition-option-card.selected .condition-name {
+      color: var(--color-primary);
+    }
+
+    .condition-desc {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      line-height: 1.35;
+      display: block;
+    }
+
+    /* Valuation Results Section */
+    .results-price-box {
+      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: var(--border-radius-sm);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .estimated-price-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .estimated-price-value {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--color-primary);
+      letter-spacing: -0.02em;
+    }
+
+    /* Graph Container */
+    .graph-container {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-sm);
+      padding: 1.25rem 1rem 0.75rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .graph-header-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    .graph-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .graph-legend-line {
+      width: 18px;
+      height: 3px;
+      background-color: var(--color-accent);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .svg-line-chart {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      display: block;
+    }
+
+    /* Valuation Disclaimer Note */
+    .valuation-disclaimer-note {
+      background-color: #f8fafc;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-sm);
+      padding: 0.85rem 1rem;
+      font-size: 0.825rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .valuation-disclaimer-note strong {
+      color: var(--color-text-main);
+    }
+
+    /* Create a Listing Button */
+    .btn-create-listing {
+      background-color: var(--color-accent);
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 800;
+      padding: 1rem 2.2rem;
+      border-radius: var(--border-radius-sm);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      border: 2px solid #b71c1c;
+      box-shadow: 0 4px 14px rgba(211, 47, 47, 0.35);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      width: 100%;
+    }
+
+    .btn-create-listing:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(211, 47, 47, 0.45);
+    }
+
+    .btn-create-listing:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Metadata Bar -->
+  <aside class="top-bar" aria-label="Course and Academic Information">
+    <div class="container top-bar-inner">
+      <div class="top-bar-meta">
+        <span class="top-bar-badge">Academic Project</span>
+        <span>Course: Software Engineering (SE-A)</span>
+        <span>Group: <strong>SE-A_Group04</strong></span>
+        <span>Roll No: <strong>i263000</strong></span>
+      </div>
+      <div>
+        <span>Helpline: 042-111-WHEELS (94335) | Instant Valuation Engine</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Semantic Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <!-- Brand Logo & Identity -->
+      <a href="../index.html" class="brand" aria-label="FastWheels Home">
+        <img src="../images/logo.jpeg" alt="FastWheels Official Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-name">Fast<span>Wheels</span></span>
+          <span class="brand-tagline">Drive Your Passion</span>
+        </div>
+      </a>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+
+      <!-- 7-Page Semantic Navigation (Instant Valuation and My Seller Listings are NOT added) -->
+      <nav id="primary-navigation" class="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="used-cars.html" class="nav-link">Used Cars</a></li>
+          <li><a href="car-details.html" class="nav-link">Featured Specs</a></li>
+          <li><a href="#" class="nav-link" style="opacity: 0.6; cursor: default;" title="Page 4 (Reserved for Group Member)">Page 4</a></li>
+          <li><a href="#" class="nav-link" style="opacity: 0.6; cursor: default;" title="Page 5 (Reserved for Group Member)">Page 5</a></li>
+          <li><a href="#" class="nav-link" style="opacity: 0.6; cursor: default;" title="Page 6 (Reserved for Group Member)">Page 6</a></li>
+          <li><a href="post-ad.html" class="nav-link">Sell Your Car</a></li>
+          <li><a href="../index.html#about-section" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Call to Action Button in Header -->
+      <div class="header-cta-group">
+        <a href="post-ad.html" class="btn-post-ad">
+          <span>+</span> Post an Ad
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Required Heading -->
+  <section class="valuation-hero" aria-labelledby="main-valuation-heading">
+    <div class="container">
+      <span class="valuation-hero-badge">Algorithmic Appraisal Engine</span>
+      <h1 id="main-valuation-heading" class="valuation-hero-title">INSTANT VALUATION</h1>
+      <p class="valuation-hero-subtitle">
+        Review real-time market estimates based on vehicle conditions, active market trends, and historical verified car sales.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <main id="main-content" class="container section">
+
+    <!-- Submitted Vehicle Details Strip -->
+    <div class="vehicle-brief-bar" id="vehicle-brief-bar">
+      <div class="vehicle-brief-details">
+        <span class="vehicle-brief-name" id="brief-vehicle-title">2023 Porsche Taycan</span>
+        <span class="vehicle-brief-pill" id="brief-vehicle-mileage">Mileage: 15,000 km</span>
+        <span class="vehicle-brief-pill" id="brief-vehicle-price">Submitted Asking: $80,000</span>
+        <span class="vehicle-brief-pill" id="brief-vehicle-certified" style="background: #ecfdf5; color: #047857; border-color: #a7f3d0;">✓ Certified</span>
+      </div>
+      <div>
+        <a href="post-ad.html" style="font-size: 0.85rem; color: var(--color-primary); font-weight: 700; text-decoration: underline;">
+          ← Edit Vehicle Info
+        </a>
+      </div>
+    </div>
+
+    <!-- Two-Column Layout Grid -->
+    <div class="valuation-layout-grid">
+
+      <!-- Left Column: Questionnaire Section -->
+      <section class="valuation-card" aria-labelledby="questionnaire-heading">
+        <div class="section-header-box">
+          <h2 id="questionnaire-heading" class="section-main-heading">Questionnaire</h2>
+          <h3 class="section-sub-heading">Condition</h3>
+        </div>
+
+        <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1.25rem;">
+          Select the vehicle's current overall condition to update the estimated market valuation:
+        </p>
+
+        <!-- Exactly FIVE Selectable Condition Options -->
+        <div class="condition-options-list" role="radiogroup" aria-label="Vehicle Condition Options">
+          
+          <!-- 1. Excellent -->
+          <label class="condition-option-card selected" id="card-condition-1" data-condition="Excellent">
+            <input type="radio" name="vehicleCondition" value="Excellent" checked>
+            <div class="condition-radio-circle" aria-hidden="true">
+              <div class="condition-radio-dot"></div>
+            </div>
+            <div class="condition-text-wrap">
+              <span class="condition-name">Excellent</span>
+              <span class="condition-desc">Looks and drives like new; pristine body, flawless mechanical inspection, full service records.</span>
+            </div>
+          </label>
+
+          <!-- 2. Very Good -->
+          <label class="condition-option-card" id="card-condition-2" data-condition="Very Good">
+            <input type="radio" name="vehicleCondition" value="Very Good">
+            <div class="condition-radio-circle" aria-hidden="true">
+              <div class="condition-radio-dot"></div>
+            </div>
+            <div class="condition-text-wrap">
+              <span class="condition-name">Very Good</span>
+              <span class="condition-desc">Minor cosmetic blemishes, fully maintained engine, smooth drive with clean interior.</span>
+            </div>
+          </label>
+
+          <!-- 3. Good -->
+          <label class="condition-option-card" id="card-condition-3" data-condition="Good">
+            <input type="radio" name="vehicleCondition" value="Good">
+            <div class="condition-radio-circle" aria-hidden="true">
+              <div class="condition-radio-dot"></div>
+            </div>
+            <div class="condition-text-wrap">
+              <span class="condition-name">Good</span>
+              <span class="condition-desc">Normal wear consistent with age and mileage; drivable with minor maintenance items.</span>
+            </div>
+          </label>
+
+          <!-- 4. Fair -->
+          <label class="condition-option-card" id="card-condition-4" data-condition="Fair">
+            <input type="radio" name="vehicleCondition" value="Fair">
+            <div class="condition-radio-circle" aria-hidden="true">
+              <div class="condition-radio-dot"></div>
+            </div>
+            <div class="condition-text-wrap">
+              <span class="condition-name">Fair</span>
+              <span class="condition-desc">Visible scratches or dents, mechanical repairs needed soon, tires or brakes require servicing.</span>
+            </div>
+          </label>
+
+          <!-- 5. Poor -->
+          <label class="condition-option-card" id="card-condition-5" data-condition="Poor">
+            <input type="radio" name="vehicleCondition" value="Poor">
+            <div class="condition-radio-circle" aria-hidden="true">
+              <div class="condition-radio-dot"></div>
+            </div>
+            <div class="condition-text-wrap">
+              <span class="condition-name">Poor</span>
+              <span class="condition-desc">Severe cosmetic or structural issues, high mileage, major mechanical repairs required.</span>
+            </div>
+          </label>
+
+        </div>
+      </section>
+
+      <!-- Right Column: Valuation Results Section -->
+      <section class="valuation-card" aria-labelledby="valuation-results-heading">
+        <div class="section-header-box">
+          <h2 id="valuation-results-heading" class="section-main-heading">Valuation Results</h2>
+          <span class="section-sub-heading">Real-Time Market Analysis</span>
+        </div>
+
+        <!-- Display: Estimated Price: $70K – $90K -->
+        <div class="results-price-box">
+          <div class="estimated-price-label">Current Estimated Range</div>
+          <div class="estimated-price-value" id="estimated-price-display">
+            Estimated Price: $70K – $90K
+          </div>
+        </div>
+
+        <!-- Simple Line Graph with Visible Axes, Upward Fluctuating Line, and Arrow at End -->
+        <div class="graph-container">
+          <div class="graph-header-meta">
+            <span style="font-weight: 700; color: var(--color-primary);">Market Valuation Trend</span>
+            <div class="graph-legend-item">
+              <span class="graph-legend-line"></span>
+              <span>Value Trajectory</span>
+            </div>
+          </div>
+
+          <svg 
+            class="svg-line-chart" 
+            viewBox="0 0 520 280" 
+            role="img" 
+            aria-label="Line graph showing fluctuating upward price valuation across vehicle conditions ending with an arrow"
+          >
+            <defs>
+              <!-- Arrowhead definition for SVG line end -->
+              <marker 
+                id="graph-arrowhead" 
+                viewBox="0 0 10 10" 
+                refX="6" 
+                refY="5" 
+                markerWidth="6" 
+                markerHeight="6" 
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 1 L 9 5 L 0 9 z" fill="#d32f2f" />
+              </marker>
+
+              <!-- Soft Gradient Fill for Graph Area -->
+              <linearGradient id="chartAreaGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0a3672" stop-opacity="0.22" />
+                <stop offset="100%" stop-color="#0a3672" stop-opacity="0.0" />
+              </linearGradient>
+            </defs>
+
+            <!-- Grid lines for visual structure -->
+            <line x1="60" y1="50" x2="480" y2="50" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" />
+            <line x1="60" y1="95" x2="480" y2="95" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" />
+            <line x1="60" y1="140" x2="480" y2="140" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" />
+            <line x1="60" y1="185" x2="480" y2="185" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" />
+
+            <!-- Visible Vertical Axis (Y-Axis) -->
+            <line x1="60" y1="25" x2="60" y2="230" stroke="#0a3672" stroke-width="2.5" />
+            
+            <!-- Visible Horizontal Axis (X-Axis) -->
+            <line x1="60" y1="230" x2="485" y2="230" stroke="#0a3672" stroke-width="2.5" />
+
+            <!-- Vertical Axis Labels ($ Price) -->
+            <text x="50" y="55" text-anchor="end" font-size="11" fill="#64748b" font-weight="600">$100K</text>
+            <text x="50" y="100" text-anchor="end" font-size="11" fill="#64748b" font-weight="600">$85K</text>
+            <text x="50" y="145" text-anchor="end" font-size="11" fill="#64748b" font-weight="600">$70K</text>
+            <text x="50" y="190" text-anchor="end" font-size="11" fill="#64748b" font-weight="600">$55K</text>
+            <text x="50" y="234" text-anchor="end" font-size="11" fill="#64748b" font-weight="600">$40K</text>
+
+            <!-- Horizontal Axis Labels (Condition Spectrum) -->
+            <text x="90" y="250" text-anchor="middle" font-size="11" fill="#64748b">Poor</text>
+            <text x="180" y="250" text-anchor="middle" font-size="11" fill="#64748b">Fair</text>
+            <text x="270" y="250" text-anchor="middle" font-size="11" fill="#64748b">Good</text>
+            <text x="360" y="250" text-anchor="middle" font-size="11" fill="#64748b">Very Good</text>
+            <text x="445" y="250" text-anchor="middle" font-size="11" fill="#64748b">Excellent</text>
+
+            <!-- Shaded Area Under Curve -->
+            <polygon 
+              points="90,210 135,185 180,195 235,150 280,165 340,115 390,125 455,55 455,230 90,230" 
+              fill="url(#chartAreaGradient)" 
+            />
+
+            <!-- Fluctuating line that generally moves upward -->
+            <polyline 
+              id="trend-polyline"
+              points="90,210 135,185 180,195 235,150 280,165 340,115 390,125 455,55" 
+              fill="none" 
+              stroke="#d32f2f" 
+              stroke-width="3.5" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+              marker-end="url(#graph-arrowhead)" 
+            />
+
+            <!-- Explicit ending arrow polygon for guaranteed visibility across all SVG renderers -->
+            <polygon points="445,46 462,55 448,66 452,55" fill="#d32f2f" />
+
+            <!-- Point markers on the fluctuating curve -->
+            <circle cx="90" cy="210" r="4.5" fill="#0a3672" stroke="#ffffff" stroke-width="1.5" />
+            <circle cx="135" cy="185" r="4" fill="#0a3672" stroke="#ffffff" stroke-width="1" />
+            <circle cx="180" cy="195" r="4.5" fill="#0a3672" stroke="#ffffff" stroke-width="1.5" />
+            <circle cx="235" cy="150" r="4" fill="#0a3672" stroke="#ffffff" stroke-width="1" />
+            <circle cx="280" cy="165" r="4.5" fill="#0a3672" stroke="#ffffff" stroke-width="1.5" />
+            <circle cx="340" cy="115" r="4" fill="#0a3672" stroke="#ffffff" stroke-width="1" />
+            <circle cx="390" cy="125" r="4.5" fill="#0a3672" stroke="#ffffff" stroke-width="1.5" />
+            <circle cx="455" cy="55" r="5" fill="#d32f2f" stroke="#ffffff" stroke-width="1.5" />
+          </svg>
+        </div>
+
+        <!-- Clearly indicate that this is an estimated value, not a professional appraisal -->
+        <div class="valuation-disclaimer-note" role="note">
+          <span aria-hidden="true" style="font-size: 1.15rem; color: #f59e0b;">ℹ️</span>
+          <div>
+            <strong>Disclaimer:</strong> This is an estimated value based on algorithmic market analysis and current listings, not a professional vehicle appraisal or binding guarantee.
+          </div>
+        </div>
+
+        <!-- Create a Listing button: Safely unconnected because third page route does not exist -->
+        <div>
+          <button 
+            type="button" 
+            id="btn-create-listing" 
+            class="btn-create-listing"
+          >
+            CREATE A LISTING
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Semantic Footer (Display roll number i263000 only, without name) -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <!-- Brand & Assignment Info -->
+        <div class="footer-brand">
+          <h3>Fast<span>Wheels</span></h3>
+          <p>FastWheels is Pakistan's premier automotive technology marketplace, modeled with high performance, semantic HTML5, pure CSS3, and vanilla JavaScript.</p>
+          <div class="footer-meta-box">
+            <p><strong>Course:</strong> Software Engineering (Section A)</p>
+            <p><strong>Project Group:</strong> SE-A_Group04</p>
+            <p><strong>Student ID / Roll:</strong> i263000</p>
+            <p><strong>Base Framework:</strong> Vanilla Web Standards (Zero external libraries)</p>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Explore Cars</h4>
+          <ul class="footer-links">
+            <li><a href="used-cars.html">Used Cars for Sale</a></li>
+            <li><a href="../index.html#featured-vehicles">Featured Luxury Cars</a></li>
+            <li><a href="car-details.html">Car Technical Specs</a></li>
+            <li><a href="post-ad.html">Sell Your Car</a></li>
+          </ul>
+        </div>
+
+        <!-- Major Cities -->
+        <div class="footer-col">
+          <h4>Cars by City</h4>
+          <ul class="footer-links">
+            <li><a href="used-cars.html?city=Lahore">Cars in Lahore</a></li>
+            <li><a href="used-cars.html?city=Karachi">Cars in Karachi</a></li>
+            <li><a href="used-cars.html?city=Islamabad">Cars in Islamabad</a></li>
+            <li><a href="used-cars.html?city=Rawalpindi">Cars in Rawalpindi</a></li>
+          </ul>
+        </div>
+
+        <!-- Support & Policies -->
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html#about-section">About FastWheels</a></li>
+            <li><a href="../docs/README.md">Developer Docs</a></li>
+            <li><a href="post-ad.html">Sell Your Car</a></li>
+            <li><a href="#primary-navigation">Privacy &amp; Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>
+          &copy; 2026 FastWheels Pakistan. All rights reserved. Developed for SE-A_Group04.
+        </div>
+        <div>
+          Theme: Royal-Blue &amp; Crimson-Red &bull; Roll Number: i263000
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript: Shared main.js + Instant Valuation Script -->
+  <script src="../js/main.js"></script>
+  <script>
+    'use strict';
+
+    // Condition options element handling
+    const conditionCards = document.querySelectorAll('.condition-option-card');
+    const priceDisplay = document.getElementById('estimated-price-display');
+    const createListingBtn = document.getElementById('btn-create-listing');
+
+    // Retrieve saved vehicle details from the Sell Your Car page
+    function loadSavedVehicleData() {
+      try {
+        const stored = sessionStorage.getItem('fastwheels_valuation_car') || localStorage.getItem('fastwheels_valuation_car');
+        if (stored) {
+          const vehicle = JSON.parse(stored);
+          const briefTitle = document.getElementById('brief-vehicle-title');
+          const briefMileage = document.getElementById('brief-vehicle-mileage');
+          const briefPrice = document.getElementById('brief-vehicle-price');
+          const briefCert = document.getElementById('brief-vehicle-certified');
+
+          if (briefTitle && (vehicle.make || vehicle.model)) {
+            briefTitle.textContent = `${vehicle.year || ''} ${vehicle.make || ''} ${vehicle.model || ''}`.trim();
+          }
+
+          if (briefMileage && vehicle.mileage) {
+            briefMileage.textContent = `Mileage: ${vehicle.mileage}`;
+          }
+
+          if (briefPrice && vehicle.price) {
+            briefPrice.textContent = `Asking: $${Number(vehicle.price).toLocaleString('en-US')}`;
+          }
+
+          if (briefCert) {
+            if (vehicle.certified) {
+              briefCert.textContent = '✓ FastWheels Certified';
+              briefCert.style.display = 'inline-block';
+            } else {
+              briefCert.textContent = 'Standard Listing';
+              briefCert.style.background = '#f1f5f9';
+              briefCert.style.color = '#475569';
+              briefCert.style.borderColor = '#cbd5e1';
+            }
+          }
+        }
+      } catch (e) {
+        console.warn('Error reading vehicle data:', e);
+      }
+    }
+
+    // Condition radio selection handler (Allow only one condition at a time, clear visual indicator)
+    conditionCards.forEach(card => {
+      card.addEventListener('click', () => {
+        // Deselect all
+        conditionCards.forEach(c => {
+          c.classList.remove('selected');
+          const radio = c.querySelector('input[type="radio"]');
+          if (radio) radio.checked = false;
+        });
+
+        // Select the clicked one
+        card.classList.add('selected');
+        const activeRadio = card.querySelector('input[type="radio"]');
+        if (activeRadio) {
+          activeRadio.checked = true;
+        }
+
+        const selectedCondition = card.getAttribute('data-condition');
+        handleConditionChange(selectedCondition);
+      });
+    });
+
+    // Handle condition selection (Displays Estimated Price: $70K – $90K prominently)
+    function handleConditionChange(condition) {
+      // Keep required base price range "$70K – $90K" displayed
+      if (priceDisplay) {
+        priceDisplay.textContent = 'Estimated Price: $70K – $90K';
+      }
+    }
+
+    // Create a Listing button click handler
+    // Since no suitable third-page route exists in the project, safely unconnected
+    if (createListingBtn) {
+      createListingBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Notice: The third page (Create a Listing) route does not currently exist in the project repository. This button is safely unconnected per project specifications.');
+      });
+    }
+
+    // Initialize on DOM Ready
+    document.addEventListener('DOMContentLoaded', () => {
+      loadSavedVehicleData();
+    });
+  </script>
+</body>
+</html>
