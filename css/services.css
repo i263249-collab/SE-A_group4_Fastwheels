@@ -6,6 +6,273 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
+   0. CSS Variable Fallbacks
+   These ensure the stylesheet works even if styles.css hasn't declared them.
+   -------------------------------------------------------------------------- */
+:root {
+  --color-accent-soft: #fff1f2;
+  --color-primary-dark: #0f2a5c;
+  --color-success: #15803d;
+}
+
+/* --------------------------------------------------------------------------
+   0b. Top Academic Metadata Bar
+   -------------------------------------------------------------------------- */
+.top-bar {
+  background-color: #0f172a;
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  padding: 0.4rem 0;
+}
+
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.top-bar-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.top-bar-badge {
+  background-color: var(--color-accent, #e63946);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* --------------------------------------------------------------------------
+   0c. Hero Highlights Strip (used on Car Finance & Inspection pages)
+   -------------------------------------------------------------------------- */
+.highlights-bar {
+  background-color: var(--color-surface, #ffffff);
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+  padding: 1rem 0;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.highlight-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.highlight-text h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary, #1a3a6b);
+  margin-bottom: 0.15rem;
+}
+
+.highlight-text p {
+  font-size: 0.75rem;
+  color: var(--color-text-muted, #64748b);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   0d. Section Title / Subtitle Wrapper (used in eligibility and service grids)
+   -------------------------------------------------------------------------- */
+.section-title-wrap {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary, #1a3a6b);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: var(--font-size-sm, 0.9rem);
+  color: var(--color-text-muted, #64748b);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   0e. Value Props Grid (Eligibility cards on Car Finance page)
+   -------------------------------------------------------------------------- */
+.value-props-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-lg, 1.5rem);
+}
+
+/* --------------------------------------------------------------------------
+   0f. Book Appointment Page — Inquiry Card & State Badges
+   -------------------------------------------------------------------------- */
+.inquiry-card {
+  background-color: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: var(--border-radius-md, 8px);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.inquiry-header-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-border, #e2e8f0);
+}
+
+.inquiry-state-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-state-empty {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.badge-state-filling {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid #93c5fd;
+}
+
+.badge-state-error {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.badge-state-success {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+/* --------------------------------------------------------------------------
+   0g. Appointment Success / Confirmation View (State 4)
+   -------------------------------------------------------------------------- */
+.inquiry-success-view {
+  display: none;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.inquiry-success-icon {
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  font-size: 2rem;
+  background-color: #dcfce7;
+  color: #15803d;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  font-weight: 800;
+}
+
+.inquiry-success-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #15803d;
+  margin-bottom: 0.5rem;
+}
+
+.inquiry-success-text {
+  font-size: var(--font-size-sm, 0.9rem);
+  color: var(--color-text-main, #1e293b);
+  margin-bottom: 1.25rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------------------------------------------
+   0h. Seller / Booking Comments Box
+   -------------------------------------------------------------------------- */
+.seller-comments-box {
+  background-color: #f8fafc;
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-left: 3px solid var(--color-primary, #1a3a6b);
+  border-radius: var(--border-radius-sm, 4px);
+  padding: 0.85rem 1rem;
+  font-size: var(--font-size-sm, 0.9rem);
+  color: var(--color-text-main, #1e293b);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   0i. Small Reset Button
+   -------------------------------------------------------------------------- */
+.btn-small-reset {
+  background-color: #f8fafc;
+  border: 1px solid var(--color-border, #e2e8f0);
+  color: var(--color-text-muted, #64748b);
+  font-size: var(--font-size-sm, 0.9rem);
+  font-weight: 700;
+  border-radius: var(--border-radius-sm, 4px);
+  cursor: pointer;
+  transition: all var(--transition-fast, 0.15s ease);
+}
+
+.btn-small-reset:hover {
+  background-color: #fee2e2;
+  border-color: var(--color-accent, #e63946);
+  color: var(--color-accent, #e63946);
+}
+
+/* --------------------------------------------------------------------------
+   0j. Field-level Validation Error Messages
+   -------------------------------------------------------------------------- */
+.field-error-msg {
+  display: none;
+  font-size: var(--font-size-xs, 0.78rem);
+  color: var(--color-accent, #e63946);
+  font-weight: 600;
+  margin-top: 0.3rem;
+}
+
+.field-error-msg.visible {
+  display: block;
+}
+
+.form-input-error {
+  border-color: var(--color-accent, #e63946) !important;
+  background-color: #fff5f5 !important;
+}
+
+/* --------------------------------------------------------------------------
    1. Shared Subpage Breadcrumb & Two-Column Layout
    -------------------------------------------------------------------------- */
 .breadcrumb-nav {
